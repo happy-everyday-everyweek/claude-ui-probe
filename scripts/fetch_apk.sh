@@ -15,17 +15,17 @@ save() {
     # 有些镜像发的是 XAPK/APKS（zip 里放若干个 split APK），apktool 只会把整包当 unknown。
     # 这里挑出真正带 AndroidManifest.xml 的那一个（base 优先，否则取最大的）。
     if ! unzip -l "$OUT" 2>/dev/null | grep -q 'AndroidManifest.xml'; then
+      echo "[note] 这不是单 APK，按 XAPK 处理："
+      unzip -l "$OUT" | awk 'NR<=40' || true
       rm -rf xapk_tmp && mkdir -p xapk_tmp
       unzip -o -q "$OUT" -d xapk_tmp 2>/dev/null || true
       pick=""
       for cand in $(find xapk_tmp -type f -name '*.apk' | sort); do
-        if unzip -l "$cand" 2>/dev/null | grep -q 'AndroidManifest.xml'; then
-          case "$(basename "$cand")" in
-            base*|*base.apk) pick="$cand"; break ;;
-          esac
-          if [ -z "$pick" ] || [ "$(stat -c %s "$cand")" -gt "$(stat -c %s "$pick")" ]; then
-            pick="$cand"
-          fi
+        # 真正的 base 既要有资源表，也要有 dex；config split 只有清单，没有这两样。
+        unzip -l "$cand" 2>/dev/null | grep -q 'resources.arsc' || continue
+        unzip -l "$cand" 2>/dev/null | grep -qE 'classes[0-9]*\.dex' || continue
+        if [ -z "$pick" ] || [ "$(stat -c %s "$cand")" -gt "$(stat -c %s "$pick")" ]; then
+          pick="$cand"
         fi
       done
       if [ -n "$pick" ]; then
