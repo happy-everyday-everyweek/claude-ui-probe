@@ -1,0 +1,35 @@
+# graphql.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u
+
+language graphql
+case-insensitive
+
+words kwroot miss=plain {
+  query:keyword:1 mutation:keyword:1 subscription:keyword:1 type:keyword:1 input:keyword:1 schema:keyword:1 directive:keyword:1 interface:keyword:1 union:keyword:1 scalar:keyword:1 fragment:keyword:1 enum:keyword:1 on:keyword:1 true:literal:1 false:literal:1 null:literal:1
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule __kwscanpat_kwroot { [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+
+rule m0 scope=comment rel=0 { "#" ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m2 rel=1 { eng3 }
+rule m0__resume { ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3 scope=string rel=0 { "\"" ( m4 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m4 rel=0 { "\\" any }
+rule m3__resume { ( m4 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m5 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m6 scope=punctuation rel=0 { [.] [.] [.] }
+rule m7 scope=punctuation rel=0 { [!():=\[\]{-}] }
+rule m8 rel=0 { cap scope=variable rel=0 { "$" ( ![^0-9A-Z_a-z] any )* } kwscan kwroot __kwscanpat_kwroot { chunktext { ( [^0-9A-Z_a-z] / eoftrunc ) } } }
+rule m8__resume { cap scope=variable rel=0 { ( ![^0-9A-Z_a-z] any )* } ( [^0-9A-Z_a-z] / eoftrunc ) }
+rule m9 scope=meta rel=1 { "@" [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule m10 scope=symbol rel=0 { [A-Z_a-z] [0-9A-Z_a-z]* &( [\t-\r ]* ":" ) }
+rule root { ( m0 / m3 / m5 / m6 / m7 / m8 / m9 / m10 / illegalx { ( [';<] / "BEGIN" ) } / kw kwroot { ( [0-9A-Z_a-z] [0-9A-Z_a-z]* !( [\t-\r ]* ":" ) / ( !( [A-Z_a-z] [0-9A-Z_a-z]* &( [\t-\r ]* ":" ) ) [0-9A-Z_a-z] )+ ) } / any )* eof }

@@ -1,0 +1,231 @@
+# php.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u
+#! memo mc6_r22
+
+language php
+
+words kwroot miss=plain {
+  __CLASS__:keyword:1 __DIR__:keyword:1 __FILE__:keyword:1 __FUNCTION__:keyword:1 __COMPILER_HALT_OFFSET__:keyword:1 __LINE__:keyword:1 __METHOD__:keyword:1 __NAMESPACE__:keyword:1 __TRAIT__:keyword:1 die:keyword:1 echo:keyword:1 exit:keyword:1 include:keyword:1 include_once:keyword:1 print:keyword:1 require:keyword:1 require_once:keyword:1 array:keyword:1 abstract:keyword:1 and:keyword:0 as:keyword:1 binary:keyword:1 bool:keyword:1 boolean:keyword:1 break:keyword:1 callable:keyword:1 case:keyword:1 catch:keyword:1 class:keyword:1 clone:keyword:1 const:keyword:1 continue:keyword:1 declare:keyword:1 default:keyword:1 do:keyword:1 double:keyword:1 else:keyword:1 elseif:keyword:1 empty:keyword:1 enddeclare:keyword:1 endfor:keyword:1 endforeach:keyword:1 endif:keyword:1 endswitch:keyword:1 endwhile:keyword:1 enum:keyword:1 eval:keyword:1 extends:keyword:1 final:keyword:1 finally:keyword:1 float:keyword:1 for:keyword:0 foreach:keyword:1 from:keyword:1 global:keyword:1 goto:keyword:1 if:keyword:0 implements:keyword:1 instanceof:keyword:1 insteadof:keyword:1 int:keyword:1 integer:keyword:1 interface:keyword:1 isset:keyword:1 iterable:keyword:1 list:keyword:0 match:keyword:0 mixed:keyword:1 new:keyword:1 never:keyword:1 object:keyword:1 or:keyword:0 private:keyword:1 protected:keyword:1 public:keyword:1 readonly:keyword:1 real:keyword:1 return:keyword:1 string:keyword:1 switch:keyword:1 throw:keyword:1 trait:keyword:1 try:keyword:1 unset:keyword:1 use:keyword:1 var:keyword:1 void:keyword:1 while:keyword:1 xor:keyword:1 yield:keyword:1 false:literal:1 FALSE:literal:1 null:literal:1 NULL:literal:1 true:literal:1 TRUE:literal:1 Error:built_in:0 AppendIterator:built_in:1 ArgumentCountError:built_in:1 ArithmeticError:built_in:1 ArrayIterator:built_in:1 ArrayObject:built_in:1 AssertionError:built_in:1 BadFunctionCallException:built_in:1 BadMethodCallException:built_in:1 CachingIterator:built_in:1 CallbackFilterIterator:built_in:1 CompileError:built_in:1 Countable:built_in:1 DirectoryIterator:built_in:1 DivisionByZeroError:built_in:1 DomainException:built_in:1 EmptyIterator:built_in:1 ErrorException:built_in:1 Exception:built_in:1 FilesystemIterator:built_in:1 FilterIterator:built_in:1 GlobIterator:built_in:1 InfiniteIterator:built_in:1 InvalidArgumentException:built_in:1 IteratorIterator:built_in:1 LengthException:built_in:1 LimitIterator:built_in:1 LogicException:built_in:1 MultipleIterator:built_in:1 NoRewindIterator:built_in:1 OutOfBoundsException:built_in:1 OutOfRangeException:built_in:1 OuterIterator:built_in:1 OverflowException:built_in:1 ParentIterator:built_in:1 ParseError:built_in:1 RangeException:built_in:1 RecursiveArrayIterator:built_in:1 RecursiveCachingIterator:built_in:1 RecursiveCallbackFilterIterator:built_in:1 RecursiveDirectoryIterator:built_in:1 RecursiveFilterIterator:built_in:1 RecursiveIterator:built_in:1 RecursiveIteratorIterator:built_in:1 RecursiveRegexIterator:built_in:1 RecursiveTreeIterator:built_in:1 RegexIterator:built_in:1 RuntimeException:built_in:1 SeekableIterator:built_in:1 SplDoublyLinkedList:built_in:1 SplFileInfo:built_in:1 SplFileObject:built_in:1 SplFixedArray:built_in:1 SplHeap:built_in:1 SplMaxHeap:built_in:1 SplMinHeap:built_in:1 SplObjectStorage:built_in:1 SplObserver:built_in:1 SplPriorityQueue:built_in:1 SplQueue:built_in:1 SplStack:built_in:1 SplSubject:built_in:1 SplTempFileObject:built_in:1 TypeError:built_in:1 UnderflowException:built_in:1 UnexpectedValueException:built_in:1 UnhandledMatchError:built_in:1 ArrayAccess:built_in:1 BackedEnum:built_in:1 Closure:built_in:1 Fiber:built_in:1 Generator:built_in:1 Iterator:built_in:1 IteratorAggregate:built_in:1 Serializable:built_in:1 Stringable:built_in:1 Throwable:built_in:1 Traversable:built_in:1 UnitEnum:built_in:1 WeakReference:built_in:1 WeakMap:built_in:1 Directory:built_in:1 __PHP_Incomplete_Class:built_in:1 parent:built_in:0 php_user_filter:built_in:1 self:built_in:1 static:built_in:1 stdClass:built_in:1
+}
+
+words kw1 miss=plain {
+  false:literal:1 null:literal:1 true:literal:1 new:keyword:1 array:keyword:1
+}
+
+words kw53 miss=plain {
+  __halt_compiler:keyword:1
+}
+
+words kw74 miss=plain {
+  fn:keyword:1 function:keyword:1
+}
+
+words kw75 miss=plain {
+  use:keyword:1
+}
+
+words kw88 miss=plain {
+  enum:keyword:1
+}
+
+words kw89 miss=plain {
+  extends:keyword:1 implements:keyword:1
+}
+
+words kw91 miss=plain {
+  class:keyword:1 interface:keyword:1 trait:keyword:1
+}
+
+words kw93 miss=plain {
+  namespace:keyword:1
+}
+
+rule _na0 { "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / "" / " " / "¡" / "¢" / "£" / "¤" / "¥" / "¦" / "§" / "¨" / "©" / "ª" / "«" / "¬" / "­" / "®" / "¯" / "°" / "±" / "²" / "³" / "´" / "µ" / "¶" / "·" / "¸" / "¹" / "º" / "»" / "¼" / "½" / "¾" / "¿" / "À" / "Á" / "Â" / "Ã" / "Ä" / "Å" / "Æ" / "Ç" / "È" / "É" / "Ê" / "Ë" / "Ì" / "Í" / "Î" / "Ï" / "Ð" / "Ñ" / "Ò" / "Ó" / "Ô" / "Õ" / "Ö" / "×" / "Ø" / "Ù" / "Ú" / "Û" / "Ü" / "Ý" / "Þ" / "ß" / "à" / "á" / "â" / "ã" / "ä" / "å" / "æ" / "ç" / "è" / "é" / "ê" / "ë" / "ì" / "í" / "î" / "ï" / "ð" / "ñ" / "ò" / "ó" / "ô" / "õ" / "ö" / "÷" / "ø" / "ù" / "ú" / "û" / "ü" / "ý" / "þ" / "ÿ" }
+rule h_r0 { [A-Z] &[A-Z] h_r0 / ( &( [A-Z] ( [0-9_a-z\x7f] / _na0 ) ) ) }
+rule h_r1 { [A-Z] &[A-Z] h_r0 }
+rule h_s5 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) h_s5 / h_r4 ) }
+rule h_r4 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s5 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s5 / "\\" h_r1 h_r4 / h_r1 h_r4 / ![0-9A-Za-z] ![$] }
+rule h_r7 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s5 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s5 / "\\" h_r1 h_r4 / h_r1 h_r4 }
+rule h_s15 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) h_s15 / h_r14 ) }
+rule h_r14 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s15 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s15 / "\\" h_r1 h_r14 / h_r1 h_r14 / ![0-9A-Za-z] ![$] }
+rule h_r17 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s15 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s15 / "\\" h_r1 h_r14 / h_r1 h_r14 }
+rule h_r20 { [0-9A-Z_a-z\x7f]* ( ( [0-9A-Z_a-z\x7f] / _na0 ) h_r20 / ![0-9A-Za-z] ![$] &":" &( !"::" ) ) }
+rule __kwscanpat_kw1 { [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule mc4_r21 { [0-9A-Za-z]* ( ( [0-9A-Z_a-z\x7f] / _na0 ) mc4_r21 / ( ![0-9A-Za-z] ![$] ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) !"(" ) ) }
+rule mc6_r22 { [A-Z] &[A-Z] mc6_r22 / ( &( [A-Z] ( [0-9_a-z\x7f] / _na0 ) ) &[:A-Z\\] ) }
+rule mc6_r23 { [A-Z] &[A-Z] mc6_r22 }
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule esbe24_r35 { [\t ] esbe24_r35 / ( samedelim 1 ![0-9A-Z_a-z] ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) }
+rule h_r37 { [01] h_r37 / ( ( "_" [01] [01]* ( "_" [01] [01]* )* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) }
+rule h_r38 { [01] h_r37 }
+rule h_r39 { [0-7] h_r39 / ( ( "_" [0-7] [0-7]* ( "_" [0-7] [0-7]* )* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) }
+rule h_r40 { [0-7] h_r39 }
+rule h_r41 { [0-9A-Fa-f] h_r41 / ( ( "_" [0-9A-Fa-f] [0-9A-Fa-f]* ( "_" [0-9A-Fa-f] [0-9A-Fa-f]* )* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) }
+rule h_r42 { [0-9A-Fa-f] h_r41 }
+rule mc31_s48 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) mc31_s48 / mc31_r47 ) }
+rule mc31_r47 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) mc31_s48 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) mc31_s48 / "\\" h_r1 mc31_r47 / h_r1 mc31_r47 / ![0-9A-Za-z] ![$] }
+rule mc31_r50 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) mc31_s48 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) mc31_s48 / "\\" h_r1 mc31_r47 / h_r1 mc31_r47 }
+rule kig_s72 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) kig_s72 / kig_r71 ) }
+rule kig_r71 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s72 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s72 / "\\" h_r1 kig_r71 / h_r1 kig_r71 / ![0-9A-Za-z] ![$] }
+rule kig_r74 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s72 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s72 / "\\" h_r1 kig_r71 / h_r1 kig_r71 }
+rule h_s82 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) h_s82 / h_r81 ) }
+rule h_r81 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s82 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s82 / "\\" h_r1 h_r81 / h_r1 h_r81 / ![0-9A-Za-z] ![$] }
+rule h_r84 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s82 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) h_s82 / "\\" h_r1 h_r81 / h_r1 h_r81 }
+rule kig_s106 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) kig_s106 / kig_r105 ) }
+rule kig_r105 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s106 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s106 / "\\" h_r1 kig_r105 / h_r1 kig_r105 / ![0-9A-Za-z] ![$] }
+rule kig_r108 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s106 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s106 / "\\" h_r1 kig_r105 / h_r1 kig_r105 }
+rule kig_s116 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) kig_s116 / kig_r115 ) }
+rule kig_r115 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s116 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s116 / "\\" h_r1 kig_r115 / h_r1 kig_r115 / ![0-9A-Za-z] ![$] }
+rule kig_r118 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s116 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s116 / "\\" h_r1 kig_r115 / h_r1 kig_r115 }
+rule h_r121 { [0-9A-Za-z]* ( ( [0-9A-Z_a-z\x7f] / _na0 ) h_r121 / ![0-9A-Za-z] ![$] ) }
+rule mc62_r122 { [0-9A-Z_a-z\x7f]* ( ( [0-9A-Z_a-z\x7f] / _na0 ) mc62_r122 / ![0-9A-Za-z] ![$] &( [\t\n ]* &( &"(" ) ) ) }
+rule kig_s142 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) kig_s142 / kig_r141 ) }
+rule kig_r141 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s142 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s142 / "\\" h_r1 kig_r141 / h_r1 kig_r141 / ![0-9A-Za-z] ![$] }
+rule kig_r144 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s142 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s142 / "\\" h_r1 kig_r141 / h_r1 kig_r141 }
+rule kig_s180 { [0-9a-z]* ( ( [0-9_a-z\x7f] / _na0 ) kig_s180 / kig_r179 ) }
+rule kig_r179 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s180 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s180 / "\\" h_r1 kig_r179 / h_r1 kig_r179 / ![0-9A-Za-z] ![$] }
+rule kig_r182 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s180 / [A-Z] ( [0-9_a-z\x7f] / _na0 ) kig_s180 / "\\" h_r1 kig_r179 / h_r1 kig_r179 }
+rule sg_r0 { ( "Error" ![a-zA-Z0-9_] / "AppendIterator" ![a-zA-Z0-9_] / "ArgumentCountError" ![a-zA-Z0-9_] / "ArithmeticError" ![a-zA-Z0-9_] / "ArrayIterator" ![a-zA-Z0-9_] / "ArrayObject" ![a-zA-Z0-9_] / "AssertionError" ![a-zA-Z0-9_] / "BadFunctionCallException" ![a-zA-Z0-9_] / "BadMethodCallException" ![a-zA-Z0-9_] / "CachingIterator" ![a-zA-Z0-9_] / "CallbackFilterIterator" ![a-zA-Z0-9_] / "CompileError" ![a-zA-Z0-9_] / "Countable" ![a-zA-Z0-9_] / "DirectoryIterator" ![a-zA-Z0-9_] / "DivisionByZeroError" ![a-zA-Z0-9_] / "DomainException" ![a-zA-Z0-9_] / "EmptyIterator" ![a-zA-Z0-9_] / "ErrorException" ![a-zA-Z0-9_] / "Exception" ![a-zA-Z0-9_] / "FilesystemIterator" ![a-zA-Z0-9_] / "FilterIterator" ![a-zA-Z0-9_] / "GlobIterator" ![a-zA-Z0-9_] / "InfiniteIterator" ![a-zA-Z0-9_] / "InvalidArgumentException" ![a-zA-Z0-9_] / "IteratorIterator" ![a-zA-Z0-9_] / "LengthException" ![a-zA-Z0-9_] / "LimitIterator" ![a-zA-Z0-9_] / "LogicException" ![a-zA-Z0-9_] / "MultipleIterator" ![a-zA-Z0-9_] / "NoRewindIterator" ![a-zA-Z0-9_] / "OutOfBoundsException" ![a-zA-Z0-9_] / "OutOfRangeException" ![a-zA-Z0-9_] / "OuterIterator" ![a-zA-Z0-9_] / "OverflowException" ![a-zA-Z0-9_] / "ParentIterator" ![a-zA-Z0-9_] / "ParseError" ![a-zA-Z0-9_] / "RangeException" ![a-zA-Z0-9_] / "RecursiveArrayIterator" ![a-zA-Z0-9_] / "RecursiveCachingIterator" ![a-zA-Z0-9_] / "RecursiveCallbackFilterIterator" ![a-zA-Z0-9_] / "RecursiveDirectoryIterator" ![a-zA-Z0-9_] / "RecursiveFilterIterator" ![a-zA-Z0-9_] / "RecursiveIterator" ![a-zA-Z0-9_] / "RecursiveIteratorIterator" ![a-zA-Z0-9_] / "RecursiveRegexIterator" ![a-zA-Z0-9_] / "RecursiveTreeIterator" ![a-zA-Z0-9_] / "RegexIterator" ![a-zA-Z0-9_] / "RuntimeException" ![a-zA-Z0-9_] / "SeekableIterator" ![a-zA-Z0-9_] / "SplDoublyLinkedList" ![a-zA-Z0-9_] / "SplFileInfo" ![a-zA-Z0-9_] / "SplFileObject" ![a-zA-Z0-9_] / "SplFixedArray" ![a-zA-Z0-9_] / "SplHeap" ![a-zA-Z0-9_] / "SplMaxHeap" ![a-zA-Z0-9_] / "SplMinHeap" ![a-zA-Z0-9_] / "SplObjectStorage" ![a-zA-Z0-9_] / "SplObserver" ![a-zA-Z0-9_] / "SplPriorityQueue" ![a-zA-Z0-9_] / "SplQueue" ![a-zA-Z0-9_] / "SplStack" ![a-zA-Z0-9_] / "SplSubject" ![a-zA-Z0-9_] / "SplTempFileObject" ![a-zA-Z0-9_] / "TypeError" ![a-zA-Z0-9_] / "UnderflowException" ![a-zA-Z0-9_] / "UnexpectedValueException" ![a-zA-Z0-9_] / "UnhandledMatchError" ![a-zA-Z0-9_] / "ArrayAccess" ![a-zA-Z0-9_] / "BackedEnum" ![a-zA-Z0-9_] / "Closure" ![a-zA-Z0-9_] / "Fiber" ![a-zA-Z0-9_] / "Generator" ![a-zA-Z0-9_] / "Iterator" ![a-zA-Z0-9_] / "IteratorAggregate" ![a-zA-Z0-9_] / "Serializable" ![a-zA-Z0-9_] / "Stringable" ![a-zA-Z0-9_] / "Throwable" ![a-zA-Z0-9_] / "Traversable" ![a-zA-Z0-9_] / "UnitEnum" ![a-zA-Z0-9_] / "WeakReference" ![a-zA-Z0-9_] / "WeakMap" ![a-zA-Z0-9_] / "Directory" ![a-zA-Z0-9_] / "__PHP_Incomplete_Class" ![a-zA-Z0-9_] / "parent" ![a-zA-Z0-9_] / "php_user_filter" ![a-zA-Z0-9_] / "self" ![a-zA-Z0-9_] / "static" ![a-zA-Z0-9_] / "stdClass" ![a-zA-Z0-9_] ) }
+rule sg_r1 { "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 }
+rule sg_r2 { ( [A-Z_a-z\x7f] / _na0 ) h_r20 / sg_r1 ( ( "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 ) )* ![0-9A-Za-z] ![$] ( "::" &( !( "class" ![a-zA-Z0-9_] ) ) ( [A-Z_a-z\x7f] / _na0 ) mc4_r21 / "::" &( !( "class" ![a-zA-Z0-9_] ) ) / "::class" ) / "new" [\t\n ] [\t\n ]* !sg_r0 kig_r108 / kig_r118 / [A-Z] [A-Z]* ![0-9A-Za-z] ![$] }
+rule sg_r3 { ( [A-Z_a-z\x7f] / _na0 ) h_r20 / sg_r1 ( ( "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 ) )* ![0-9A-Za-z] ![$] ( "::" &( !( "class" ![a-zA-Z0-9_] ) ) ( [A-Z_a-z\x7f] / _na0 ) mc4_r21 / "::" &( !( "class" ![a-zA-Z0-9_] ) ) / "::class" ) / "new" [\t\n ] [\t\n ]* !sg_r0 kig_r144 }
+rule sg_r4 { ( [A-Z_a-z\x7f] / _na0 ) h_r20 / sg_r1 ( ( "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 ) )* ![0-9A-Za-z] ![$] ( "::" &( !( "class" ![a-zA-Z0-9_] ) ) ( [A-Z_a-z\x7f] / _na0 ) mc4_r21 / "::" &( !( "class" ![a-zA-Z0-9_] ) ) / "::class" ) / "new" [\t\n ] [\t\n ]* !sg_r0 kig_r74 }
+rule sg_r5 { sg_r1 ( ( "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 ) )* ![0-9A-Za-z] ![$] ( "::" &( !( "class" ![a-zA-Z0-9_] ) ) ( [A-Z_a-z\x7f] / _na0 ) mc4_r21 / "::" &( !( "class" ![a-zA-Z0-9_] ) ) / "::class" ) }
+
+rule m0 rel=0 { cap scope=meta rel=0 mc=1 { "#[" [\t-\r ]* ( ( "\\" ( h_r7 / [A-Z] [A-Z]* ![0-9A-Za-z] ![$] ) ) / ( ( h_r17 / [A-Z] [A-Z]* ![0-9A-Za-z] ![$] ) ) ) } ( m1 / m2 / m3 / m4 / m5 / m6 / m7 / m31 / m34 / m37 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / m30 / m40 / m41 / !"]" kw kw1 { ( !sg_r2 [0-9A-Z_a-z] )+ } / !"]" any )* ( rel(1){ cap scope=meta rel=0 mc=1 { "]" } } / eoftrunc ) }
+rule m1 rel=0 { "[" ( m1 / m2 / m3 / m4 / m5 / m6 / m7 / m8 / m11 / m14 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / m30 / !"]" kw kw1 { ( !sg_r4 [0-9A-Z_a-z] )+ } / !"]" any )* ( rel(1){ "]" } / eoftrunc ) }
+rule m2 scope=attr rel=1 { ( [A-Z_a-z\x7f] / _na0 ) h_r20 }
+rule m3 rel=1 { kwscan kw1 __kwscanpat_kw1 { "::" &( !( "class" ![a-zA-Z0-9_] ) ) } cap scope=variable.constant rel=0 mc=1 { ( [A-Z_a-z\x7f] / _na0 ) mc4_r21 } }
+rule m4 rel=1 { "::" cap scope=variable.language rel=0 mc=1 { "class" } }
+rule m5 rel=1 { cap scope=title.class rel=0 mc=1 { sg_r1 ( ( "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 ) )* ![0-9A-Za-z] ![$] } kwscan kw1 __kwscanpat_kw1 { "::" &( !( "class" ![a-zA-Z0-9_] ) ) } cap scope=variable.constant rel=0 mc=1 { ( [A-Z_a-z\x7f] / _na0 ) mc4_r21 } }
+rule m6 rel=1 { cap scope=title.class rel=0 mc=1 { sg_r1 ( ( "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 ) )* ![0-9A-Za-z] ![$] } kwscan kw1 __kwscanpat_kw1 { "::" &( !( "class" ![a-zA-Z0-9_] ) ) } }
+rule m7 rel=1 { cap scope=title.class rel=0 mc=1 { sg_r1 ( ( "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 ) )* ![0-9A-Za-z] ![$] } "::" cap scope=variable.language rel=0 mc=1 { "class" } }
+rule m8 scope=comment rel=0 { "/*" ( m9 / m10 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m9 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m10 rel=1 { eng3 }
+rule m8__resume { ( m9 / m10 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m11 scope=comment rel=0 { "//" ( m12 / m13 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m12 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m13 rel=1 { eng3 }
+rule m11__resume { ( m12 / m13 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m14 scope=comment rel=0 { "#" ( m15 / m16 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m15 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m16 rel=1 { eng3 }
+rule m14__resume { ( m15 / m16 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m17 scope=string rel=0 { "\"" ( m18 / m19 / m20 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m18 rel=0 { "\\" any }
+rule m19 scope=subst rel=1 { "$" [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule m20 scope=subst rel=0 { "{$" ( !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m20__resume { ( !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m17__resume { ( m18 / m19 / m20 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m21 scope=string rel=0 { "'" ( m22 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m22 rel=0 { "\\" any }
+rule m21__resume { ( m22 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m23 scope=string rel=0 { "<<<" [\t ]* ( delim 1 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / "\"" delim 1 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } "\"" ) "\n" ( m24 / m19 / m20 / !esbe24_r35 any )* ( rel(1){ esbe24_r35 } / eoftrunc ) }
+rule m24 rel=0 { "\\" any }
+rule m23__resume { ( m24 / m19 / m20 / !esbe24_r35 any )* ( rel(1){ esbe24_r35 } / eoftrunc ) }
+rule m25 scope=string rel=0 { "<<<" [\t ]* "'" delim 1 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } "'\n" ( !esbe24_r35 any )* ( rel(1){ esbe24_r35 } / eoftrunc ) }
+rule m25__resume { ( !esbe24_r35 any )* ( rel(1){ esbe24_r35 } / eoftrunc ) }
+rule m26 scope=number rel=0 { nb [a-zA-Z0-9_] "0" [Bb] h_r38 }
+rule m27 scope=number rel=0 { nb [a-zA-Z0-9_] "0" [Oo] h_r40 }
+rule m28 scope=number rel=0 { nb [a-zA-Z0-9_] "0" [Xx] h_r42 }
+rule m29 scope=number rel=0 { ( nb [a-zA-Z0-9_] [0-9] [0-9]* ( "_" [0-9] [0-9]* )* ( "." [0-9] [0-9]* ( "_" [0-9] [0-9]* )* )? / ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) "." [0-9] [0-9]* ) ( [Ee] [+\-]? [0-9] [0-9]* )? }
+rule m30 rel=1 { cap scope=keyword rel=0 mc=1 { "new" } [\t\n ] [\t\n ]* kwscan kw1 __kwscanpat_kw1 { !sg_r0 } cap scope=title.class rel=0 mc=1 { mc31_r50 } }
+rule m1__resume { ( m1 / m2 / m3 / m4 / m5 / m6 / m7 / m8 / m11 / m14 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / m30 / !"]" kw kw1 { ( !sg_r4 [0-9A-Z_a-z] )+ } / !"]" any )* ( rel(1){ "]" } / eoftrunc ) }
+rule m31 scope=comment rel=0 { "/*" ( m32 / m33 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m32 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m33 rel=1 { eng3 }
+rule m31__resume { ( m32 / m33 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m34 scope=comment rel=0 { "//" ( m35 / m36 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m35 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m36 rel=1 { eng3 }
+rule m34__resume { ( m35 / m36 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m37 scope=comment rel=0 { "#" ( m38 / m39 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m38 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m39 rel=1 { eng3 }
+rule m37__resume { ( m38 / m39 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m40 scope=meta rel=1 { h_r84 }
+rule m41 scope=meta rel=1 { [A-Z] [A-Z]* ![0-9A-Za-z] ![$] }
+rule m0__resume { ( m1 / m2 / m3 / m4 / m5 / m6 / m7 / m31 / m34 / m37 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / m30 / m40 / m41 / !"]" kw kw1 { ( !sg_r2 [0-9A-Z_a-z] )+ } / !"]" any )* ( rel(1){ cap scope=meta rel=0 mc=1 { "]" } } / eoftrunc ) }
+rule m42 scope=comment rel=0 { "#" ( m43 / m44 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m43 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m44 rel=1 { eng3 }
+rule m42__resume { ( m43 / m44 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m45 scope=comment rel=0 { "//" ( m46 / m47 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m46 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m47 rel=1 { eng3 }
+rule m45__resume { ( m46 / m47 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m48 scope=comment rel=0 { "/*" ( m49 / m50 / m51 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m49 scope=doctag rel=1 { "@" [A-Za-z] [A-Za-z]* }
+rule m50 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m51 rel=1 { eng3 }
+rule m48__resume { ( m49 / m50 / m51 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m52 rel=1 { kwscan kw53 __kwscanpat_kw1 { "__halt_compiler();" } }
+rule m53 scope=comment rel=0 { ( !( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / "?>" ) ) any )+ ( m54 rel(1){ &( any / eof ) } / rel(1){ ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) } / eoftrunc ) }
+rule m54 scope=meta rel=1 { "?>" }
+rule m53__resume { ( !( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / "?>" ) ) any )+ ( m54 rel(1){ &( any / eof ) } / rel(1){ ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) } / eoftrunc ) }
+rule m52_s { m52 ( m53 / cap scope=comment rel=0 { rel(1){ &( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) ) } } / eoftrunc ) }
+rule m52_s__resume { ( m53 / cap scope=comment rel=0 { rel(1){ &( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) ) } } / eoftrunc ) }
+rule m55 scope=meta rel=10 { "<?php" }
+rule m56 scope=meta rel=1 { "<?=" }
+rule m57 scope=meta rel=0.1 { "<?" }
+rule m58 scope=meta rel=1 { "?>" }
+rule m59 scope=variable.language rel=1 { "$this" ![a-zA-Z0-9_] }
+rule m60 scope=variable rel=1 { "$" "$"* ( [A-Z_a-z\x7f] / _na0 ) h_r121 }
+rule m61 rel=0 { ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) kwscan kwroot __kwscanpat_kw1 { !( ( "fn" ![a-zA-Z0-9_] / "function" ![a-zA-Z0-9_] / "__CLASS__" ![a-zA-Z0-9_] / "__DIR__" ![a-zA-Z0-9_] / "__FILE__" ![a-zA-Z0-9_] / "__FUNCTION__" ![a-zA-Z0-9_] / "__COMPILER_HALT_OFFSET__" ![a-zA-Z0-9_] / "__LINE__" ![a-zA-Z0-9_] / "__METHOD__" ![a-zA-Z0-9_] / "__NAMESPACE__" ![a-zA-Z0-9_] / "__TRAIT__" ![a-zA-Z0-9_] / "die" ![a-zA-Z0-9_] / "echo" ![a-zA-Z0-9_] / "exit" ![a-zA-Z0-9_] / "include" ![a-zA-Z0-9_] / "include_once" ![a-zA-Z0-9_] / "print" ![a-zA-Z0-9_] / "require" ![a-zA-Z0-9_] / "require_once" ![a-zA-Z0-9_] / "array" ![a-zA-Z0-9_] / "abstract" ![a-zA-Z0-9_] / "and" ![a-zA-Z0-9_] / "as" ![a-zA-Z0-9_] / "binary" ![a-zA-Z0-9_] / "bool" ![a-zA-Z0-9_] / "boolean" ![a-zA-Z0-9_] / "break" ![a-zA-Z0-9_] / "callable" ![a-zA-Z0-9_] / "case" ![a-zA-Z0-9_] / "catch" ![a-zA-Z0-9_] / "class" ![a-zA-Z0-9_] / "clone" ![a-zA-Z0-9_] / "const" ![a-zA-Z0-9_] / "continue" ![a-zA-Z0-9_] / "declare" ![a-zA-Z0-9_] / "default" ![a-zA-Z0-9_] / "do" ![a-zA-Z0-9_] / "double" ![a-zA-Z0-9_] / "else" ![a-zA-Z0-9_] / "elseif" ![a-zA-Z0-9_] / "empty" ![a-zA-Z0-9_] / "enddeclare" ![a-zA-Z0-9_] / "endfor" ![a-zA-Z0-9_] / "endforeach" ![a-zA-Z0-9_] / "endif" ![a-zA-Z0-9_] / "endswitch" ![a-zA-Z0-9_] / "endwhile" ![a-zA-Z0-9_] / "enum" ![a-zA-Z0-9_] / "eval" ![a-zA-Z0-9_] / "extends" ![a-zA-Z0-9_] / "final" ![a-zA-Z0-9_] / "finally" ![a-zA-Z0-9_] / "float" ![a-zA-Z0-9_] / "for" ![a-zA-Z0-9_] / "foreach" ![a-zA-Z0-9_] / "from" ![a-zA-Z0-9_] / "global" ![a-zA-Z0-9_] / "goto" ![a-zA-Z0-9_] / "if" ![a-zA-Z0-9_] / "implements" ![a-zA-Z0-9_] / "instanceof" ![a-zA-Z0-9_] / "insteadof" ![a-zA-Z0-9_] / "int" ![a-zA-Z0-9_] / "integer" ![a-zA-Z0-9_] / "interface" ![a-zA-Z0-9_] / "isset" ![a-zA-Z0-9_] / "iterable" ![a-zA-Z0-9_] / "list" ![a-zA-Z0-9_] / "match" ![a-zA-Z0-9_] / "mixed" ![a-zA-Z0-9_] / "new" ![a-zA-Z0-9_] / "never" ![a-zA-Z0-9_] / "object" ![a-zA-Z0-9_] / "or" ![a-zA-Z0-9_] / "private" ![a-zA-Z0-9_] / "protected" ![a-zA-Z0-9_] / "public" ![a-zA-Z0-9_] / "readonly" ![a-zA-Z0-9_] / "real" ![a-zA-Z0-9_] / "return" ![a-zA-Z0-9_] / "string" ![a-zA-Z0-9_] / "switch" ![a-zA-Z0-9_] / "throw" ![a-zA-Z0-9_] / "trait" ![a-zA-Z0-9_] / "try" ![a-zA-Z0-9_] / "unset" ![a-zA-Z0-9_] / "use" ![a-zA-Z0-9_] / "var" ![a-zA-Z0-9_] / "void" ![a-zA-Z0-9_] / "while" ![a-zA-Z0-9_] / "xor" ![a-zA-Z0-9_] / "yield" / "Error" ![a-zA-Z0-9_] / "AppendIterator" ![a-zA-Z0-9_] / "ArgumentCountError" ![a-zA-Z0-9_] / "ArithmeticError" ![a-zA-Z0-9_] / "ArrayIterator" ![a-zA-Z0-9_] / "ArrayObject" ![a-zA-Z0-9_] / "AssertionError" ![a-zA-Z0-9_] / "BadFunctionCallException" ![a-zA-Z0-9_] / "BadMethodCallException" ![a-zA-Z0-9_] / "CachingIterator" ![a-zA-Z0-9_] / "CallbackFilterIterator" ![a-zA-Z0-9_] / "CompileError" ![a-zA-Z0-9_] / "Countable" ![a-zA-Z0-9_] / "DirectoryIterator" ![a-zA-Z0-9_] / "DivisionByZeroError" ![a-zA-Z0-9_] / "DomainException" ![a-zA-Z0-9_] / "EmptyIterator" ![a-zA-Z0-9_] / "ErrorException" ![a-zA-Z0-9_] / "Exception" ![a-zA-Z0-9_] / "FilesystemIterator" ![a-zA-Z0-9_] / "FilterIterator" ![a-zA-Z0-9_] / "GlobIterator" ![a-zA-Z0-9_] / "InfiniteIterator" ![a-zA-Z0-9_] / "InvalidArgumentException" ![a-zA-Z0-9_] / "IteratorIterator" ![a-zA-Z0-9_] / "LengthException" ![a-zA-Z0-9_] / "LimitIterator" ![a-zA-Z0-9_] / "LogicException" ![a-zA-Z0-9_] / "MultipleIterator" ![a-zA-Z0-9_] / "NoRewindIterator" ![a-zA-Z0-9_] / "OutOfBoundsException" ![a-zA-Z0-9_] / "OutOfRangeException" ![a-zA-Z0-9_] / "OuterIterator" ![a-zA-Z0-9_] / "OverflowException" ![a-zA-Z0-9_] / "ParentIterator" ![a-zA-Z0-9_] / "ParseError" ![a-zA-Z0-9_] / "RangeException" ![a-zA-Z0-9_] / "RecursiveArrayIterator" ![a-zA-Z0-9_] / "RecursiveCachingIterator" ![a-zA-Z0-9_] / "RecursiveCallbackFilterIterator" ![a-zA-Z0-9_] / "RecursiveDirectoryIterator" ![a-zA-Z0-9_] / "RecursiveFilterIterator" ![a-zA-Z0-9_] / "RecursiveIterator" ![a-zA-Z0-9_] / "RecursiveIteratorIterator" ![a-zA-Z0-9_] / "RecursiveRegexIterator" ![a-zA-Z0-9_] / "RecursiveTreeIterator" ![a-zA-Z0-9_] / "RegexIterator" ![a-zA-Z0-9_] / "RuntimeException" ![a-zA-Z0-9_] / "SeekableIterator" ![a-zA-Z0-9_] / "SplDoublyLinkedList" ![a-zA-Z0-9_] / "SplFileInfo" ![a-zA-Z0-9_] / "SplFileObject" ![a-zA-Z0-9_] / "SplFixedArray" ![a-zA-Z0-9_] / "SplHeap" ![a-zA-Z0-9_] / "SplMaxHeap" ![a-zA-Z0-9_] / "SplMinHeap" ![a-zA-Z0-9_] / "SplObjectStorage" ![a-zA-Z0-9_] / "SplObserver" ![a-zA-Z0-9_] / "SplPriorityQueue" ![a-zA-Z0-9_] / "SplQueue" ![a-zA-Z0-9_] / "SplStack" ![a-zA-Z0-9_] / "SplSubject" ![a-zA-Z0-9_] / "SplTempFileObject" ![a-zA-Z0-9_] / "TypeError" ![a-zA-Z0-9_] / "UnderflowException" ![a-zA-Z0-9_] / "UnexpectedValueException" ![a-zA-Z0-9_] / "UnhandledMatchError" ![a-zA-Z0-9_] / "ArrayAccess" ![a-zA-Z0-9_] / "BackedEnum" ![a-zA-Z0-9_] / "Closure" ![a-zA-Z0-9_] / "Fiber" ![a-zA-Z0-9_] / "Generator" ![a-zA-Z0-9_] / "Iterator" ![a-zA-Z0-9_] / "IteratorAggregate" ![a-zA-Z0-9_] / "Serializable" ![a-zA-Z0-9_] / "Stringable" ![a-zA-Z0-9_] / "Throwable" ![a-zA-Z0-9_] / "Traversable" ![a-zA-Z0-9_] / "UnitEnum" ![a-zA-Z0-9_] / "WeakReference" ![a-zA-Z0-9_] / "WeakMap" ![a-zA-Z0-9_] / "Directory" ![a-zA-Z0-9_] / "__PHP_Incomplete_Class" ![a-zA-Z0-9_] / "parent" ![a-zA-Z0-9_] / "php_user_filter" ![a-zA-Z0-9_] / "self" ![a-zA-Z0-9_] / "static" ![a-zA-Z0-9_] / "stdClass" ![a-zA-Z0-9_] ) ) } cap scope=title.function.invoke rel=0 mc=1 { ( [A-Z_a-z\x7f] / _na0 ) mc62_r122 } [\t\n ]* &( &"(" ) ( m62 )*  }
+rule m62 rel=0 { "(" ( m2 / m60 / m3 / m4 / m5 / m6 / m7 / m63 / m66 / m69 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / m30 / m61 / !")" kw kwroot { ( !sg_r3 [0-9A-Z_a-z] )+ } / !")" any )* ( ")" / eoftrunc ) }
+rule m63 scope=comment rel=0 { "/*" ( m64 / m65 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m64 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m65 rel=1 { eng3 }
+rule m63__resume { ( m64 / m65 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m66 scope=comment rel=0 { "//" ( m67 / m68 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m67 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m68 rel=1 { eng3 }
+rule m66__resume { ( m67 / m68 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m69 scope=comment rel=0 { "#" ( m70 / m71 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m70 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m71 rel=1 { eng3 }
+rule m69__resume { ( m70 / m71 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m62__resume { ( m2 / m60 / m3 / m4 / m5 / m6 / m7 / m63 / m66 / m69 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / m30 / m61 / !")" kw kwroot { ( !sg_r3 [0-9A-Z_a-z] )+ } / !")" any )* ( ")" / eoftrunc ) }
+rule m72 rel=1 { cap scope=keyword rel=0 mc=1 { "const" } [\t-\r ] cap scope=variable.constant rel=0 mc=1 { ( [A-Z_a-z\x7f] / _na0 ) h_r121 } }
+rule m73 rel=0 { ( cap scope=function rel=0 { &( nb [a-zA-Z0-9_] ( "fn" / "function" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw74 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m74 / m75 / !( "=>" ) m76 / !( ( [;{] / "=>" ) ) illegalx { [$%\[] } / !( ( [;{] / "=>" ) ) !( "=>" ) kw kw74 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !( ( [;{] / "=>" ) ) any )* ( m86 ) } / cap scope=function rel=0 { &( nb [a-zA-Z0-9_] ( "fn" / "function" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw74 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m74 / m75 / !( "=>" ) m76 / !( ( [;{] / "=>" ) ) illegalx { [$%\[] } / !( ( [;{] / "=>" ) ) !( "=>" ) kw kw74 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !( ( [;{] / "=>" ) ) any )* } chunktext { ( [;{] / eoftrunc ) } ) }
+rule m74 rel=0 { &( nb [a-zA-Z0-9_] "use" !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw75 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } }
+rule m75 scope=title rel=0 { [A-Z_a-z] [0-9A-Z_a-z]* }
+rule m76 rel=0 { kwscan kw74 __kwscanpat_kw1 { chunktext { "(" } } cap scope=params rel=0 { ( m76 / m0 / m60 / m3 / m4 / m5 / m6 / m7 / m77 / m80 / m83 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / !")" kw kwroot { ( !sg_r5 [0-9A-Z_a-z] )+ } / !")" any )* } kwscan kw74 __kwscanpat_kw1 { chunktext { ( rel(1){ ")" } / eoftrunc ) } } }
+rule m77 scope=comment rel=0 { "/*" ( m78 / m79 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m78 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m79 rel=1 { eng3 }
+rule m77__resume { ( m78 / m79 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m80 scope=comment rel=0 { "//" ( m81 / m82 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m81 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m82 rel=1 { eng3 }
+rule m80__resume { ( m81 / m82 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m83 scope=comment rel=0 { "#" ( m84 / m85 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m84 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m85 rel=1 { eng3 }
+rule m83__resume { ( m84 / m85 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m76__resume { cap scope=params rel=0 { ( m76 / m0 / m60 / m3 / m4 / m5 / m6 / m7 / m77 / m80 / m83 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / !")" kw kwroot { ( !sg_r5 [0-9A-Z_a-z] )+ } / !")" any )* } ( rel(1){ ")" } / eoftrunc ) }
+rule m86 rel=1 { "=>" }
+rule m73__resume { cap scope=function rel=0 { ( m74 / m75 / !( "=>" ) m76 / !( ( [;{] / "=>" ) ) illegalx { [$%\[] } / !( ( [;{] / "=>" ) ) !( "=>" ) kw kw74 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !( ( [;{] / "=>" ) ) any )* ( m86 ) } / cap scope=function rel=0 { ( m74 / m75 / !( "=>" ) m76 / !( ( [;{] / "=>" ) ) illegalx { [$%\[] } / !( ( [;{] / "=>" ) ) !( "=>" ) kw kw74 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !( ( [;{] / "=>" ) ) any )* } ( [;{] / eoftrunc ) }
+rule m87 rel=0 { cap scope=class rel=0 { &( nb [a-zA-Z0-9_] "enum" !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw88 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m88 / m89 / !"{" illegalx { ["$(] } / !"{" kw kw88 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !"{" any )* } kwscan kwroot __kwscanpat_kw1 { chunktext { ( "{" / eoftrunc ) } } }
+rule m88 rel=0 { &( nb [a-zA-Z0-9_] ( "extends" / "implements" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw89 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } }
+rule m89 scope=title rel=0 { [A-Z_a-z] [0-9A-Z_a-z]* }
+rule m87__resume { cap scope=class rel=0 { ( m88 / m89 / !"{" illegalx { ["$(] } / !"{" kw kw88 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !"{" any )* } ( "{" / eoftrunc ) }
+rule m90 rel=0 { cap scope=class rel=0 { &( nb [a-zA-Z0-9_] ( "class" / "interface" / "trait" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw91 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m88 / m91 / !"{" illegalx { ["$(:] } / !"{" kw kw91 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !"{" any )* } kwscan kwroot __kwscanpat_kw1 { chunktext { ( "{" / eoftrunc ) } } }
+rule m91 scope=title rel=0 { [A-Z_a-z] [0-9A-Z_a-z]* }
+rule m90__resume { cap scope=class rel=0 { ( m88 / m91 / !"{" illegalx { ["$(:] } / !"{" kw kw91 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !"{" any )* } ( "{" / eoftrunc ) }
+rule m92 rel=0 { &( nb [a-zA-Z0-9_] "namespace" !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw93 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m93 / !";" illegalx { ['.] } / !";" kw kw93 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !";" any )* ( ";" / eoftrunc ) }
+rule m93 scope=title.class rel=0 { [A-Z_a-z] [0-9A-Z_a-z]* }
+rule m92__resume { ( m93 / !";" illegalx { ['.] } / !";" kw kw93 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !";" any )* ( ";" / eoftrunc ) }
+rule m94 rel=0 { &( nb [a-zA-Z0-9_] "use" !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw75 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m95 / m96 / !";" kw kw75 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !";" any )* ( ";" / eoftrunc ) }
+rule m95 scope=keyword rel=1 { nb [a-zA-Z0-9_] ( "as" / "const" / "function" ) ![a-zA-Z0-9_] }
+rule m96 scope=title rel=0 { [A-Z_a-z] [0-9A-Z_a-z]* }
+rule m94__resume { ( m95 / m96 / !";" kw kw75 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !";" any )* ( ";" / eoftrunc ) }
+rule root { ( m0 / m42 / m45 / m48 / m52_s / m55 / m56 / m57 / m58 / m59 / m60 / m61 / m3 / m4 / m5 / m6 / m7 / m72 / m30 / m73 / m87 / m90 / m92 / m94 / m17 / m21 / m23 / m25 / m26 / m27 / m28 / m29 / kw kwroot { ( !( "__halt_compiler();" / sg_r1 ( ( "\\" [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / [A-Z] ( [0-9_a-z\x7f] / _na0 ) ( ( [0-9_a-z\x7f] / _na0 ) )* / "\\" mc6_r23 / mc6_r23 ) )* ![0-9A-Za-z] ![$] ( "::" &( !( "class" ![a-zA-Z0-9_] ) ) ( [A-Z_a-z\x7f] / _na0 ) mc4_r21 / "::" &( !( "class" ![a-zA-Z0-9_] ) ) / "::class" ) / "const" [\t-\r ] ( [A-Z_a-z\x7f] / _na0 ) h_r121 / "new" [\t\n ] [\t\n ]* !sg_r0 kig_r182 ) [0-9A-Z_a-z] )+ } / any )* eof }

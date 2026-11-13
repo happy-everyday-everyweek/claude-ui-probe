@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="APKTOOL_RENAMED_0x7f06007f">@android:color/system_neutral1_10</color>
+    <color name="APKTOOL_RENAMED_0x7f060080">#ffb3261e</color>
+    <color name="APKTOOL_RENAMED_0x7f060081">#fff9dedc</color>
+    <color name="APKTOOL_RENAMED_0x7f060082">@android:color/system_neutral1_900</color>
+    <color name="APKTOOL_RENAMED_0x7f060083">#ffffffff</color>
+    <color name="APKTOOL_RENAMED_0x7f060084">#ff410e0b</color>
+    <color name="APKTOOL_RENAMED_0x7f060085">@android:color/system_accent1_0</color>
+    <color name="APKTOOL_RENAMED_0x7f060086">@android:color/system_accent1_900</color>
+    <color name="APKTOOL_RENAMED_0x7f060087">@android:color/system_accent2_0</color>
+    <color name="APKTOOL_RENAMED_0x7f060088">@android:color/system_accent2_900</color>
+    <color name="APKTOOL_RENAMED_0x7f060089">@android:color/system_neutral1_900</color>
+    <color name="APKTOOL_RENAMED_0x7f06008a">@android:color/system_neutral1_50</color>
+    <color name="APKTOOL_RENAMED_0x7f06008b">@android:color/system_neutral2_700</color>
+    <color name="APKTOOL_RENAMED_0x7f06008c">@android:color/system_accent3_0</color>
+    <color name="APKTOOL_RENAMED_0x7f06008d">@android:color/system_accent3_900</color>
+    <color name="APKTOOL_RENAMED_0x7f06008e">@android:color/system_neutral2_500</color>
+    <color name="APKTOOL_RENAMED_0x7f06008f">@android:color/system_accent1_600</color>
+    <color name="APKTOOL_RENAMED_0x7f060090">@android:color/system_accent1_100</color>
+    <color name="APKTOOL_RENAMED_0x7f060091">@android:color/system_accent1_200</color>
+    <color name="APKTOOL_RENAMED_0x7f060092">@android:color/system_accent2_600</color>
+    <color name="APKTOOL_RENAMED_0x7f060093">@android:color/system_accent2_100</color>
+    <color name="APKTOOL_RENAMED_0x7f060094">@android:color/system_neutral1_10</color>
+    <color name="APKTOOL_RENAMED_0x7f060095">@android:color/system_neutral1_800</color>
+    <color name="APKTOOL_RENAMED_0x7f060096">@android:color/system_neutral2_100</color>
+    <color name="APKTOOL_RENAMED_0x7f060097">@android:color/system_accent3_600</color>
+    <color name="APKTOOL_RENAMED_0x7f060098">@android:color/system_accent3_100</color>
+    <color name="APKTOOL_RENAMED_0x7f060099">@android:color/system_accent2_50</color>
+</resources>

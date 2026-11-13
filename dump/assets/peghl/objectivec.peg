@@ -1,0 +1,67 @@
+# objectivec.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u, dot≈[^\n\r]
+
+language objectivec
+
+words kwroot miss=plain {
+  this:variable.language:1 super:variable.language:1 while:keyword:1 export:keyword:1 sizeof:keyword:1 typedef:keyword:1 const:keyword:1 struct:keyword:1 for:keyword:0 union:keyword:1 volatile:keyword:1 static:keyword:1 mutable:keyword:1 if:keyword:0 do:keyword:1 return:keyword:1 goto:keyword:1 enum:keyword:1 else:keyword:1 break:keyword:1 extern:keyword:1 asm:keyword:1 case:keyword:1 default:keyword:1 register:keyword:1 explicit:keyword:1 typename:keyword:1 switch:keyword:1 continue:keyword:1 inline:keyword:1 readonly:keyword:1 assign:keyword:1 readwrite:keyword:1 self:keyword:1 @synchronized:keyword:1 id:type:0 typeof:keyword:1 nonatomic:keyword:1 IBOutlet:keyword:1 IBAction:keyword:1 strong:keyword:1 weak:keyword:1 copy:keyword:1 in:keyword:0 out:keyword:1 inout:keyword:1 bycopy:keyword:1 byref:keyword:1 oneway:keyword:1 __strong:keyword:1 __weak:keyword:1 __block:keyword:1 __autoreleasing:keyword:1 @private:keyword:1 @protected:keyword:1 @public:keyword:1 @try:keyword:1 @property:keyword:1 @end:keyword:1 @throw:keyword:1 @catch:keyword:1 @finally:keyword:1 @autoreleasepool:keyword:1 @synthesize:keyword:1 @dynamic:keyword:1 @selector:keyword:1 @optional:keyword:1 @required:keyword:1 @encode:keyword:1 @package:keyword:1 @import:keyword:1 @defs:keyword:1 @compatibility_alias:keyword:1 __bridge:keyword:1 __bridge_transfer:keyword:1 __bridge_retained:keyword:1 __bridge_retain:keyword:1 __covariant:keyword:1 __contravariant:keyword:1 __kindof:keyword:1 _Nonnull:keyword:1 _Nullable:keyword:1 _Null_unspecified:keyword:1 __FUNCTION__:keyword:1 __PRETTY_FUNCTION__:keyword:1 __attribute__:keyword:1 getter:keyword:1 setter:keyword:1 retain:keyword:1 unsafe_unretained:keyword:1 nonnull:keyword:1 nullable:keyword:1 null_unspecified:keyword:1 null_resettable:keyword:1 class:keyword:1 instancetype:keyword:1 NS_DESIGNATED_INITIALIZER:keyword:1 NS_UNAVAILABLE:keyword:1 NS_REQUIRES_SUPER:keyword:1 NS_RETURNS_INNER_POINTER:keyword:1 NS_INLINE:keyword:1 NS_AVAILABLE:keyword:1 NS_DEPRECATED:keyword:1 NS_ENUM:keyword:1 NS_OPTIONS:keyword:1 NS_SWIFT_UNAVAILABLE:keyword:1 NS_ASSUME_NONNULL_BEGIN:keyword:1 NS_ASSUME_NONNULL_END:keyword:1 NS_REFINED_FOR_SWIFT:keyword:1 NS_SWIFT_NAME:keyword:1 NS_SWIFT_NOTHROW:keyword:1 NS_DURING:keyword:1 NS_HANDLER:keyword:1 NS_ENDHANDLER:keyword:1 NS_VALUERETURN:keyword:1 NS_VOIDRETURN:keyword:1 false:literal:1 true:literal:1 FALSE:literal:1 TRUE:literal:1 nil:literal:1 YES:literal:1 NO:literal:1 NULL:literal:1 dispatch_once_t:built_in:1 dispatch_queue_t:built_in:1 dispatch_sync:built_in:1 dispatch_async:built_in:1 dispatch_once:built_in:1 int:type:1 float:type:1 char:type:1 unsigned:type:1 signed:type:1 short:type:1 long:type:1 double:type:1 wchar_t:type:1 unichar:type:1 void:type:1 bool:type:1 BOOL:type:1 _Bool:type:1
+}
+
+words kw15 miss=plain {
+  if:keyword:0 else:keyword:1 elif:keyword:1 endif:keyword:1 define:keyword:1 undef:keyword:1 warning:keyword:1 error:keyword:1 line:keyword:1 pragma:keyword:1 ifdef:keyword:1 ifndef:keyword:1 include:keyword:1
+}
+
+words kw26 miss=plain {
+  @interface:keyword:1 @class:keyword:1 @protocol:keyword:1 @implementation:keyword:1
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule __kwscanpat_kwroot { [@-Za-z] [0-9A-Z_a-z]* }
+
+rule m0 scope=built_in rel=1 { nb [a-zA-Z0-9_] ( "AV" / "CA" / "CF" / "CG" / "CI" / "CL" / "CM" / "CN" / "CT" / "MK" / "MP" / "MTK" / "MTL" / "NS" / "SCN" / "SK" / "UI" / "WK" / "XC" ) [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule m1 scope=comment rel=0 { "//" ( m2 / m3 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m2 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m3 rel=1 { eng3 }
+rule m1__resume { ( m2 / m3 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m4 scope=comment rel=0 { "/*" ( m5 / m6 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m5 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m6 rel=1 { eng3 }
+rule m4__resume { ( m5 / m6 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m7 scope=number rel=0 { "-"? ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) "0" [Xx] [0-9A-Fa-f] [0-9A-Fa-f]* / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) [0-9] [0-9]* ( "." [0-9]* )? / "." [0-9] [0-9]* ) ( [Ee] [+\-]? [0-9] [0-9]* )? ) }
+rule m8 scope=string rel=0 { "\"" ( m9 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m9 rel=0 { "\\" any }
+rule m8__resume { ( m9 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m10 scope=string rel=0 { "'" ( m11 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m11 rel=0 { "\\" any }
+rule m10__resume { ( m11 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m12 scope=string rel=0 { "@\"" ( m13 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m13 rel=0 { "\\" any }
+rule m12__resume { ( m13 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m14 scope=meta rel=0 { "#" [\t-\r ]* kw kw15 { [a-z] [a-z]* } ![0-9A-Z_a-z] ( m15 / m16 / m18 / m19 / m22 / !( &( [\n\r] / eof ) ) kw kw15 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m15 rel=0 { "\\\n" }
+rule m16 scope=string rel=0 { "\"" ( m17 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m17 rel=0 { "\\" any }
+rule m16__resume { ( m17 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m18 scope=string rel=0 { "<" ( !">" [^\n\r] )* ">" ( !( &( [\n\r] / eof ) ) illegalx { "\n" } / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m18__resume { ( !( &( [\n\r] / eof ) ) illegalx { "\n" } / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m19 scope=comment rel=0 { "//" ( m20 / m21 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m20 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m21 rel=1 { eng3 }
+rule m19__resume { ( m20 / m21 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m22 scope=comment rel=0 { "/*" ( m23 / m24 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m23 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m24 rel=1 { eng3 }
+rule m22__resume { ( m23 / m24 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m14__resume { ( m15 / m16 / m18 / m19 / m22 / !( &( [\n\r] / eof ) ) kw kw15 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m25 rel=0 { cap scope=class rel=0 { kw kw26 { ( "@implementation" / "@interface" / "@protocol" / "@class" ) } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ( m26 / !( ( "{" / &( [\n\r] / eof ) ) ) kw kw26 { [@-Za-z] ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )* } / !( ( "{" / &( [\n\r] / eof ) ) ) any )* } kwscan kwroot __kwscanpat_kwroot { chunktext { ( rel(1){ ( "{" / &( [\n\r] / eof ) ) } / eoftrunc ) } } }
+rule m26 scope=title rel=0 { [A-Z_a-z] [0-9A-Z_a-z]* }
+rule m25__resume { cap scope=class rel=0 { ( m26 / !( ( "{" / &( [\n\r] / eof ) ) ) kw kw26 { [@-Za-z] ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )* } / !( ( "{" / &( [\n\r] / eof ) ) ) any )* } ( rel(1){ ( "{" / &( [\n\r] / eof ) ) } / eoftrunc ) }
+rule m27 rel=0 { "." [A-Z_a-z] [0-9A-Z_a-z]* }
+rule root { ( m0 / m1 / m4 / m7 / m8 / m10 / m12 / m14 / m25 / m27 / illegalx { "</" } / kw kwroot { [@-Za-z] ( !( nb [a-zA-Z0-9_] ( "AV" / "CA" / "CF" / "CG" / "CI" / "CL" / "CM" / "CN" / "CT" / "MK" / "MP" / "MTK" / "MTL" / "NS" / "SCN" / "SK" / "UI" / "WK" / "XC" ) [0-9A-Z_a-z] [0-9A-Z_a-z]* ) ( !( "-"? ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) "0" [Xx] [0-9A-Fa-f] [0-9A-Fa-f]* / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) [0-9] [0-9]* ( "." [0-9]* )? / "." [0-9] [0-9]* ) ( [Ee] [+\-]? [0-9] [0-9]* )? ) ) [0-9A-Z_a-z] )+ )? } / any )* eof }

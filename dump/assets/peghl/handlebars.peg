@@ -1,0 +1,127 @@
+# handlebars.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u
+
+language handlebars
+case-insensitive
+
+words kw10 miss=plain {
+  action:built_in:1 bindattr:built_in:1 collection:built_in:1 component:built_in:1 concat:built_in:1 debugger:built_in:1 each:built_in:1 each-in:built_in:1 get:built_in:1 hash:built_in:1 if:built_in:0 in:built_in:0 input:built_in:1 link-to:built_in:1 loc:built_in:1 log:built_in:1 lookup:built_in:1 mut:built_in:1 outlet:built_in:1 partial:built_in:1 query-params:built_in:1 render:built_in:1 template:built_in:1 textarea:built_in:1 unbound:built_in:1 unless:built_in:1 view:built_in:1 with:built_in:1 yield:built_in:1
+}
+
+words kw17 miss=plain {
+  as:keyword:1
+}
+
+words kw27 miss=plain {
+  true:literal:1 false:literal:1 undefined:literal:1 null:literal:1
+}
+
+words kw40 miss=plain {
+  else:keyword:1
+}
+
+words kw41 miss=plain {
+  else:keyword:1 if:keyword:0
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule __kwscanpat_kw27 { [.-9A-Z_a-z] [.-9A-Z_a-z]* }
+rule __kwscanpat_kw40 { [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule sg_r0 { ( "\"\"" ( ( "." / "/" ) sg_r1 )* ) / ( "\"" [^"] [^"]* "\"" ( ( "." / "/" ) sg_r1 )* ) / ( "''" ( ( "." / "/" ) sg_r1 )* ) / ( "'" [^'] [^']* "'" ( ( "." / "/" ) sg_r1 )* ) / ( "[]" ( ( "." / "/" ) sg_r1 )* ) / ( "[" [^\]] ( [^\]] )* "]" ( ( "." / "/" ) sg_r1 )* ) / ( [^\t-\r -#%-,./;->@\[-\^`{-~] [^\t-\r -#%-,./;->@\[-\^`{-~]* ( ( "." / "/" ) sg_r1 )* ) }
+rule sg_r1 { "\"\"" / "\"" [^"] [^"]* "\"" / "''" / "'" [^'] [^']* "'" / "[]" / "[" [^\]] ( [^\]] )* "]" / [^\t-\r -#%-,./;->@\[-\^`{-~] [^\t-\r -#%-,./;->@\[-\^`{-~]* }
+
+rule m0 rel=0 { "\\{{" }
+rule m1 rel=0 { "\\\\" &"{{" }
+rule m2 scope=comment rel=0 { "{{!--" ( m3 / m4 / !"--}}" any )* ( rel(1){ "--}}" } / eoftrunc ) }
+rule m3 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m4 rel=1 { eng3 }
+rule m2__resume { ( m3 / m4 / !"--}}" any )* ( rel(1){ "--}}" } / eoftrunc ) }
+rule m5 scope=comment rel=0 { "{{!" ( m6 / m7 / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m6 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m7 rel=1 { eng3 }
+rule m5__resume { ( m6 / m7 / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m8 scope=template-tag rel=0 { "{{{{" !"/" ( m9_s / !"}}}}" any )* ( rel(1){ "}}}}" } / eoftrunc ) }
+rule m9 scope=name rel=1 { kwscan kw10 __kwscanpat_kw27 { ( ( "." sg_r0 ) / ( "./" sg_r0 ) / ( "/" sg_r0 ) / ( sg_r0 ) ) } }
+rule m10 rel=0 { ( m11 / m12 / m14 / m16 / m18_s / m26 / m27 / !"}}" any )* ( rel(1){ &"}}" } / eoftrunc ) }
+rule m11 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m12 scope=string rel=0 { "\"" ( m13 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m13 rel=0 { "\\" any }
+rule m12__resume { ( m13 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m14 scope=string rel=0 { "'" ( m15 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m15 rel=0 { "\\" any }
+rule m14__resume { ( m15 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m16 rel=0 { &( "as" [\t-\r ] [\t-\r ]* "|" ) ( kw kw17 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / ![\t-\r ] any )+ [\t-\r ] [\t-\r ]* "|" ( m17 / !"|" kw kw17 { ( !( [0-9A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !"|" any )* ( rel(1){ "|" } / eoftrunc ) }
+rule m17 rel=1 { [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule m16__resume { ( m17 / !"|" kw kw17 { ( !( [0-9A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !"|" any )* ( rel(1){ "|" } / eoftrunc ) }
+rule m18 scope=attr rel=0 { ( "[]" &"=" / "[" [^\]] ( [^\]] )* "]" &"=" / [^\t-\r -#%-,./;->@\[-\^`{-~] [^\t-\r -#%-,./;->@\[-\^`{-~]* &"=" ) }
+rule m19 rel=0 { ( ( !"=" any )+ ( rel(1){ "=" } / eoftrunc ) / rel(1){ "=" } ) }
+rule m20 rel=0 { ( m21 / m22 / m24 / m26 / m27 )*  rel(1){ &( any / eof ) } }
+rule m21 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m22 scope=string rel=0 { "\"" ( m23 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m23 rel=0 { "\\" any }
+rule m22__resume { ( m23 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m24 scope=string rel=0 { "'" ( m25 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m25 rel=0 { "\\" any }
+rule m24__resume { ( m25 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m26 rel=1 { kwscan kw27 __kwscanpat_kw27 { ( ( "." sg_r0 ) / ( "./" sg_r0 ) / ( "/" sg_r0 ) / ( sg_r0 ) ) } }
+rule m27 rel=0 { "(" ( m28_s / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m28 scope=name rel=1 { kwscan kw10 __kwscanpat_kw27 { ( ( "." sg_r0 ) / ( "./" sg_r0 ) / ( "/" sg_r0 ) / ( sg_r0 ) ) } }
+rule m29 rel=0 { ( m30 / m31 / m33 / m16 / m18_s / m26 / m27 / !")" any )* ( rel(1){ &")" } / eoftrunc ) }
+rule m30 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m31 scope=string rel=0 { "\"" ( m32 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m32 rel=0 { "\\" any }
+rule m31__resume { ( m32 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m33 scope=string rel=0 { "'" ( m34 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m34 rel=0 { "\\" any }
+rule m33__resume { ( m34 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m29__resume { ( m30 / m31 / m33 / m16 / m18_s / m26 / m27 / !")" any )* ( rel(1){ &")" } / eoftrunc ) }
+rule m28_s { m28 ( m29 / &( eof ) / eoftrunc ) }
+rule m28_s__resume { ( m29 / &( eof ) / eoftrunc ) }
+rule m27__resume { ( m28_s / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m19__resume { ( ( !"=" any )+ ( rel(1){ "=" } / eoftrunc ) / rel(1){ "=" } ) }
+rule m19_s { m19 ( m20 / eoftrunc ) }
+rule m19_s__resume { ( m20 / eoftrunc ) }
+rule m18_s { m18 ( m19_s / eoftrunc ) }
+rule m18_s__resume { ( m19_s / eoftrunc ) }
+rule m10__resume { ( m11 / m12 / m14 / m16 / m18_s / m26 / m27 / !"}}" any )* ( rel(1){ &"}}" } / eoftrunc ) }
+rule m9_s { m9 ( m10 / &( eof ) / eoftrunc ) }
+rule m9_s__resume { ( m10 / &( eof ) / eoftrunc ) }
+rule m35 rel=0 { sublang-chunked xml { ( !( "{{{{/" ) any )* } }
+rule m8__resume { ( m9_s / !"}}}}" any )* ( rel(1){ "}}}}" } / eoftrunc ) }
+rule m8_s { m8 ( m35 / &( eof ) / eoftrunc ) }
+rule m8_s__resume { ( m35 / &( eof ) / eoftrunc ) }
+rule m36 scope=template-tag rel=0 { "{{{{/" ( m37 / !"}}}}" any )* ( rel(1){ "}}}}" } / eoftrunc ) }
+rule m37 scope=name rel=1 { kwscan kw10 __kwscanpat_kw27 { ( ( "." sg_r0 ) / ( "./" sg_r0 ) / ( "/" sg_r0 ) / ( sg_r0 ) ) } }
+rule m36__resume { ( m37 / !"}}}}" any )* ( rel(1){ "}}}}" } / eoftrunc ) }
+rule m38 scope=template-tag rel=0 { "{{#" ( m9_s / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m38__resume { ( m9_s / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m39 scope=template-tag rel=0 { kwscan kw40 __kwscanpat_kw40 { "{{" &"else}}" } ( !"}}" kw kw40 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m39__resume { ( !"}}" kw kw40 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m40 scope=template-tag rel=0 { kwscan kw41 __kwscanpat_kw40 { "{{" &"else if" } ( !"}}" kw kw41 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m40__resume { ( !"}}" kw kw41 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m41 scope=template-tag rel=0 { "{{/" ( m37 / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m41__resume { ( m37 / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m42 scope=template-variable rel=0 { "{{{" ( m43_s / !"}}}" any )* ( rel(1){ "}}}" } / eoftrunc ) }
+rule m43 scope=name rel=1 { kwscan kw10 __kwscanpat_kw27 { ( ( "." sg_r0 ) / ( "./" sg_r0 ) / ( "/" sg_r0 ) / ( sg_r0 ) ) } }
+rule m44 rel=0 { ( m45 / m46 / m48 / m16 / m18_s / m26 / m27 / !"}}" any )* ( rel(1){ &"}}" } / eoftrunc ) }
+rule m45 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m46 scope=string rel=0 { "\"" ( m47 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m47 rel=0 { "\\" any }
+rule m46__resume { ( m47 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m48 scope=string rel=0 { "'" ( m49 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m49 rel=0 { "\\" any }
+rule m48__resume { ( m49 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m44__resume { ( m45 / m46 / m48 / m16 / m18_s / m26 / m27 / !"}}" any )* ( rel(1){ &"}}" } / eoftrunc ) }
+rule m43_s { m43 ( m44 / &( eof ) / eoftrunc ) }
+rule m43_s__resume { ( m44 / &( eof ) / eoftrunc ) }
+rule m42__resume { ( m43_s / !"}}}" any )* ( rel(1){ "}}}" } / eoftrunc ) }
+rule m50 scope=template-variable rel=0 { "{{" ( m43_s / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule m50__resume { ( m43_s / !"}}" any )* ( rel(1){ "}}" } / eoftrunc ) }
+rule root { sublang-chunked xml { ( chunktext { m0 } / chunktext { m1 } / nosub { m2 } / nosub { m5 } / nosub { m8_s } / nosub { m36 } / nosub { m38 } / nosub { m39 } / nosub { m40 } / nosub { m41 } / nosub { m42 } / nosub { m50 } / any )* eof } }

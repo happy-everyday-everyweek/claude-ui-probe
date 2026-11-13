@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="APKTOOL_RENAMED_0x7f15007b" parent="@style/APKTOOL_RENAMED_0x7f150127" />
+    <style name="APKTOOL_RENAMED_0x7f15007d" parent="@style/APKTOOL_RENAMED_0x7f150128" />
+    <style name="APKTOOL_RENAMED_0x7f150127" parent="@style/APKTOOL_RENAMED_0x7f150125">
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150128" parent="@style/APKTOOL_RENAMED_0x7f150126">
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+</resources>

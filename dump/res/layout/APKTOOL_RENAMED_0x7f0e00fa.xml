@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/APKTOOL_RENAMED_0x7f15013e"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e0105" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e0106" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e0107" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e0108" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e0109" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e010a" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e010b" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e010c" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e010d" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e010e" />
+</LinearLayout>

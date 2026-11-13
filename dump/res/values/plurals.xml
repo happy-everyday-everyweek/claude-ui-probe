@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="APKTOOL_RENAMED_0x7f120000">
+        <item quantity="one">Signed out · %1$s +%2$d</item>
+        <item quantity="other">Signed out · %1$s +%2$d</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120001">
+        <item quantity="one">%1$s more</item>
+        <item quantity="other">%1$s more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120002">
+        <item quantity="one">%1$d suggestion</item>
+        <item quantity="other">%1$d suggestions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120003">
+        <item quantity="one">Couldn’t delete %d artifact. It’s still in your list.</item>
+        <item quantity="other">Couldn’t delete %d artifacts. They’re still in your list.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120004">
+        <item quantity="one">Delete %d artifact?</item>
+        <item quantity="other">Delete %d artifacts?</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120005">
+        <item quantity="one">%1$d item moved. The rest can’t be moved this way. Open the folder to review its artifacts.</item>
+        <item quantity="other">%1$d items moved. The rest can’t be moved this way. Open the folder to review its artifacts.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120006">
+        <item quantity="one">%1$d item moved. Try again later, or delete the folder in Claude on the web or in the desktop app.</item>
+        <item quantity="other">%1$d items moved. Try again later, or delete the folder in Claude on the web or in the desktop app.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120007">
+        <item quantity="one">%1$d item moved to %2$s. More may also have moved.</item>
+        <item quantity="other">%1$d items moved to %2$s. More may also have moved.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120008">
+        <item quantity="one">%1$d item moved to %2$s.</item>
+        <item quantity="other">%1$d items moved to %2$s.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120009">
+        <item quantity="one">Moving… %1$d so far</item>
+        <item quantity="other">Moving… %1$d so far</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12000a">
+        <item quantity="one">Moved %d artifact</item>
+        <item quantity="other">Moved %d artifacts</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12000b">
+        <item quantity="one">Couldn’t move %d artifact.</item>
+        <item quantity="other">Couldn’t move %d artifacts.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12000c">
+        <item quantity="one">Couldn’t tell whether %d artifact moved. Check where it is before trying again.</item>
+        <item quantity="other">Couldn’t tell whether %d artifacts moved. Check where they are before trying again.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12000d">
+        <item quantity="one">Couldn’t pin %d artifact. Try again.</item>
+        <item quantity="other">Couldn’t pin %d artifacts. Try again.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12000e">
+        <item quantity="one">Couldn’t unpin %d artifact. Try again.</item>
+        <item quantity="other">Couldn’t unpin %d artifacts. Try again.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12000f">
+        <item quantity="one">%1$d view</item>
+        <item quantity="other">%1$d views</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120010">
+        <item quantity="one">View artifact</item>
+        <item quantity="other">View artifacts</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120013">
+        <item quantity="one">%1$d credit was added.</item>
+        <item quantity="other">%1$d credits were added.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120014">
+        <item quantity="one">%1$d credit</item>
+        <item quantity="other">%1$d credits</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120015">
+        <item quantity="one">Create %d event</item>
+        <item quantity="other">Create %d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120016">
+        <item quantity="one">Delete %d event</item>
+        <item quantity="other">Delete %d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120017">
+        <item quantity="one">Created %1$d event</item>
+        <item quantity="other">Created %1$d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120018">
+        <item quantity="one">Failed to create %1$d event</item>
+        <item quantity="other">Failed to create %1$d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120019">
+        <item quantity="one">Deleted %1$d event</item>
+        <item quantity="other">Deleted %1$d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12001a">
+        <item quantity="one">Failed to delete %1$d event</item>
+        <item quantity="other">Failed to delete %1$d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12001b">
+        <item quantity="one">Failed to update %1$d event</item>
+        <item quantity="other">Failed to update %1$d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12001c">
+        <item quantity="one">Updated %1$d event</item>
+        <item quantity="other">Updated %1$d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12001d">
+        <item quantity="one">Found %1$d event</item>
+        <item quantity="other">Found %1$d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12001e">
+        <item quantity="one">Found %1$d calendar</item>
+        <item quantity="other">Found %1$d calendars</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12001f">
+        <item quantity="one">%d reminder</item>
+        <item quantity="other">%d reminders</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120020">
+        <item quantity="one">Update %d event</item>
+        <item quantity="other">Update %d events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120021">
+        <item quantity="one">%d calendar selected</item>
+        <item quantity="other">%d calendars selected</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120022">
+        <item quantity="one">%1$d enabled</item>
+        <item quantity="other">%1$d enabled</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120023">
+        <item quantity="one">%1$d stop: %2$s</item>
+        <item quantity="other">%1$d stops: %2$s</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120024">
+        <item quantity="one">%1$d tool call</item>
+        <item quantity="other">%1$d tool calls</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120025">
+        <item quantity="one">%1$d tool use</item>
+        <item quantity="other">%1$d tool uses</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120026">
+        <item quantity="one">Must be at most %1$d character.</item>
+        <item quantity="other">Must be at most %1$d characters.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120027">
+        <item quantity="one">Must be at least %1$d character.</item>
+        <item quantity="other">Must be at least %1$d characters.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120028">
+        <item quantity="one">Compacted conversation · from %1$s token</item>
+        <item quantity="other">Compacted conversation · from %1$s tokens</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120029">
+        <item quantity="one">Compacted conversation · saved %1$s token</item>
+        <item quantity="other">Compacted conversation · saved %1$s tokens</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12002a">
+        <item quantity="one">Show %d more</item>
+        <item quantity="other">Show %d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12002b">
+        <item quantity="one">%1$d unpushed commit stays on your computer.</item>
+        <item quantity="other">%1$d unpushed commits stay on your computer.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12002c">
+        <item quantity="one">%1$d unpushed commit and uncommitted edits stay on your computer.</item>
+        <item quantity="other">%1$d unpushed commits and uncommitted edits stay on your computer.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12002d">
+        <item quantity="one">%1$d unpushed commit and uncommitted edits, plus an unfinished git operation, stay on your computer.</item>
+        <item quantity="other">%1$d unpushed commits and uncommitted edits, plus an unfinished git operation, stay on your computer.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12002e">
+        <item quantity="one">%1$d unpushed commit, plus an unfinished git operation, stays on your computer.</item>
+        <item quantity="other">%1$d unpushed commits, plus an unfinished git operation, stay on your computer.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12002f">
+        <item quantity="one">%1$d active session</item>
+        <item quantity="other">%1$d active sessions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120030">
+        <item quantity="one">%1$d runner online</item>
+        <item quantity="other">%1$d runners online</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120031">
+        <item quantity="one">See %1$d more</item>
+        <item quantity="other">See %1$d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120032">
+        <item quantity="one">%1$s older commit not listed</item>
+        <item quantity="other">%1$s older commits not listed</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120033">
+        <item quantity="one">At least %1$s more changed file isn’t shown.</item>
+        <item quantity="other">At least %1$s more changed files aren’t shown.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120034">
+        <item quantity="one">%1$s commit</item>
+        <item quantity="other">%1$s commits</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120035">
+        <item quantity="one">Add folder</item>
+        <item quantity="other">Add folders</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120036">
+        <item quantity="one">Repositories from %1$d organization are hidden</item>
+        <item quantity="other">Repositories from %1$d organizations are hidden</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120037">
+        <item quantity="one">Cloning repository</item>
+        <item quantity="other">Cloning %1$d repositories</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120038">
+        <item quantity="one">Cloned repository</item>
+        <item quantity="other">Cloned %1$d repositories</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120039">
+        <item quantity="one">Refreshing your repository</item>
+        <item quantity="other">Refreshing your %1$d repositories</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12003a">
+        <item quantity="one">Refreshed your repository</item>
+        <item quantity="other">Refreshed your %1$d repositories</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12003b">
+        <item quantity="one">Refresh your repository</item>
+        <item quantity="other">Refresh your %1$d repositories</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12003c">
+        <item quantity="one">Clone repository</item>
+        <item quantity="other">Clone %1$d repositories</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12003d">
+        <item quantity="one">Failed after %1$d attempt. Send a new message to retry.</item>
+        <item quantity="other">Failed after %1$d attempts. Send a new message to retry.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12003e">
+        <item quantity="one">%d thread</item>
+        <item quantity="other">%d threads</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12003f">
+        <item quantity="one">Claude Code notice</item>
+        <item quantity="other">%1$s Claude Code notices</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120040">
+        <item quantity="one">System notice</item>
+        <item quantity="other">%1$s system notices</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120041">
+        <item quantity="one">%1$d new thread</item>
+        <item quantity="other">%1$d new threads</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120042">
+        <item quantity="one">%1$d item</item>
+        <item quantity="other">%1$d items</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120043">
+        <item quantity="one">Adding %1$d file…</item>
+        <item quantity="other">Adding %1$d files…</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120044">
+        <item quantity="one">%1$d file</item>
+        <item quantity="other">%1$d files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120045">
+        <item quantity="one">%1$d unreadable file</item>
+        <item quantity="other">%1$d unreadable files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120046">
+        <item quantity="one">%1$d artifact</item>
+        <item quantity="other">%1$d artifacts</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120047">
+        <item quantity="one">%1$d closed</item>
+        <item quantity="other">%1$d closed</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120048">
+        <item quantity="one">%1$d draft</item>
+        <item quantity="other">%1$d draft</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120049">
+        <item quantity="one">%1$d merged</item>
+        <item quantity="other">%1$d merged</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12004a">
+        <item quantity="one">%1$d open</item>
+        <item quantity="other">%1$d open</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12004b">
+        <item quantity="one">%1$d PR</item>
+        <item quantity="other">%1$d PRs</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12004c">
+        <item quantity="one">%1$d in queue</item>
+        <item quantity="other">%1$d in queue</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12004d">
+        <item quantity="one">Show %1$d more</item>
+        <item quantity="other">Show %1$d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12004e">
+        <item quantity="one">%1$d participant</item>
+        <item quantity="other">%1$d participants</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12004f">
+        <item quantity="one">%1$d session</item>
+        <item quantity="other">%1$d sessions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120050">
+        <item quantity="one">%1$d more on GitHub</item>
+        <item quantity="other">%1$d more on GitHub</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120051">
+        <item quantity="one">%1$d running</item>
+        <item quantity="other">%1$d running</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120052">
+        <item quantity="one">%1$d file changed</item>
+        <item quantity="other">%1$d files changed</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120053">
+        <item quantity="one">%1$s and %2$d more</item>
+        <item quantity="other">%1$s and %2$d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120054">
+        <item quantity="one">Received a CI event</item>
+        <item quantity="other">Received %1$d CI events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120055">
+        <item quantity="one">Received a GitHub event</item>
+        <item quantity="other">Received %1$d GitHub events</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120056">
+        <item quantity="one">+%d more</item>
+        <item quantity="other">+%d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120057">
+        <item quantity="one">%1$s, +%2$d more</item>
+        <item quantity="other">%1$s, +%2$d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120058">
+        <item quantity="one">%1$d finding</item>
+        <item quantity="other">%1$d findings</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120059">
+        <item quantity="one">%1$d runner online</item>
+        <item quantity="other">%1$d runners online</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12005a">
+        <item quantity="one">%1$d file didn’t reach Claude</item>
+        <item quantity="other">%1$d files didn’t reach Claude</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12005b">
+        <item quantity="one">The preview pauses after %1$d minute when it isn’t being used.</item>
+        <item quantity="other">The preview pauses after %1$d minutes when it isn’t being used.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12005c">
+        <item quantity="one">The preview pauses after %1$d hour.</item>
+        <item quantity="other">The preview pauses after %1$d hours.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12005d">
+        <item quantity="one">The preview keeps your session awake, so it pauses after %1$d minute.</item>
+        <item quantity="other">The preview keeps your session awake, so it pauses after %1$d minutes.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12005e">
+        <item quantity="one">The preview keeps your session awake, so it pauses after %1$d hour.</item>
+        <item quantity="other">The preview keeps your session awake, so it pauses after %1$d hours.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12005f">
+        <item quantity="one">Start %d thread</item>
+        <item quantity="other">Start %d threads</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120060">
+        <item quantity="one">%d branch</item>
+        <item quantity="other">%d branches</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120061">
+        <item quantity="one">%d repo</item>
+        <item quantity="other">%d repos</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120062">
+        <item quantity="one">%1$d running task</item>
+        <item quantity="other">%1$d running tasks</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120063">
+        <item quantity="one">Ran agent: %1$s (+%2$d tool)</item>
+        <item quantity="other">Ran agent: %1$s (+%2$d tools)</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120064">
+        <item quantity="one"><annotation role="verb">ran</annotation> a command</item>
+        <item quantity="other"><annotation role="verb">ran</annotation> ^1 commands</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120065">
+        <item quantity="one"><annotation role="verb">edited</annotation> a file</item>
+        <item quantity="other"><annotation role="verb">edited</annotation> ^1 files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120066">
+        <item quantity="one"><annotation role="verb">found</annotation> files</item>
+        <item quantity="other"><annotation role="verb">found</annotation> files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120067">
+        <item quantity="one"><annotation role="verb">searched</annotation> code</item>
+        <item quantity="other"><annotation role="verb">searched</annotation> code</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120068">
+        <item quantity="one"><annotation role="verb">edited</annotation> a notebook</item>
+        <item quantity="other"><annotation role="verb">edited</annotation> ^1 notebooks</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120069">
+        <item quantity="one"><annotation role="verb">used</annotation> a tool</item>
+        <item quantity="other"><annotation role="verb">used</annotation> ^1 tools</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12006a">
+        <item quantity="one"><annotation role="verb">proposed a change to</annotation> a file</item>
+        <item quantity="other"><annotation role="verb">proposed changes to</annotation> ^1 files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12006b">
+        <item quantity="one"><annotation role="verb">proposed</annotation> a plan</item>
+        <item quantity="other"><annotation role="verb">proposed</annotation> a plan</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12006c">
+        <item quantity="one"><annotation role="verb">read</annotation> a file</item>
+        <item quantity="other"><annotation role="verb">read</annotation> ^1 files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12006d">
+        <item quantity="one"><annotation role="verb">received</annotation> a message</item>
+        <item quantity="other"><annotation role="verb">received</annotation> ^1 messages</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12006e">
+        <item quantity="one"><annotation role="verb">received</annotation> a notice</item>
+        <item quantity="other"><annotation role="verb">received</annotation> ^1 notices</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12006f">
+        <item quantity="one"><annotation role="verb">ran</annotation> an agent</item>
+        <item quantity="other"><annotation role="verb">ran</annotation> ^1 agents</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120070">
+        <item quantity="one"><annotation role="verb">updated</annotation> todos</item>
+        <item quantity="other"><annotation role="verb">updated</annotation> todos</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120071">
+        <item quantity="one"><annotation role="verb">browsed</annotation> the web</item>
+        <item quantity="other"><annotation role="verb">browsed</annotation> the web</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120072">
+        <item quantity="one">%1$s (%2$d failed)</item>
+        <item quantity="other">%1$s (%2$d failed)</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120073">
+        <item quantity="one"><annotation role="verb">created</annotation> a file</item>
+        <item quantity="other"><annotation role="verb">created</annotation> ^1 files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120074">
+        <item quantity="one">%1$s token</item>
+        <item quantity="other">%1$s tokens</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120075">
+        <item quantity="one">%1$d more output</item>
+        <item quantity="other">%1$d more outputs</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120076">
+        <item quantity="one">%1$d output</item>
+        <item quantity="other">%1$d outputs</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120077">
+        <item quantity="one">%1$d of %2$d step done</item>
+        <item quantity="other">%1$d of %2$d steps done</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120078">
+        <item quantity="one">This will also end the scheduled task created in this thread.</item>
+        <item quantity="other">This will also end %1$d scheduled tasks created in this thread.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120079">
+        <item quantity="one">%1$d artifact</item>
+        <item quantity="other">%1$d artifacts</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12007a">
+        <item quantity="one">%1$d output</item>
+        <item quantity="other">%1$d outputs</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12007b">
+        <item quantity="one">%1$d pull request</item>
+        <item quantity="other">%1$d pull requests</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12007c">
+        <item quantity="one">%1$d of %2$d task done</item>
+        <item quantity="other">%1$d of %2$d tasks done</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12007d">
+        <item quantity="one">%1$d person is typing…</item>
+        <item quantity="other">%1$d people are typing…</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12007e">
+        <item quantity="one">%1$s and %2$d other are typing…</item>
+        <item quantity="other">%1$s and %2$d others are typing…</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12007f">
+        <item quantity="one">%1$d %2$s reaction</item>
+        <item quantity="other">%1$d %2$s reactions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120080">
+        <item quantity="one">%1$d other</item>
+        <item quantity="other">%1$d others</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120081">
+        <item quantity="one">%1$d other</item>
+        <item quantity="other">%1$d others</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120082">
+        <item quantity="one">%1$d person</item>
+        <item quantity="other">%1$d people</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120083">
+        <item quantity="one">%1$s, %2$d reaction</item>
+        <item quantity="other">%1$s, %2$d reactions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120084">
+        <item quantity="one">%1$s, %2$d reaction: %3$s</item>
+        <item quantity="other">%1$s, %2$d reactions: %3$s</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120085">
+        <item quantity="one">All, %1$d reaction</item>
+        <item quantity="other">All, %1$d reactions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120086">
+        <item quantity="one">(%d request)</item>
+        <item quantity="other">(%d requests)</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120087">
+        <item quantity="one">+ %1$d more argument</item>
+        <item quantity="other">+ %1$d more arguments</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120088">
+        <item quantity="one">… +%1$d character not shown</item>
+        <item quantity="other">… +%1$d characters not shown</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120089">
+        <item quantity="one">Show %d more</item>
+        <item quantity="other">Show %d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12008a">
+        <item quantity="one">%1$d project file</item>
+        <item quantity="other">%1$d project files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12008b">
+        <item quantity="one">I’ll keep track of the work here, move it along, and flag anything important. To start, here is one chat you can pick up.</item>
+        <item quantity="other">I’ll keep track of the work here, move it along, and flag anything important. To start, here are %1$d chats you can pick up.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12008c">
+        <item quantity="one">%1$d %2$s thread</item>
+        <item quantity="other">%1$d %2$s threads</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12008d">
+        <item quantity="one">chat</item>
+        <item quantity="other">chats</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12008e">
+        <item quantity="one">%1$d thread, called a chat before</item>
+        <item quantity="other">%1$d threads, called chats before</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12008f">
+        <item quantity="one">%1$d agent</item>
+        <item quantity="other">%1$d agents</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120090">
+        <item quantity="one">%1$d done</item>
+        <item quantity="other">%1$d done</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120091">
+        <item quantity="one">%1$d failed</item>
+        <item quantity="other">%1$d failed</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120092">
+        <item quantity="one">%1$d not started</item>
+        <item quantity="other">%1$d not started</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120093">
+        <item quantity="one">%1$d of %2$d agent shown: %3$s</item>
+        <item quantity="other">%1$d of %2$d agents shown: %3$s</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120094">
+        <item quantity="one">%1$d running</item>
+        <item quantity="other">%1$d running</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120095">
+        <item quantity="one">%1$d running task</item>
+        <item quantity="other">%1$d running tasks</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120096">
+        <item quantity="one">%1$d line added</item>
+        <item quantity="other">%1$d lines added</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120097">
+        <item quantity="one">%1$d line removed</item>
+        <item quantity="other">%1$d lines removed</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120098">
+        <item quantity="one">%1$d row</item>
+        <item quantity="other">%1$d rows</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120099">
+        <item quantity="one">%1$d data series</item>
+        <item quantity="other">%1$d data series</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12009a">
+        <item quantity="one">%1$s earlier file</item>
+        <item quantity="other">%1$s earlier files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12009b">
+        <item quantity="one">%1$s earlier step</item>
+        <item quantity="other">%1$s earlier steps</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12009c">
+        <item quantity="one">Your answer didn’t go through. Try again.</item>
+        <item quantity="other">Your answers didn’t go through. Try again.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12009d">
+        <item quantity="one">Your answer wasn’t accepted.</item>
+        <item quantity="other">Your answers weren’t accepted.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12009e">
+        <item quantity="one">Hide question</item>
+        <item quantity="other">Hide questions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12009f">
+        <item quantity="one">Show question</item>
+        <item quantity="other">Show questions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a0">
+        <item quantity="one">%1$d attachment</item>
+        <item quantity="other">%1$d attachments</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a1">
+        <item quantity="one">Couldn’t delete %1$d chat</item>
+        <item quantity="other">Couldn’t delete %1$d chats</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a2">
+        <item quantity="one">Delete %1$d chat?</item>
+        <item quantity="other">Delete %1$d chats?</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a3">
+        <item quantity="one">%1$d source</item>
+        <item quantity="other">%1$d sources</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a4">
+        <item quantity="one">(+ %1$d attachment)</item>
+        <item quantity="other">(+ %1$d attachments)</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a5">
+        <item quantity="one">(%1$d attachment)</item>
+        <item quantity="other">(%1$d attachments)</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a6">
+        <item quantity="one">%1$d of %2$d message shown</item>
+        <item quantity="other">%1$d of %2$d messages shown</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a7">
+        <item quantity="one">Earlier messages didn’t load. Showing the %1$d most recent message.</item>
+        <item quantity="other">Earlier messages didn’t load. Showing the %1$d most recent messages.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a8">
+        <item quantity="one">Loading earlier messages. Showing the %1$d most recent message so far.</item>
+        <item quantity="other">Loading earlier messages. Showing the %1$d most recent messages so far.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200a9">
+        <item quantity="one">Showing the %1$d most recent message. Earlier messages can still be loaded.</item>
+        <item quantity="other">Showing the %1$d most recent messages. Earlier messages can still be loaded.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200aa">
+        <item quantity="one">View file</item>
+        <item quantity="other">View files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ab">
+        <item quantity="one">%d waiting</item>
+        <item quantity="other">%d waiting</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ac">
+        <item quantity="one">%d message waiting</item>
+        <item quantity="other">%d messages waiting</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ad">
+        <item quantity="one">%1$d new notification</item>
+        <item quantity="other">%1$d new notifications</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ae">
+        <item quantity="one">%1$d selected</item>
+        <item quantity="other">%1$d selected</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200af">
+        <item quantity="one">%1$,d character over the %2$,d limit.</item>
+        <item quantity="other">%1$,d characters over the %2$,d limit.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b0">
+        <item quantity="one">%1$,d character over the %2$,d limit. Trim before saving.</item>
+        <item quantity="other">%1$,d characters over the %2$,d limit. Trim before saving.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b1">
+        <item quantity="one">%1$d member</item>
+        <item quantity="other">%1$d members</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b2">
+        <item quantity="one">%1$d or more members</item>
+        <item quantity="other">%1$d or more members</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b3">
+        <item quantity="one">%1$d time a day</item>
+        <item quantity="other">%1$d times a day</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b4">
+        <item quantity="one">%1$d on</item>
+        <item quantity="other">%1$d on</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b5">
+        <item quantity="one">%1$s + %2$d other</item>
+        <item quantity="other">%1$s + %2$d others</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b6">
+        <item quantity="one">%1$d more thread is not listed; totals include it.</item>
+        <item quantity="other">%1$d more threads are not listed; totals include them.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b7">
+        <item quantity="one">+1 more</item>
+        <item quantity="other">+%1$d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b8">
+        <item quantity="one">Must be at most %1$d character.</item>
+        <item quantity="other">Must be at most %1$d characters.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200b9">
+        <item quantity="one">Must be at least %1$d character.</item>
+        <item quantity="other">Must be at least %1$d characters.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ba">
+        <item quantity="one">%1$d connected</item>
+        <item quantity="other">%1$d connected</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200bb">
+        <item quantity="one">%d comment</item>
+        <item quantity="other">%d comments</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200bc">
+        <item quantity="one">%1$s page</item>
+        <item quantity="other">%1$s pages</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200bd">
+        <item quantity="one">%1$d reply</item>
+        <item quantity="other">%1$d replies</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200be">
+        <item quantity="one">%1$d %2$s reaction</item>
+        <item quantity="other">%1$d %2$s reactions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200bf">
+        <item quantity="one">%1$d result found</item>
+        <item quantity="other">%1$d results found</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c0">
+        <item quantity="one">%1$d result so far</item>
+        <item quantity="other">%1$d results so far</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c1">
+        <item quantity="one">Switching accounts ends this chat and %1$d more. They stay out of your history, so you can’t open them again.</item>
+        <item quantity="other">Switching accounts ends this chat and %1$d more. They stay out of your history, so you can’t open them again.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c2">
+        <item quantity="one">Switching accounts ends %1$d incognito chat in another window. It stays out of your history, so you can’t open it again.</item>
+        <item quantity="other">Switching accounts ends %1$d incognito chats in other windows. They stay out of your history, so you can’t open them again.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c3">
+        <item quantity="one">Switching organizations ends this chat and %1$d more. They stay out of your history, so you can’t open them again.</item>
+        <item quantity="other">Switching organizations ends this chat and %1$d more. They stay out of your history, so you can’t open them again.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c4">
+        <item quantity="one">Switching organizations ends %1$d incognito chat in another window. It stays out of your history, so you can’t open it again.</item>
+        <item quantity="other">Switching organizations ends %1$d incognito chats in other windows. They stay out of your history, so you can’t open them again.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c5">
+        <item quantity="one">Source</item>
+        <item quantity="other">Sources</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c6">
+        <item quantity="one">and %1$d more</item>
+        <item quantity="other">and %1$d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c7">
+        <item quantity="one">For up to %1$d day, this device keeps a few account details, like your name, email, and profile picture.</item>
+        <item quantity="other">For up to %1$d days, this device keeps a few account details, like your name, email, and profile picture.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c8">
+        <item quantity="one">%1$s stars, %2$s review</item>
+        <item quantity="other">%1$s stars, %2$s reviews</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200c9">
+        <item quantity="one">%1$s review</item>
+        <item quantity="other">%1$s reviews</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ca">
+        <item quantity="one">%1$s wants to attach %2$d image to your message</item>
+        <item quantity="other">%1$s wants to attach %2$d images to your message</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200cb">
+        <item quantity="one">%1$d memory file</item>
+        <item quantity="other">%1$d memory files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200cc">
+        <item quantity="one">Couldn’t move %1$d chat</item>
+        <item quantity="other">Couldn’t move %1$d chats</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200cd">
+        <item quantity="one">Move %d chat</item>
+        <item quantity="other">Move %d chats</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ce">
+        <item quantity="one">Couldn’t move %1$d session</item>
+        <item quantity="other">Couldn’t move %1$d sessions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200cf">
+        <item quantity="one">Move %d session</item>
+        <item quantity="other">Move %d sessions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200d1">
+        <item quantity="one">Show all %1$d</item>
+        <item quantity="other">Show all %1$d</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200d2">
+        <item quantity="one">%1$d thread waiting</item>
+        <item quantity="other">%1$d threads waiting</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200d3">
+        <item quantity="one">%1$d waiting for approval</item>
+        <item quantity="other">%1$d waiting for approval</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200d4">
+        <item quantity="one">%1$d enabled</item>
+        <item quantity="other">%1$d enabled</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200d6">
+        <item quantity="one">%1$s star</item>
+        <item quantity="other">%1$s stars</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200d7">
+        <item quantity="one">%1$d review</item>
+        <item quantity="other">%1$d reviews</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200d9">
+        <item quantity="one">%d file</item>
+        <item quantity="other">%d files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200da">
+        <item quantity="one">Couldn’t add %1$d file</item>
+        <item quantity="other">Couldn’t add %1$d files</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200df">
+        <item quantity="one">Couldn’t archive %d project</item>
+        <item quantity="other">Couldn’t archive %d projects</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e0">
+        <item quantity="one">Archive %d project?</item>
+        <item quantity="other">Archive %d projects?</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e1">
+        <item quantity="one">Couldn’t delete %d project</item>
+        <item quantity="other">Couldn’t delete %d projects</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e2">
+        <item quantity="one">Delete %d project?</item>
+        <item quantity="other">Delete %d projects?</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e3">
+        <item quantity="one">Couldn’t unarchive %d project</item>
+        <item quantity="other">Couldn’t unarchive %d projects</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e4">
+        <item quantity="one">Question</item>
+        <item quantity="other">Questions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e5">
+        <item quantity="one">%1$d selected</item>
+        <item quantity="other">%1$d selected</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e6">
+        <item quantity="one">%1$d meetings · %2$s</item>
+        <item quantity="other">%1$d meetings · %2$s</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e7">
+        <item quantity="one">%1$d meetings, %2$s</item>
+        <item quantity="other">%1$d meetings, %2$s</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e8">
+        <item quantity="one">%1$d overlapping</item>
+        <item quantity="other">%1$d overlapping</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200e9">
+        <item quantity="one">%1$d message remaining</item>
+        <item quantity="other">%1$d messages remaining</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ec">
+        <item quantity="one">%1$d conversation</item>
+        <item quantity="other">%1$d conversations</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ed">
+        <item quantity="one">%1$d idea</item>
+        <item quantity="other">%1$d ideas</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ee">
+        <item quantity="one">%1$d result</item>
+        <item quantity="other">%1$d results</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ef">
+        <item quantity="one">%1$d source</item>
+        <item quantity="other">%1$d sources</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f0">
+        <item quantity="one">%1$s + %2$d other</item>
+        <item quantity="other">%1$s + %2$d others</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f1">
+        <item quantity="one">%1$d not available in the app</item>
+        <item quantity="other">%1$d not available in the app</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f2">
+        <item quantity="one">A GitHub filter condition can have up to %1$d value</item>
+        <item quantity="other">A GitHub filter condition can have up to %1$d values</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f3">
+        <item quantity="one">A GitHub filter value can have up to %1$d character</item>
+        <item quantity="other">A GitHub filter value can have up to %1$d characters</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f4">
+        <item quantity="one">Couldn’t delete %d scheduled task. It’s still in your list.</item>
+        <item quantity="other">Couldn’t delete %d scheduled tasks. They’re still in your list.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f5">
+        <item quantity="one">Delete %d task?</item>
+        <item quantity="other">Delete %d tasks?</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f6">
+        <item quantity="one">%1$d edit was too large to show</item>
+        <item quantity="other">%1$d edits were too large to show</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f7">
+        <item quantity="one">Couldn’t delete %1$d session</item>
+        <item quantity="other">Couldn’t delete %1$d sessions</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f8">
+        <item quantity="one">Delete %1$d session?</item>
+        <item quantity="other">Delete %1$d sessions?</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200f9">
+        <item quantity="one">Speak for up to %1$s minute</item>
+        <item quantity="other">Speak for up to %1$s minutes</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200fa">
+        <item quantity="one">Suggested connector</item>
+        <item quantity="other">Suggested connectors</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200fb">
+        <item quantity="one">Show all %1$d</item>
+        <item quantity="other">Show all %1$d</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200fc">
+        <item quantity="one">%1$d account</item>
+        <item quantity="other">%1$d accounts</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200fd">
+        <item quantity="one">%1$d hidden</item>
+        <item quantity="other">%1$d hidden</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200fe">
+        <item quantity="one">Only the first new bank in this list will be linked.</item>
+        <item quantity="other">Only the first %1$d new banks in this list will be linked.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f1200ff">
+        <item quantity="one">Link %1$d bank</item>
+        <item quantity="other">Link %1$d banks</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120100">
+        <item quantity="one">You have room for %1$d more bank.</item>
+        <item quantity="other">You have room for %1$d more banks.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120101">
+        <item quantity="one">Link %1$d bank?</item>
+        <item quantity="other">Link these %1$d banks?</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120102">
+        <item quantity="one">Link %1$d of these %2$d banks?</item>
+        <item quantity="other">Link %1$d of these %2$d banks?</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120103">
+        <item quantity="one">%1$d banks are linked.</item>
+        <item quantity="other">%1$d banks are linked.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120104">
+        <item quantity="one">Couldn’t save your dashboard. Try again in %1$d minute.</item>
+        <item quantity="other">Couldn’t save your dashboard. Try again in %1$d minutes.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120105">
+        <item quantity="one">Couldn’t save your dashboard. Try again in %1$d second.</item>
+        <item quantity="other">Couldn’t save your dashboard. Try again in %1$d seconds.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120106">
+        <item quantity="one">%1$d limit removed.</item>
+        <item quantity="other">%1$d limits removed.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120107">
+        <item quantity="one">account ending in %1$s</item>
+        <item quantity="other">accounts ending in %1$s</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120108">
+        <item quantity="one">%1$d more</item>
+        <item quantity="other">%1$d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120109">
+        <item quantity="one">%1$d account linked</item>
+        <item quantity="other">%1$d accounts linked</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12010a">
+        <item quantity="one">%1$d bank linked</item>
+        <item quantity="other">%1$d banks linked</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12010b">
+        <item quantity="one">%1$s purchase</item>
+        <item quantity="other">%1$s purchases</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12010c">
+        <item quantity="one">%1$d account is hidden.</item>
+        <item quantity="other">%1$d accounts are hidden.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12010d">
+        <item quantity="one">View %1$d more</item>
+        <item quantity="other">View %1$d more</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12010e">
+        <item quantity="one">%1$s month</item>
+        <item quantity="other">%1$s months</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f12010f">
+        <item quantity="one">Add %1$d</item>
+        <item quantity="other">Add %1$d</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120110">
+        <item quantity="one">Add %1$d widget</item>
+        <item quantity="other">Add %1$d widgets</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120111">
+        <item quantity="one">%1$s year</item>
+        <item quantity="other">%1$s years</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120112">
+        <item quantity="one">%1$d reply</item>
+        <item quantity="other">%1$d replies</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120113">
+        <item quantity="one">· %1$d reply</item>
+        <item quantity="other">· %1$d replies</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120114">
+        <item quantity="one">%1$d reply</item>
+        <item quantity="other">%1$d replies</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120115">
+        <item quantity="one">A permission request still needs your answer.</item>
+        <item quantity="other">Some permission requests still need your answer.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120116">
+        <item quantity="one">%1$s character in the middle of this text is hidden because that part is too long to show. If you allow this, the whole request can run, including the part not shown.</item>
+        <item quantity="other">%1$s characters in the middle of this text are hidden because that part is too long to show. If you allow this, the whole request can run, including the part not shown.</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120117">
+        <item quantity="one">(%1$d request)</item>
+        <item quantity="other">(%1$d requests)</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120118">
+        <item quantity="one">Expires in %1$d day</item>
+        <item quantity="other">Expires in %1$d days</item>
+    </plurals>
+    <plurals name="APKTOOL_RENAMED_0x7f120119">
+        <item quantity="one">%1$d credit</item>
+        <item quantity="other">%1$d credits</item>
+    </plurals>
+</resources>

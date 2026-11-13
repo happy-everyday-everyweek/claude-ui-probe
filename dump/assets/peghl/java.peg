@@ -1,0 +1,56 @@
+# java, hand-written for the apps by clean2, Nov 8 2026. No ported rule; see ORIGIN.md.
+language java
+
+set W = [A-Za-z0-9_$\u]
+set I = [A-Za-z_$\u]
+set S = [ \t\n\r]
+set O2 = [ \t\n\r:=+*%&|^~?<;,(){}\[\]!#\\\-]
+set O = [ \t\n\r.:=+*%&|^~?<;,(){}\[\]!#\\\-]
+rule tag { cap scope=doctag rel=0 { ( "BUG" / "FI" [X] [M] "E" / "HA" [C] [K] / "NO" [T] [E] / "OP" [T] [I] "MI" [Z] [E] / "TO" [D] [O] / "XXX" ) ":" } }
+rule linec scope=comment rel=0 { "//" [^\nBFHNOTX]* ( ( tag / [BFHNOTX] ) [^\nBFHNOTX]* )* }
+rule blockd__resume { [^*@BFHNOTX]* ( ( "*" !"/" / nb W cap scope=doctag rel=0 { "@" [A-Za-z]+ } / tag / [@BFHNOTX] ) [^*@BFHNOTX]* )* ( "*/" / eoftrunc ) }
+rule blockd scope=comment rel=0 { "/**" !"/" [^*@BFHNOTX]* ( ( "*" !"/" / nb W cap scope=doctag rel=0 { "@" [A-Za-z]+ } / tag / [@BFHNOTX] ) [^*@BFHNOTX]* )* ( "*/" / eoftrunc ) }
+rule blockc__resume { [^*BFHNOTX]* ( ( "*" !"/" / tag / [BFHNOTX] ) [^*BFHNOTX]* )* ( "*/" / eoftrunc ) }
+rule blockc scope=comment rel=0 { "/*" [^*BFHNOTX]* ( ( "*" !"/" / tag / [BFHNOTX] ) [^*BFHNOTX]* )* ( "*/" / eoftrunc ) }
+rule blk { blockd / blockc }
+rule tb__resume { [^"\\]* ( ( !"\"\"\"" "\"" / "\\" any ) [^"\\]* )* ( "\"\"\"" / eoftrunc )? }
+rule tb scope=string rel=0 { "\"\"\"" [^"\\]* ( ( !"\"\"\"" "\"" / "\\" any ) [^"\\]* )* ( "\"\"\"" / eoftrunc )? }
+rule com { &"//" linec / &"/*" blk }
+rule tx__resume { [^"\\]* ( ( !"\"\"\"" "\"" / "\\" any ) [^"\\]* )* ( "\"\"\"" / eoftrunc )? }
+rule tx { "\"\"\"" [^"\\]* ( ( !"\"\"\"" "\"" / "\\" any ) [^"\\]* )* ( "\"\"\"" / eoftrunc )? }
+rule sx { "\"" [^"\\\n]* ( "\\" [^\n] [^"\\\n]* )* "\\"? "\""? }
+rule str scope=string rel=0 { sx }
+rule cx { "'" ( "\\" [^\n] [^'\n]* / [^\n'\\] ) "'" }
+rule chr scope=string rel=0 { cx }
+rule num scope=number rel=0 { "0" ( [xX] [0-9a-fA-F_]* ( "." [0-9a-fA-F_]* )? ( [pP] [+\-]? [0-9_]+ )? / [bB] [01_]+ ) [lLfFdD]? / [0-9] [0-9_]* ( "." ![.A-Za-z_] [0-9_]* )? ( [eE] [+\-]? [0-9_]+ )? [lLfFdD]? }
+rule annot__resume { ain ( eoftrunc / ")"? ) }
+rule dotn scope=number rel=0 { "." [0-9] [0-9_]* ( [eE] [+\-]? [0-9_]+ )? [lLfFdD]? }
+rule annot scope=meta rel=0 { "@" I W* ( "." I W* )* ( S* "(" ain ( eoftrunc / ")"? ) )? }
+rule ain__resume { ain ( eoftrunc / ")"? ) ain }
+rule ain { ( [^()"'/;]+ / &"\"\"\"" tx / &"\"" sx / cx / "(" ain ( eoftrunc / ")"? ) / com / [/'] )* }
+rule params__resume { pin ( ")" / eoftrunc )? }
+rule params scope=params rel=0 { "(" pin ( ")" / eoftrunc )? }
+rule pin { ( [ \t\n\r.,:=+*%&|^~?<>\[\]!#0-9\\\-]+ / cap scope=type rel=0 { ( "b" ( "oo" [l] [e] "an" / "yte" ) / "ch" [a] [r] / "do" [u] [b] "le" / "fl" [o] [a] "t" / "int" / "lo" [n] [g] / "sh" [o] [r] "t" ) } !W / cap scope=keyword rel=0 { ( "ex" [t] [e] "nds" / "fi" [n] [a] "l" / "su" [p] [e] "r" / "th" [i] [s] ) } !W / cap scope=literal rel=0 { ( "fa" [l] [s] "e" / "nu" [l] [l] / "tr" [u] [e] ) } !W / I W* / &"\"\"\"" tb / &"\"" str / chr / &"@" annot / "(" pin ( eoftrunc / ")"? ) / com / "/" )* }
+rule pin__resume { pin ( eoftrunc / ")"? ) pin }
+rule head { cap scope=title.function rel=0 { I W* } S* &"(" params }
+rule binds { cap scope=variable rel=0 { I W* } S* "=" !"=" }
+rule word { I W* ![ \t\n\r$]  / I W* !( S+ I ) / cap scope=type rel=0 { I W* } S+ binds / I W* ( S+ head )? }
+rule w_a { cap scope=keyword rel=0 { "ab" [s] [t] "ra" [c] [t] } !W ( S+ &[A-Z] head )? / cap scope=keyword rel=0 { "as" [s] [e] "rt" } !W  / &"a" word }
+rule w_b { cap scope=type rel=0 { ( "b" ( "oo" [l] [e] "an" / "yte" ) ) } !W ( S+ ( binds / head ) )? / cap scope=keyword rel=0 { "br" [e] [a] "k" } !W  / &"b" word }
+rule w_c { cap scope=type rel=0 { "ch" [a] [r] } !W ( S+ ( binds / head ) )? / cap scope=keyword rel=0 { "cl" [a] [s] "s" } !W ( S+ cap scope=title.class rel=0 { I W* } )? / cap scope=keyword rel=0 { ( "c" ( "a" ( "se" / "tch" ) / "on" [t] [i] "nue" ) ) } !W  / &"c" word }
+rule w_d { cap scope=type rel=0 { "do" [u] [b] "le" } !W ( S+ ( binds / head ) )? / cap scope=keyword rel=0 { ( "d" ( "ef" [a] [u] "lt" / "o" ) ) } !W  / &"d" word }
+rule w_e { cap scope=keyword rel=0 { ( "e" ( "num" / "xt" [e] [n] "ds" ) ) } !W ( S+ cap scope=title.class rel=0 { I W* } )? / cap scope=keyword rel=0 { ( "e" ( "lse" / "xp" [o] [r] "ts" ) ) } !W  / &"e" word }
+rule w_f { cap scope=keyword rel=0 { "fi" [n] [a] "l" } !W ( S+ &[A-Z] head )? / cap scope=type rel=0 { "fl" [o] [a] "t" } !W ( S+ ( binds / head ) )? / cap scope=keyword rel=0 { ( "f" ( "in" [a] [l] "ly" / "or" ) ) } !W  / cap scope=literal rel=0 { "fa" [l] [s] "e" } !W / &"f" word }
+rule w_g { cap scope=keyword rel=0 { "go" [t] [o] } !W  / &"g" word }
+rule w_i { cap scope=type rel=0 { "int" } !W ( S+ ( binds / head ) )? / cap scope=keyword rel=0 { ( "i" ( "mp" [l] [e] "me" [n] [t] "s" / "nt" [e] [r] "fa" [c] [e] ) ) } !W ( S+ cap scope=title.class rel=0 { I W* } )? / cap scope=keyword rel=0 { ( "i" ( "f" / "mp" [o] [r] "t" / "ns" [t] [a] "nc" [e] [o] "f" ) ) } !W  / &"i" word }
+rule w_l { cap scope=type rel=0 { "lo" [n] [g] } !W ( S+ ( binds / head ) )? / &"l" word }
+rule w_m { cap scope=keyword rel=0 { "mo" [d] [u] "le" } !W  / &"m" word }
+rule w_n { cap scope=keyword rel=0 { "new" } !W ( S+ cap scope=title.class rel=0 { I W* } )? / cap scope=keyword rel=0 { ( "n" ( "at" [i] [v] "e" / "on-sealed" ) ) } !W  / cap scope=literal rel=0 { "nu" [l] [l] } !W / &"n" word }
+rule w_p { cap scope=keyword rel=0 { ( "p" ( "r" ( "iv" [a] [t] "e" / "ot" [e] [c] "ted" ) / "ub" [l] [i] "c" ) ) } !W ( S+ &[A-Z] head )? / cap scope=keyword rel=0 { ( "p" ( "ac" [k] [a] "ge" / "er" [m] [i] "ts" ) ) } !W  / &"p" word }
+rule w_r { cap scope=keyword rel=0 { "re" [c] [o] "rd" } &( S+ I W* S* [(<] ) S+ cap scope=title.class rel=0 { I W* } ( S* &"(" params )? / cap scope=keyword rel=0 { ( "re" ( "qu" [i] [r] "es" / "tu" [r] [n] ) ) } !W  / &"r" word }
+rule w_s { cap scope=keyword rel=0 { ( "s" ( "ta" [t] [i] "c" / "yn" [c] [h] "ro" [n] [i] "zed" ) ) } !W ( S+ &[A-Z] head )? / cap scope=type rel=0 { "sh" [o] [r] "t" } !W ( S+ ( binds / head ) )? / cap scope=keyword rel=0 { ( "s" ( "ea" [l] [e] "d" / "tr" [i] [c] "tfp" / "wi" [t] [c] "h" / "yn" [c] [h] "ro" [n] [i] "zed" ) ) } !W  / cap scope=built_in rel=0 { "su" [p] [e] "r" } !W  / &"s" word }
+rule w_t { cap scope=keyword rel=0 { ( "t" ( "hr" [o] [w] ( "s" )? / "r" ( "an" [s] [i] "ent" / "y" ) ) ) } !W  / cap scope=literal rel=0 { "tr" [u] [e] } !W / cap scope=built_in rel=0 { "th" [i] [s] } !W  / &"t" word }
+rule w_v { cap scope=keyword rel=0 { "vo" [i] [d] } !W ( S+ head )? / cap scope=type rel=0 { "var" } !W ( S+ ( binds / head ) )? / cap scope=keyword rel=0 { "vo" [l] [a] "ti" [l] [e] } !W  / &"v" word }
+rule w_w { cap scope=keyword rel=0 { "wh" [i] [l] "e" } !W  / cap scope=keyword rel=0 { "wh" [e] [n] } &( S+ [A-Za-z(!] ) / &"w" word }
+rule w_y { cap scope=keyword rel=0 { "yi" [e] [l] "d" } !W  / &"y" word }
+rule root { ( w_a / w_b / w_c / w_d / w_e / w_f / w_g / w_i / w_l / w_m / w_n / w_p / w_r / w_s / w_t / w_v / w_w / w_y / "﻿" dotn? / word / nb [A-Za-z0-9_$\u)\]}"'.] dotn / "." ( "." "."? "."? )? / O2 O2? O2? O2? / num / nb [ \t\n\r\-] ">" [>]* ( S+ head )? / ">" / &"//" linec / &"/*" blk / &"\"\"\"" tb / str / &"@" annot / chr / any )* eof }

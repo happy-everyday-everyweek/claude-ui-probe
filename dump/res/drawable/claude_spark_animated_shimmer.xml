@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer1" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer2" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer3" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer4" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer5" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer6" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer7" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer4" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer5" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer6" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer7" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer4" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer3" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer2" />
+    <item android:duration="125" android:drawable="@drawable/claude_spark_shimmer1" />
+</animation-list>

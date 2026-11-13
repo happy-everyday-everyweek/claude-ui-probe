@@ -1,0 +1,83 @@
+# xml.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u
+
+language xml
+case-insensitive
+
+words kw18 miss=plain {
+  style:name:1
+}
+
+words kw26 miss=plain {
+  script:name:1
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+
+rule m0 scope=meta rel=0 { "<!" [a-z] ( m1 / m3 / m5 / m7 / m8 / !">" any )* ( rel(10){ ">" } / eoftrunc ) }
+rule m1 rel=0 { [\t-\r ] ( m2 )*  rel(1){ &( any / eof ) } }
+rule m2 scope=keyword rel=1 { "#"? [_a-z] [\-1-9_a-z] [\-1-9_a-z]* }
+rule m3 scope=string rel=0 { "\"" ( m4 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m4 rel=0 { "\\" any }
+rule m3__resume { ( m4 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m5 scope=string rel=0 { "'" ( m6 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m6 rel=0 { "\\" any }
+rule m5__resume { ( m6 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m7 rel=0 { "(" ( m2 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m7__resume { ( m2 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m8 rel=0 { "[" ( m9 / !"]" any )* ( rel(1){ "]" } / eoftrunc ) }
+rule m9 scope=meta rel=0 { "<!" [a-z] ( m1 / m7 / m3 / m5 / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m9__resume { ( m1 / m7 / m3 / m5 / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m8__resume { ( m9 / !"]" any )* ( rel(1){ "]" } / eoftrunc ) }
+rule m0__resume { ( m1 / m3 / m5 / m7 / m8 / !">" any )* ( rel(10){ ">" } / eoftrunc ) }
+rule m10 scope=comment rel=0 { "<!--" ( m11 / m12 / !"-->" any )* ( rel(10){ "-->" } / eoftrunc ) }
+rule m11 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m12 rel=1 { eng3 }
+rule m10__resume { ( m11 / m12 / !"-->" any )* ( rel(10){ "-->" } / eoftrunc ) }
+rule m13 rel=0 { "<![CDATA[" ( !"]]>" any )* ( rel(10){ "]]>" } / eoftrunc ) }
+rule m13__resume { ( !"]]>" any )* ( rel(10){ "]]>" } / eoftrunc ) }
+rule m14 scope=symbol rel=1 { ( "&" [a-z] [a-z]* ";" / "&#" [0-9] [0-9]* ";" / "&#x" [0-9a-f] [0-9a-f]* ";" ) }
+rule m15 scope=meta rel=0 { "<?xml" ( m3 / !"?>" any )* ( rel(10){ "?>" } / eoftrunc ) }
+rule m15__resume { ( m3 / !"?>" any )* ( rel(10){ "?>" } / eoftrunc ) }
+rule m16 scope=meta rel=0 { "<?" [a-z] [0-9a-z] [0-9a-z]* ( !"?>" any )* ( rel(1){ "?>" } / eoftrunc ) }
+rule m16__resume { ( !"?>" any )* ( rel(1){ "?>" } / eoftrunc ) }
+rule m17 scope=tag rel=0 { "<" kw kw18 { "style" } &( ( [\t-\r ] / ">" ) ) ( m18 / !">" kw kw18 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m18 rel=0 { ( ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ( m19 / m20 / !">" illegalx { "<" } / !">" any )+ ( &">" / eoftrunc ) }
+rule m19 scope=attr rel=0 { [\-.0-:A-Z_a-z\u] [\-.0-:A-Z_a-z\u]* }
+rule m20 rel=0 { "=" [\t-\r ]*  ( m21 / m22 / m23 )? }
+rule m21 scope=string rel=0 { "\"" ( m14 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m21__resume { ( m14 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m22 scope=string rel=0 { "'" ( m14 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m22__resume { ( m14 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m23 scope=string rel=1 { [^\t-\r "'<->`] [^\t-\r "'<->`]* }
+rule m18__resume { ( m19 / m20 / !">" illegalx { "<" } / !">" any )* ( &">" / eoftrunc ) }
+rule m24 rel=0 { sublang-auto [css,xml] { ( !( "</style>" ) any )* } }
+rule m17__resume { ( m18 / !">" kw kw18 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m17_s { m17 ( m24 / &( eof ) / eoftrunc ) }
+rule m17_s__resume { ( m24 / &( eof ) / eoftrunc ) }
+rule m25 scope=tag rel=0 { "<" kw kw26 { "script" } &( ( [\t-\r ] / ">" ) ) ( m26 / !">" kw kw26 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m26 rel=0 { ( ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ( m19 / m20 / !">" illegalx { "<" } / !">" any )+ ( &">" / eoftrunc ) }
+rule m26__resume { ( m19 / m20 / !">" illegalx { "<" } / !">" any )* ( &">" / eoftrunc ) }
+rule m27 rel=0 { sublang-auto [javascript,handlebars,xml] { ( !( "</script>" ) any )* } }
+rule m25__resume { ( m26 / !">" kw kw26 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m25_s { m25 ( m27 / &( eof ) / eoftrunc ) }
+rule m25_s__resume { ( m27 / &( eof ) / eoftrunc ) }
+rule m28 scope=tag rel=1 { ( "<>" / "</>" ) }
+rule m29 scope=tag rel=0 { "<" &( [A-Z_a-z\u] ( ( [\-.0-9A-Z_a-z\u]* ":" [\-.0-9A-Z_a-z\u]* ( "/>" / ">" / [\t-\r ] ) ) / ( [\-.0-9A-Z_a-z\u]* ( "/>" / ">" / [\t-\r ] ) ) ) ) ( m30_s / !( "/"? ">" ) any )* ( rel(1){ "/"? ">" } / eoftrunc ) }
+rule m30 scope=name rel=0 { [A-Z_a-z\u] ( [\-.0-9A-Z_a-z\u]* ":" [\-.0-9A-Z_a-z\u]* / [\-.0-9A-Z_a-z\u]* ) }
+rule m31 rel=0 { ( m19 / m20 / !( "/"? ">" ) illegalx { "<" } / !( "/"? ">" ) any )+ ( &( "/"? ">" ) / eoftrunc ) }
+rule m31__resume { ( m19 / m20 / !( "/"? ">" ) illegalx { "<" } / !( "/"? ">" ) any )* ( &( "/"? ">" ) / eoftrunc ) }
+rule m30_s { m30 ( m31 / &( "/"? ">" ) / eoftrunc ) }
+rule m30_s__resume { ( m31 / &( "/"? ">" ) / eoftrunc ) }
+rule m29__resume { ( m30_s / !( "/"? ">" ) any )* ( rel(1){ "/"? ">" } / eoftrunc ) }
+rule m32 scope=tag rel=0 { "</" &( [A-Z_a-z\u] ( [\-.0-9A-Z_a-z\u]* ( ":" [\-.0-9A-Z_a-z\u]* ">" / ">" ) ) ) ( m33 )*  ( m34 )? rel(1){ &( any / eof ) } }
+rule m33 scope=name rel=0 { [A-Z_a-z\u] ( [\-.0-9A-Z_a-z\u]* ":" [\-.0-9A-Z_a-z\u]* / [\-.0-9A-Z_a-z\u]* ) }
+rule m34 rel=0 { ">" }
+rule root { ( m0 / m10 / m13 / m14 / m15 / m16 / m17_s / m25_s / m28 / m29 / m32 / any )* eof }

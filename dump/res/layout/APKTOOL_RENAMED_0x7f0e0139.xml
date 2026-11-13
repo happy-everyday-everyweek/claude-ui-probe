@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/APKTOOL_RENAMED_0x7f15013e"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e0119" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e011a" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e011b" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e011c" />
+</LinearLayout>

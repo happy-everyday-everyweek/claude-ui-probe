@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="APKTOOL_RENAMED_0x7f15007b" parent="@android:style/Theme.DeviceDefault.DayNight">
+        <item name="android:enforceNavigationBarContrast">true</item>
+        <item name="isLightTheme">?android:isLightTheme</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150134" parent="@style/APKTOOL_RENAMED_0x7f150013">
+        <item name="android:padding">16.0dp</item>
+        <item name="android:clipToOutline">true</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150277" parent="@style/APKTOOL_RENAMED_0x7f15005b">
+        <item name="android:isLightTheme">true</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/branding_claude_splash</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150278" parent="@style/APKTOOL_RENAMED_0x7f150277">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f1502cf" parent="@style/APKTOOL_RENAMED_0x7f15007c">
+        <item name="android:windowSplashScreenBackground">?APKTOOL_RENAMED_0x7f0405d7</item>
+        <item name="android:windowSplashScreenAnimatedIcon">?APKTOOL_RENAMED_0x7f0405d5</item>
+        <item name="android:windowSplashScreenAnimationDuration">?APKTOOL_RENAMED_0x7f0405d6</item>
+    </style>
+</resources>

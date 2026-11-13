@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider android:description="@string/APKTOOL_RENAMED_0x7f140b67" android:minWidth="@dimen/APKTOOL_RENAMED_0x7f070068" android:minHeight="@dimen/APKTOOL_RENAMED_0x7f070068" android:updatePeriodMillis="0" android:initialLayout="@layout/APKTOOL_RENAMED_0x7f0e00f2" android:previewImage="@drawable/code_shortcuts_widget_preview" android:resizeMode="horizontal|vertical" android:minResizeWidth="@dimen/APKTOOL_RENAMED_0x7f070068" android:minResizeHeight="@dimen/APKTOOL_RENAMED_0x7f070067" android:widgetCategory="home_screen" android:previewLayout="@layout/APKTOOL_RENAMED_0x7f0e00f6" android:targetCellWidth="4" android:targetCellHeight="2"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

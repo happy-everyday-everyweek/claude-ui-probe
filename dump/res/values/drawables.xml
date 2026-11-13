@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="anthropicon_artifacts">@drawable/cds_icon_artifacts</drawable>
+    <drawable name="anthropicon_code">@drawable/cds_icon_code</drawable>
+    <drawable name="anthropicon_file">@drawable/cds_icon_file</drawable>
+    <drawable name="anthropicon_globe">@drawable/cds_icon_globe</drawable>
+    <drawable name="anthropicon_scroll">@drawable/cds_icon_scroll</drawable>
+    <drawable name="anthropicon_shapes">@drawable/cds_icon_shapes</drawable>
+    <drawable name="media3_notification_small_icon">@drawable/media3_icon_circular_play</drawable>
+    <drawable name="notification_sender_avatar">@drawable/claude_spark_icon</drawable>
+    <drawable name="notification_small_icon">@drawable/claude_spark_icon</drawable>
+</resources>

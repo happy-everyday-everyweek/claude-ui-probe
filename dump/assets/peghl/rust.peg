@@ -1,0 +1,46 @@
+# rust, hand-written for the apps by clean2, Nov 8 2026. No ported rule; see ORIGIN.md.
+language rust
+
+set W = [A-Za-z0-9_\u]
+set I = [A-Za-z_\u]
+set S = [ \t\n\r]
+set O = [ \t\n\r.:=+*%&|^~?@<>;,(){}\[\]$!\-]
+words lowerwords rel=0 miss=fail markhits=false { abstract:keyword as:keyword async:keyword await:keyword become:keyword box:keyword break:keyword const:keyword continue:keyword crate:keyword do:keyword dyn:keyword else:keyword enum:keyword extern:keyword final:keyword fn:keyword for:keyword if:keyword impl:keyword in:keyword let:keyword loop:keyword macro:keyword match:keyword mod:keyword move:keyword mut:keyword override:keyword priv:keyword pub:keyword ref:keyword return:keyword self:keyword static:keyword struct:keyword super:keyword trait:keyword try:keyword type:keyword typeof:keyword unsafe:keyword unsized:keyword use:keyword virtual:keyword where:keyword while:keyword yield:keyword true:literal false:literal bool:type char:type str:type u8:type u16:type u32:type u64:type u128:type usize:type i8:type i16:type i32:type i64:type i128:type isize:type f32:type f64:type }
+words capwords rel=0 miss=fail markhits=false { Some:literal None:literal Ok:literal Err:literal String:type Vec:type Box:type Option:type Result:type Copy:built_in Send:built_in Sized:built_in Sync:built_in Drop:built_in Fn:built_in FnMut:built_in FnOnce:built_in ToOwned:built_in Clone:built_in Debug:built_in PartialEq:built_in PartialOrd:built_in Eq:built_in Ord:built_in AsRef:built_in AsMut:built_in Into:built_in From:built_in Default:built_in Iterator:built_in Extend:built_in IntoIterator:built_in DoubleEndedIterator:built_in ExactSizeIterator:built_in ToString:built_in TryFrom:built_in TryInto:built_in }
+words macwords rel=0 miss=fail markhits=false scope=built_in { assert assert_eq assert_ne cfg column compile_error concat dbg debug_assert debug_assert_eq debug_assert_ne env eprint eprintln file format format_args include include_bytes include_str line macro_rules matches module_path option_env panic print println select stringify thread_local todo try unimplemented unreachable vec write writeln }
+rule tag { cap scope=doctag rel=0 { ( "BUG" / "FI" [X] [M] "E" / "HA" [C] [K] / "NO" [T] [E] / "OP" [T] [I] "MI" [Z] [E] / "TO" [D] [O] / "XXX" ) ":" } }
+rule linec scope=comment rel=0 { "//" [^\nBFHNOTX]* ( ( tag / [BFHNOTX] ) [^\nBFHNOTX]* )* }
+rule bin__resume { [^*/]* ( ( "*" !"/" / &"/*" bin / "/" ) [^*/]* )* ( "*/" / eoftrunc ) }
+rule bin { "/*" [^*/]* ( ( "*" !"/" / &"/*" bin / "/" ) [^*/]* )* ( "*/" / eoftrunc ) }
+rule blockc__resume { [^*/BFHNOTX]* ( ( "*" !"/" / &"/*" bin / "/" / tag / [BFHNOTX] ) [^*/BFHNOTX]* )* ( "*/" / eoftrunc ) }
+rule blockc scope=comment rel=0 { "/*" [^*/BFHNOTX]* ( ( "*" !"/" / &"/*" bin / "/" / tag / [BFHNOTX] ) [^*/BFHNOTX]* )* ( "*/" / eoftrunc ) }
+rule str__resume { [^"\\]* ( "\\" any [^"\\]* )* "\\"? ( "\"" / eoftrunc ) }
+rule str scope=string rel=0 { [bc]? "\"" [^"\\]* ( "\\" any [^"\\]* )* "\\"? ( "\"" / eoftrunc ) }
+rule raw0__resume { [^"]* ( "\"" / eoftrunc ) }
+rule raw0 scope=string rel=0 { [bc]? "r\"" [^"]* ( "\"" / eoftrunc ) }
+rule raw1__resume { [^"]* ( !"\"#" "\"" [^"]* )* ( "\"#" / eoftrunc ) }
+rule raw1 scope=string rel=0 { [bc]? "r#\"" [^"]* ( !"\"#" "\"" [^"]* )* ( "\"#" / eoftrunc ) }
+rule raw2__resume { [^"]* ( !"\"##" "\"" [^"]* )* ( "\"##" / eoftrunc ) }
+rule raw2 scope=string rel=0 { [bc]? "r##\"" [^"]* ( !"\"##" "\"" [^"]* )* ( "\"##" / eoftrunc ) }
+rule raw scope=string rel=0 { [bc]? "r" delim 1 { "#"* } "\"" [^"]* ( !( "\"" samedelim 1 ) "\"" [^"]* )* ( "\"" samedelim 1 / eoftrunc )? }
+rule chr scope=string rel=0 { "b"? "'" ( "\\" any [^'\n]* / [^\n'] ) "'" }
+rule life scope=symbol rel=0 { "'" I W* }
+rule num scope=number rel=0 { "0" ( "b" [01_]+ / "o" [0-7_]+ / "x" [0-9a-fA-F_]+ ) ( [iu] [0-9a-z]* )? / [0-9] [0-9_]* ( "." [0-9] [0-9_]* / "." ![.A-Za-z_] )? ( [eE] [+\-]? [0-9_]+ )? ( [iuf] [0-9s] [0-9a-z]* )? }
+rule bd { [ \t\r]* "\n" / ( "as" [y] [n] "c" / "co" [n] [s] "t" / "e" ( "num" / "xt" [e] [r] "n" ) / "fn" / "im" [p] [l] / "let" / "m" ( "ac" [r] [o] "_r" [u] [l] "es" / "od" ) / "pub" / "st" ( "at" [i] [c] / "ru" [c] [t] ) / "t" ( "ra" [i] [t] / "ype" ) / "u" ( "ns" [a] [f] "e" / "se" ) ) !W / "#" "!"? "[" }
+rule an { "\n" !bd }
+rule ab__resume { ( !( nb [^\n] bd ) [^\]\["/\n]* ( ( str / an ) [^\]\["/\n]* )* ( eoftrunc / "]"? ) ab )? }
+rule ab { [^\]\["/r\n]* ( ( "[" [^\]\["/\n]* ( ( str / an ) [^\]\["/\n]* )* ( eoftrunc / "]"? ) / an / str / &"r\"" raw0 / &"r#\"" raw1 / &"r##\"" raw2 / &"//" linec / &"/*" blockc / [/r] ) [^\]\["/r\n]* )* }
+rule attr__resume { ( !( nb [^\n] bd ) ab )? ( eoftrunc / "]"? ) }
+rule attr scope=meta rel=0 { "#" "!"? "[" ab ( eoftrunc / "]"? ) }
+rule sfn { cap scope=keyword rel=0 { "fn" } !W ( S+ cap scope=title.function rel=0 { "r#"? I W* } )? }
+rule scl { cap scope=keyword rel=0 { ( "en" [u] [m] / "st" [r] [u] "ct" / "t" ( "ra" [i] [t] / "ype" ) ) } !W ( S+ cap scope=title.class rel=0 { "r#"? I W* } )? }
+rule slet { cap scope=keyword rel=0 { "let" } !W ( S+ ( cap scope=keyword rel=0 { ( "mut" / "ref" ) } !W S+ )? ![A-Z] cap scope=variable rel=0 { "r#"? I W* } )? }
+rule simp { cap scope=keyword rel=0 { "im" [p] [l] } !W ( S+ !( ( "co" [n] [s] "t" / "dyn" / "for" / "un" [s] [a] "fe" ) !W ) ( I W* "::" )* cap scope=title.class rel=0 { "r#"? I W* } )? }
+rule sfor { cap scope=keyword rel=0 { "for" } !W ( S+ ( &[A-Z] cap scope=title.class rel=0 { "r#"? I W* } / &( I W* "::" ) ( cap scope=keyword rel=0 { ( "cr" [a] [t] "e" / "s" ( "elf" / "up" [e] [r] ) ) } "::" ( cap scope=keyword rel=0 { ( "cr" [a] [t] "e" / "s" ( "elf" / "up" [e] [r] ) ) } "::" cap scope=keyword rel=0 { ( "cr" [a] [t] "e" / "s" ( "elf" / "up" [e] [r] ) ) } "::"? )? )? ( I W* "::" ( I W* "::" ( I W* "::" I W* "::"? )? )? )? &[A-Z_] cap scope=title.class rel=0 { "r#"? I W* } / !( ( "cr" [a] [t] "e" / "dyn" / "mut" ) !W ) ( cap scope=title.class rel=0 { "r#"? I W* } &( " "? [{<] / "\r"? "\n" "{" / "\r"? [ \n] " "? " "? " "? " "? "wh" [e] [r] "e" !W ) / cap scope=variable rel=0 { "r#"? I W* } ) ) )? }
+rule sun { cap scope=keyword rel=0 { "un" [i] [o] "n" } &( S+ ( [A-Z] / I W* ( " "? [{<] / "\r"? "\n" "{" / "\r"? [ \n] " "? " "? " "? " "? "wh" [e] [r] "e" !W ) ) ) S+ cap scope=title.class rel=0 { "r#"? I W* } }
+rule pre { &( [bc] "\"" ) str / &"b'" chr / &( [bc]? "r\"" ) raw0 / &( [bc]? "r#\"" ) raw1 / &( [bc]? "r##\"" ) raw2 / &( [bc]? "r" "#"* "\"" ) raw / cap scope=title.function.invoke rel=0 { "r#" I W* } &"(" / "r#" I W* }
+rule pf { cap scope=title.function.invoke rel=0 { I W* } }
+rule lower { &"bool(" pf / &"char(" pf / &"str(" pf / &( [fiu] [1368s] [24680i]* ( "ze" )? "(" ) pf / kw lowerwords { [a-z] W* } / [a-z] W* ![(!] / cap scope=title.function.invoke rel=0 { I W* } &"(" /  kw macwords { I W* } &( "!" !"=" ) cap scope=built_in rel=0 { "!" } / I W* }
+rule up { cap scope=keyword rel=0 { "Se" [l] [f] } !W / kw capwords { [A-Z] W* } !"(" / [A-Z] W* ![(!] / cap scope=title.function.invoke rel=0 { I W* } &"(" /  kw macwords { I W* } &( "!" !"=" ) cap scope=built_in rel=0 { "!" } / I W* }
+rule word { I W* ![(!] / cap scope=title.function.invoke rel=0 { I W* } &"(" / kw macwords { I W* } &( "!" !"=" ) cap scope=built_in rel=0 { "!" } / I W* }
+rule root { ( &"fn" sfn / &"for" sfor / &"le" slet / &"st" scl / &"en" scl / &"tr" scl / &"ty" scl / &"im" simp / &"un" sun / &( [bcr] [r"'#] ) pre / &[a-z] lower / &[A-Z] up / "﻿" / word / O O? O? O? / num / &"//" linec / &"/*" blockc / str / ( chr / life ) / attr / any )* eof }

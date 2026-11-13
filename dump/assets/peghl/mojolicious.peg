@@ -1,0 +1,12 @@
+# mojolicious.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII
+
+language mojolicious
+
+rule m0 scope=meta rel=1 { nb [^\n\r] "__" ( "END" / "DATA" ) "__" &( [\n\r] / eof ) }
+rule m1 rel=0 { sublang-chunked perl { nb [^\n\r] [\t-\r ]* "%" ( "%" )? ( "=" ( "=" )? )? ( !( &( [\n\r] / eof ) ) any )* ( &( [\n\r] / eof ) / eoftrunc ) } }
+rule m1__resume { sublang-chunked perl { ( !( &( [\n\r] / eof ) ) any )* ( &( [\n\r] / eof ) / eoftrunc ) } }
+rule m2 rel=0 { chunktext { "<" "%" ( "%" )? ( "=" ( "=" )? )? } sublang-chunked perl { ( !( ( "=" )? "%>" ) any )* } chunktext { ( ( "=" )? "%>" / eoftrunc ) } }
+rule m2__resume { sublang-chunked perl { ( !( ( "=" )? "%>" ) any )* } ( ( "=" )? "%>" / eoftrunc ) }
+rule root { sublang-chunked xml { ( nosub { m0 } / nosub { m1 } / nosub { m2 } / any )* eof } }

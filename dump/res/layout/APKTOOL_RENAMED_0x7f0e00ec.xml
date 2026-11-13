@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/APKTOOL_RENAMED_0x7f150137"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e009a" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e009b" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e009c" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e009d" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e009e" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e009f" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e00a0" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e00a1" />
+    <include layout="@layout/APKTOOL_RENAMED_0x7f0e00a2" />
+</FrameLayout>

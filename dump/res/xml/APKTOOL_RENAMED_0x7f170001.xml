@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="sharedpref" path="app_prefs.xml" />
+    <include domain="file" path="datastores/app_stats.preferences_pb" />
+    <include domain="sharedpref" path="app_stats.xml" />
+    <include domain="sharedpref" path="app_prefs_widget_settings.xml" />
+    <include domain="file" path="datastores/stt.preferences_pb" />
+    <include domain="file" path="datastores/external_links.preferences_pb" />
+    <include domain="file" path="datastores/accessibility.preferences_pb" />
+    <include domain="file" path="datastores/code_diff.preferences_pb" />
+</full-backup-content>

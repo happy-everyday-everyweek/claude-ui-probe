@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <cache-path name="plaid_images" path="plaid-sdk/images/" />
+</paths>

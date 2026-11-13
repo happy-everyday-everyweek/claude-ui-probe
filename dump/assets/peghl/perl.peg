@@ -1,0 +1,133 @@
+# perl.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, dot≈[^\n\r], non-ascii-class-member≈\u
+
+language perl
+
+words kwroot miss=plain {
+  abs:keyword:1 accept:keyword:1 alarm:keyword:1 and:keyword:0 atan2:keyword:1 bind:keyword:1 binmode:keyword:1 bless:keyword:1 break:keyword:1 caller:keyword:1 chdir:keyword:1 chmod:keyword:1 chomp:keyword:1 chop:keyword:1 chown:keyword:1 chr:keyword:1 chroot:keyword:1 class:keyword:1 close:keyword:1 closedir:keyword:1 connect:keyword:1 continue:keyword:1 cos:keyword:1 crypt:keyword:1 dbmclose:keyword:1 dbmopen:keyword:1 defined:keyword:1 delete:keyword:1 die:keyword:1 do:keyword:1 dump:keyword:1 each:keyword:1 else:keyword:1 elsif:keyword:1 endgrent:keyword:1 endhostent:keyword:1 endnetent:keyword:1 endprotoent:keyword:1 endpwent:keyword:1 endservent:keyword:1 eof:keyword:1 eval:keyword:1 exec:keyword:1 exists:keyword:1 exit:keyword:1 exp:keyword:1 fcntl:keyword:1 field:keyword:1 fileno:keyword:1 flock:keyword:1 for:keyword:0 foreach:keyword:1 fork:keyword:1 format:keyword:1 formline:keyword:1 getc:keyword:1 getgrent:keyword:1 getgrgid:keyword:1 getgrnam:keyword:1 gethostbyaddr:keyword:1 gethostbyname:keyword:1 gethostent:keyword:1 getlogin:keyword:1 getnetbyaddr:keyword:1 getnetbyname:keyword:1 getnetent:keyword:1 getpeername:keyword:1 getpgrp:keyword:1 getpriority:keyword:1 getprotobyname:keyword:1 getprotobynumber:keyword:1 getprotoent:keyword:1 getpwent:keyword:1 getpwnam:keyword:1 getpwuid:keyword:1 getservbyname:keyword:1 getservbyport:keyword:1 getservent:keyword:1 getsockname:keyword:1 getsockopt:keyword:1 given:keyword:1 glob:keyword:1 gmtime:keyword:1 goto:keyword:1 grep:keyword:1 gt:keyword:1 hex:keyword:1 if:keyword:0 index:keyword:1 int:keyword:1 ioctl:keyword:1 join:keyword:1 keys:keyword:1 kill:keyword:1 last:keyword:1 lc:keyword:1 lcfirst:keyword:1 length:keyword:1 link:keyword:1 listen:keyword:1 local:keyword:1 localtime:keyword:1 log:keyword:1 lstat:keyword:1 lt:keyword:1 ma:keyword:1 map:keyword:1 method:keyword:1 mkdir:keyword:1 msgctl:keyword:1 msgget:keyword:1 msgrcv:keyword:1 msgsnd:keyword:1 my:keyword:1 ne:keyword:1 next:keyword:1 no:keyword:1 not:keyword:0 oct:keyword:1 open:keyword:1 opendir:keyword:1 or:keyword:0 ord:keyword:1 our:keyword:1 pack:keyword:1 package:keyword:1 pipe:keyword:1 pop:keyword:1 pos:keyword:1 print:keyword:1 printf:keyword:1 prototype:keyword:1 push:keyword:1 q:keyword:0 qq:keyword:1 quotemeta:keyword:1 qw:keyword:1 qx:keyword:1 rand:keyword:1 read:keyword:1 readdir:keyword:1 readline:keyword:1 readlink:keyword:1 readpipe:keyword:1 recv:keyword:1 redo:keyword:1 ref:keyword:1 rename:keyword:1 require:keyword:1 reset:keyword:1 return:keyword:1 reverse:keyword:1 rewinddir:keyword:1 rindex:keyword:1 rmdir:keyword:1 say:keyword:1 scalar:keyword:1 seek:keyword:1 seekdir:keyword:1 select:keyword:1 semctl:keyword:1 semget:keyword:1 semop:keyword:1 send:keyword:1 setgrent:keyword:1 sethostent:keyword:1 setnetent:keyword:1 setpgrp:keyword:1 setpriority:keyword:1 setprotoent:keyword:1 setpwent:keyword:1 setservent:keyword:1 setsockopt:keyword:1 shift:keyword:1 shmctl:keyword:1 shmget:keyword:1 shmread:keyword:1 shmwrite:keyword:1 shutdown:keyword:1 sin:keyword:1 sleep:keyword:1 socket:keyword:1 socketpair:keyword:1 sort:keyword:1 splice:keyword:1 split:keyword:1 sprintf:keyword:1 sqrt:keyword:1 srand:keyword:1 stat:keyword:1 state:keyword:1 study:keyword:1 sub:keyword:1 substr:keyword:1 symlink:keyword:1 syscall:keyword:1 sysopen:keyword:1 sysread:keyword:1 sysseek:keyword:1 system:keyword:1 syswrite:keyword:1 tell:keyword:1 telldir:keyword:1 tie:keyword:1 tied:keyword:1 time:keyword:1 times:keyword:1 tr:keyword:1 truncate:keyword:1 uc:keyword:1 ucfirst:keyword:1 umask:keyword:1 undef:keyword:1 unless:keyword:1 unlink:keyword:1 unpack:keyword:1 unshift:keyword:1 untie:keyword:1 until:keyword:1 use:keyword:1 utime:keyword:1 values:keyword:1 vec:keyword:1 wait:keyword:1 waitpid:keyword:1 wantarray:keyword:1 warn:keyword:1 when:keyword:1 while:keyword:1 write:keyword:1 x:keyword:0 xor:keyword:1 y:keyword:0
+}
+
+words kw48 miss=plain {
+  split:keyword:1 return:keyword:1 print:keyword:1 reverse:keyword:1 grep:keyword:1
+}
+
+words kw62 miss=plain {
+  sub:keyword:1 method:keyword:1
+}
+
+words kw64 miss=plain {
+  class:keyword:1
+}
+
+rule h_s1 { [A-Za-z]* ( [0-9A-Z_a-z] h_s1 / h_r0 ) }
+rule h_r0 { "::" [0-9A-Z_a-z] h_s1 / ![A-Za-z] ![$%@] }
+rule h_r2 { "::" [0-9A-Z_a-z] h_s1 }
+rule h_r4 { [A-Za-z]* ( [0-9A-Z_a-z] h_r4 / ( ( h_r2 ![A-Za-z] ![$%@] / ![A-Za-z] ![$%@] ) ) ) }
+rule h_r5 { [0-9A-Z_a-z] h_r4 }
+rule h_s7 { [A-Za-z]* ( [0-9A-Z_a-z] h_s7 / h_r6 ) }
+rule h_r6 { "::" h_s7 / ![A-Za-z] ![$%@] }
+rule h_r9 { [0-9A-Z_a-z] h_s7 }
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule h_r10 { [0-9_] h_r10 / ( ( "." [0-9_] [0-9_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) }
+rule __kwscanpat_kwroot { [.0-9A-Z_a-z] [.0-9A-Z_a-z]* }
+rule sg_r0 { [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] ( [adgil-nprsux] )? )? )? )? )? )? )? )? )? )? )? }
+rule sg_r1 { "q" [qrwx]? [\t-\r ]* ( "(" / "[" / "{" / "|" / "<" ) / "qw" [\t-\r ] [\t-\r ]* "q" / "-"? [0-9A-Z_a-z] [0-9A-Z_a-z]* [\t-\r ]* "=>" / "0"? "." [0-9] [0-9_] [0-9_]* ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] "v"? ( "0" ![a-zA-Z0-9_] / [1-9] h_r10 ![a-zA-Z0-9_] / ( [1-9] ( [0-9_] [0-9_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ![a-zA-Z0-9_] ) ) / nb [a-zA-Z0-9_] "0" [0-7] ( [0-7_] [0-7_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) / nb [a-zA-Z0-9_] "0x" [0-9A-Fa-f] ( [0-9A-F_a-f] [0-9A-F_a-f]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) / nb [a-zA-Z0-9_] "0b" [01] ( [01_] [01_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) / ( "//" [\t-\r ]* / "!" [\t-\r ]* / "!=" [\t-\r ]* / "!==" [\t-\r ]* / "%" [\t-\r ]* / "%=" [\t-\r ]* / "&" [\t-\r ]* / "&&" [\t-\r ]* / "&=" [\t-\r ]* / "*" [\t-\r ]* / "*=" [\t-\r ]* / "+" [\t-\r ]* / "+=" [\t-\r ]* / "," [\t-\r ]* / "-" [\t-\r ]* / "-=" [\t-\r ]* / "/=" [\t-\r ]* / "/" [\t-\r ]* / ":" [\t-\r ]* / ";" [\t-\r ]* / "<<" [\t-\r ]* / "<<=" [\t-\r ]* / "<=" [\t-\r ]* / "<" [\t-\r ]* / "===" [\t-\r ]* / "==" [\t-\r ]* / "=" [\t-\r ]* / ">>>=" [\t-\r ]* / ">>=" [\t-\r ]* / ">=" [\t-\r ]* / ">>>" [\t-\r ]* / ">>" [\t-\r ]* / ">" [\t-\r ]* / "?" [\t-\r ]* / "[" [\t-\r ]* / "{" [\t-\r ]* / "(" [\t-\r ]* / "^" [\t-\r ]* / "^=" [\t-\r ]* / "|" [\t-\r ]* / "|=" [\t-\r ]* / "||" [\t-\r ]* / "~" [\t-\r ]* / ( nb [a-zA-Z0-9_] ( "reverse" / "return" / "split" / "print" / "grep" ) ![a-zA-Z0-9_] [\t-\r ]* ) ) / nb [a-zA-Z0-9_] ( "sub" / "method" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) / nb [a-zA-Z0-9_] "class" !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) / nb [^\n\r] "__DATA__" &( [\n\r] / eof ) }
+
+rule m0 scope=variable rel=0 { "$" [0-9] ( m1 )*  rel(1){ &( any / eof ) } }
+rule m1 scope=attr rel=1 { [\t-\r ] [\t-\r ]* ":" [\t-\r ]* [0-9A-Z_a-z] [0-9A-Z_a-z]* ( [\t-\r ]* "(" ( !")" [^\n\r] )* ")" )? }
+rule m2 scope=variable rel=0 { [$%@] !"\"" ( "^" [0-9A-Z_a-z] ![a-zA-Z0-9_] / "#" h_r5 / "{" [0-9A-Z_a-z] [0-9A-Z_a-z]* "}" / h_r9 ) ![A-Za-z] ![$%@] ( m1 )*  rel(1){ &( any / eof ) } }
+rule m3 scope=variable rel=0 { ( [$%@] !"\"" [^\t-\r 0-9=A-Z_a-{] / "$=" ) ( m1 )*  }
+rule m4 scope=comment rel=0 { "#" ( m5 / m6 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m5 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m6 rel=1 { eng3 }
+rule m4__resume { ( m5 / m6 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m7 scope=comment rel=0 { nb [^\n\r] "=" [0-9A-Z_a-z] ( m8 / m9 / !"=cut" any )* ( rel(1){ "=cut" } / eoftrunc ) }
+rule m8 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m9 rel=1 { eng3 }
+rule m7__resume { ( m8 / m9 / !"=cut" any )* ( rel(1){ "=cut" } / eoftrunc ) }
+rule m10 rel=0 { "->{" ( m0 / m2 / m3 / m11 / m14 / m10 / m15 / m22 / m24 / m26 / m28 / m30 / m32 / m34 / m36 / m38 / m40 / m42 / m43 / m44 / m45 / m46 / m47 / m61 / m63 / m65 / m66 / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m11 scope=comment rel=0 { "#" ( m12 / m13 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m12 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m13 rel=1 { eng3 }
+rule m11__resume { ( m12 / m13 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m14 scope=comment rel=0 { nb [^\n\r] "=" [0-9A-Z_a-z] ( m8 / m9 / !( ( "=cut" / "}" ) ) any )* ( rel(1){ "=cut" } / rel(1){ &"}" } / eoftrunc ) }
+rule m14__resume { ( m8 / m9 / !( ( "=cut" / "}" ) ) any )* ( rel(1){ "=cut" } / rel(1){ &"}" } / eoftrunc ) }
+rule m15 scope=string rel=0 { "q" [qrwx]? [\t-\r ]* "(" ( m16 / m17 / m0 / m2 / m3 / !")" any )* ( rel(5){ ")" } / eoftrunc ) }
+rule m16 rel=0 { "\\" any }
+rule m17 scope=subst rel=0 { [$@] "{" ( m0 / m2 / m3 / m18 / m21 / m10 / m15 / m22 / m24 / m26 / m28 / m30 / m32 / m34 / m36 / m38 / m40 / m42 / m43 / m44 / m45 / m46 / m47 / m61 / m63 / m65 / m66 / !"}" kw kwroot { ( !sg_r1 [.0-9A-Z_a-z] )+ } / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m18 scope=comment rel=0 { "#" ( m19 / m20 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m19 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m20 rel=1 { eng3 }
+rule m18__resume { ( m19 / m20 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m21 scope=comment rel=0 { nb [^\n\r] "=" [0-9A-Z_a-z] ( m8 / m9 / !( ( "=cut" / "}" ) ) any )* ( rel(1){ "=cut" } / rel(1){ &"}" } / eoftrunc ) }
+rule m21__resume { ( m8 / m9 / !( ( "=cut" / "}" ) ) any )* ( rel(1){ "=cut" } / rel(1){ &"}" } / eoftrunc ) }
+rule m22 scope=string rel=0 { "q" [qrwx]? [\t-\r ]* "[" ( m23 / m17 / m0 / m2 / m3 / !"]" any )* ( rel(5){ "]" } / eoftrunc ) }
+rule m23 rel=0 { "\\" any }
+rule m22__resume { ( m23 / m17 / m0 / m2 / m3 / !"]" any )* ( rel(5){ "]" } / eoftrunc ) }
+rule m24 scope=string rel=0 { "q" [qrwx]? [\t-\r ]* "{" ( m25 / m17 / m0 / m2 / m3 / !"}" any )* ( rel(5){ "}" } / eoftrunc ) }
+rule m25 rel=0 { "\\" any }
+rule m24__resume { ( m25 / m17 / m0 / m2 / m3 / !"}" any )* ( rel(5){ "}" } / eoftrunc ) }
+rule m26 scope=string rel=0 { "q" [qrwx]? [\t-\r ]* "|" ( m27 / m17 / m0 / m2 / m3 / !"|" any )* ( rel(5){ "|" } / eoftrunc ) }
+rule m27 rel=0 { "\\" any }
+rule m26__resume { ( m27 / m17 / m0 / m2 / m3 / !"|" any )* ( rel(5){ "|" } / eoftrunc ) }
+rule m28 scope=string rel=0 { "q" [qrwx]? [\t-\r ]* "<" ( m29 / m17 / m0 / m2 / m3 / !">" any )* ( rel(5){ ">" } / eoftrunc ) }
+rule m29 rel=0 { "\\" any }
+rule m28__resume { ( m29 / m17 / m0 / m2 / m3 / !">" any )* ( rel(5){ ">" } / eoftrunc ) }
+rule m30 scope=string rel=0 { "qw" [\t-\r ] [\t-\r ]* "q" ( m31 / m17 / m0 / m2 / m3 / !"q" any )* ( rel(5){ "q" } / eoftrunc ) }
+rule m31 rel=0 { "\\" any }
+rule m30__resume { ( m31 / m17 / m0 / m2 / m3 / !"q" any )* ( rel(5){ "q" } / eoftrunc ) }
+rule m32 scope=string rel=0 { "'" ( m33 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m33 rel=0 { "\\" any }
+rule m32__resume { ( m33 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m34 scope=string rel=0 { "\"" ( m35 / m17 / m0 / m2 / m3 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m35 rel=0 { "\\" any }
+rule m34__resume { ( m35 / m17 / m0 / m2 / m3 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m36 scope=string rel=0 { "`" ( m37 / !"`" any )* ( rel(1){ "`" } / eoftrunc ) }
+rule m37 rel=0 { "\\" any }
+rule m36__resume { ( m37 / !"`" any )* ( rel(1){ "`" } / eoftrunc ) }
+rule m38 scope=string rel=0 { "{" [0-9A-Z_a-z] [0-9A-Z_a-z]* "}" ( m39 / m17 / m0 / m2 / m3 )*  }
+rule m39 rel=0 { "\\" any }
+rule m40 scope=string rel=0 { "-"? [0-9A-Z_a-z] [0-9A-Z_a-z]* [\t-\r ]* "=>" ( m41 / m17 / m0 / m2 / m3 )*  }
+rule m41 rel=0 { "\\" any }
+rule m42 scope=number rel=0 { "0"? "." [0-9] [0-9_] [0-9_]* ![a-zA-Z0-9_] }
+rule m43 scope=number rel=0 { nb [a-zA-Z0-9_] "v"? ( "0" ![a-zA-Z0-9_] / [1-9] h_r10 ![a-zA-Z0-9_] / ( [1-9] ( [0-9_] [0-9_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ![a-zA-Z0-9_] ) ) }
+rule m44 scope=number rel=0 { nb [a-zA-Z0-9_] "0" [0-7] ( [0-7_] [0-7_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) }
+rule m45 scope=number rel=0 { nb [a-zA-Z0-9_] "0x" [0-9A-Fa-f] ( [0-9A-F_a-f] [0-9A-F_a-f]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) }
+rule m46 scope=number rel=0 { nb [a-zA-Z0-9_] "0b" [01] ( [01_] [01_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) }
+rule m47 rel=0 { ( ( nb [0-9A-Z_a-z] kw kw48 { ( "reverse" / "return" / "split" / "print" / "grep" ) } ![0-9A-Z_a-z] ) / ( "//" / "!" / "!=" / "!==" / "%" / "%=" / "&" / "&&" / "&=" / "*" / "*=" / "+" / "+=" / "," / "-" / "-=" / "/=" / "/" / ":" / ";" / "<<" / "<<=" / "<=" / "<" / "===" / "==" / "=" / ">>>=" / ">>=" / ">=" / ">>>" / ">>" / ">" / "?" / "[" / "{" / "(" / "^" / "^=" / "|" / "|=" / "||" / "~" ) ) [\t-\r ]* ( m48 / m51 / m52 / m53 / m54 / m55 / m56 / m57 / m58 / m59 / m60 )*  }
+rule m48 scope=comment rel=0 { "#" ( m49 / m50 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m49 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m50 rel=1 { eng3 }
+rule m48__resume { ( m49 / m50 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m51 scope=regexp rel=2 { ( "s" / "tr" / "y" ) delim 1 { ( "!" / "/" / "|" / "?" / "'" / "\"" / "#" ) } ( !( samedelim 1 ( !( samedelim 1 sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* samedelim 1 sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* samedelim 1 ( !( samedelim 1 sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* samedelim 1 sg_r0? }
+rule m52 scope=regexp rel=2 { ( "s" / "tr" / "y" ) "(" ( !( ")(" ( !( ")" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* ")" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* ")(" ( !( ")" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* ")" sg_r0? }
+rule m53 scope=regexp rel=2 { ( "s" / "tr" / "y" ) "[" ( !( "][" ( !( "]" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "]" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "][" ( !( "]" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "]" sg_r0? }
+rule m54 scope=regexp rel=2 { ( "s" / "tr" / "y" ) "{" ( !( "}{" ( !( "}" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "}" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "}{" ( !( "}" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "}" sg_r0? }
+rule m55 scope=regexp rel=0 { ( "m" / "qr" ) "//" }
+rule m56 scope=regexp rel=1 { ( ( "m" / "qr" ) )? "/" ( !( "/" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "/" sg_r0? }
+rule m57 scope=regexp rel=1 { ( "m" / "qr" ) delim 1 { ( "!" / "/" / "|" / "?" / "'" / "\"" / "#" ) } ( !( samedelim 1 sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* samedelim 1 sg_r0? }
+rule m58 scope=regexp rel=1 { ( "m" / "qr" ) "(" ( !( ")" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* ")" sg_r0? }
+rule m59 scope=regexp rel=1 { ( "m" / "qr" ) "[" ( !( "]" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "]" sg_r0? }
+rule m60 scope=regexp rel=1 { ( "m" / "qr" ) "{" ( !( "}" sg_r0? ) ( ( "\\" [^\n\r] / [^/\\] ) ) )* "}" sg_r0? }
+rule m61 rel=0 { cap scope=function rel=0 { &( nb [a-zA-Z0-9_] ( "sub" / "method" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw62 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m62 / m1 / !( ( [\t-\r ]* "(" ( !( ")" [;{] ) [^\n\r] )* ")" )? [;{] ) kw kw62 { ( !( [A-Za-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !( ( [\t-\r ]* "(" ( !( ")" [;{] ) [^\n\r] )* ")" )? [;{] ) any )* } kwscan kwroot __kwscanpat_kwroot { chunktext { ( rel(5){ ( [\t-\r ]* "(" ( !( ")" [;{] ) [^\n\r] )* ")" )? [;{] } / eoftrunc ) } } }
+rule m62 scope=title rel=0 { [A-Za-z] [0-9A-Z_a-z]* }
+rule m61__resume { cap scope=function rel=0 { ( m62 / m1 / !( ( [\t-\r ]* "(" ( !( ")" [;{] ) [^\n\r] )* ")" )? [;{] ) kw kw62 { ( !( [A-Za-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !( ( [\t-\r ]* "(" ( !( ")" [;{] ) [^\n\r] )* ")" )? [;{] ) any )* } ( rel(5){ ( [\t-\r ]* "(" ( !( ")" [;{] ) [^\n\r] )* ")" )? [;{] } / eoftrunc ) }
+rule m63 rel=0 { cap scope=class rel=0 { &( nb [a-zA-Z0-9_] "class" !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw64 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m64 / m1 / m42 / m43 / m44 / m45 / m46 / ![;{] kw kw64 { ( !( [A-Za-z] [0-9A-Z_a-z]* / "0"? "." [0-9] [0-9_] [0-9_]* ![a-zA-Z0-9_] ) [0-9A-Z_a-z] )+ } / ![;{] any )* } kwscan kwroot __kwscanpat_kwroot { chunktext { ( rel(5){ [;{] } / eoftrunc ) } } }
+rule m64 scope=title rel=0 { [A-Za-z] [0-9A-Z_a-z]* }
+rule m63__resume { cap scope=class rel=0 { ( m64 / m1 / m42 / m43 / m44 / m45 / m46 / ![;{] kw kw64 { ( !( [A-Za-z] [0-9A-Z_a-z]* / "0"? "." [0-9] [0-9_] [0-9_]* ![a-zA-Z0-9_] ) [0-9A-Z_a-z] )+ } / ![;{] any )* } ( rel(5){ [;{] } / eoftrunc ) }
+rule m65 rel=0 { "-" [0-9A-Z_a-z] ![a-zA-Z0-9_] }
+rule m66 rel=0 { sublang-chunked mojolicious { nb [^\n\r] "__DATA__" &( [\n\r] / eof ) ( nosub { m67 } / !( nb [^\n\r] "__END__" &( [\n\r] / eof ) ) any )* ( nb [^\n\r] "__END__" &( [\n\r] / eof ) / eoftrunc ) } }
+rule m67 scope=comment rel=0 { nb [^\n\r] "@@" [^\n\r]* ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m67__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m66__resume { sublang-chunked mojolicious { ( nosub { m67 } / !( nb [^\n\r] "__END__" &( [\n\r] / eof ) ) any )* ( nb [^\n\r] "__END__" &( [\n\r] / eof ) / eoftrunc ) } }
+rule m17__resume { ( m0 / m2 / m3 / m18 / m21 / m10 / m15 / m22 / m24 / m26 / m28 / m30 / m32 / m34 / m36 / m38 / m40 / m42 / m43 / m44 / m45 / m46 / m47 / m61 / m63 / m65 / m66 / !"}" kw kwroot { ( !sg_r1 [.0-9A-Z_a-z] )+ } / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m15__resume { ( m16 / m17 / m0 / m2 / m3 / !")" any )* ( rel(5){ ")" } / eoftrunc ) }
+rule m10__resume { ( m0 / m2 / m3 / m11 / m14 / m10 / m15 / m22 / m24 / m26 / m28 / m30 / m32 / m34 / m36 / m38 / m40 / m42 / m43 / m44 / m45 / m46 / m47 / m61 / m63 / m65 / m66 / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule root { ( m0 / m2 / m3 / m4 / m7 / m10 / m15 / m22 / m24 / m26 / m28 / m30 / m32 / m34 / m36 / m38 / m40 / m42 / m43 / m44 / m45 / m46 / m47 / m61 / m63 / m65 / m66 / kw kwroot { ( !sg_r1 [.0-9A-Z_a-z] )+ } / any )* eof }

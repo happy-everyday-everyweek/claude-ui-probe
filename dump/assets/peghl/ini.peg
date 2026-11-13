@@ -1,0 +1,51 @@
+# ini.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, dot≈[^\n\r], non-ascii-class-member≈\u
+
+language ini
+case-insensitive
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule h_r0 { [\x00-!#-\[\]-\x7f]* ( "\\\"" h_r0 / [^"] h_r0 / "\"" ) }
+rule h_r2 { [\t-\r ]* "." [\t-\r ]* ( [\-0-9A-Z_a-z] [\-0-9A-Z_a-z]* h_r2 / "\"" h_r0 h_r2 / "'" [^']* "'" h_r2 ) / &( [\t-\r ]* "=" [\t-\r ]* [^\t-\r #] ) }
+rule h_r3 { [\x00-!#-\[\]-\x7f]* ( "\\\"" h_r3 / [^"] h_r3 / "\"" &h_r2 ) }
+
+rule m0 scope=comment rel=0 { ";" ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m2 rel=1 { eng3 }
+rule m0__resume { ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3 scope=comment rel=0 { "#" ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3__resume { ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m4 scope=section rel=0 { "[" "["* ( !( "]" "]"* ) any )* ( rel(1){ "]" "]"* } / eoftrunc ) }
+rule m4__resume { ( !( "]" "]"* ) any )* ( rel(1){ "]" "]"* } / eoftrunc ) }
+rule m5 scope=attr rel=1 { ( [\-0-9A-Z_a-z] [\-0-9A-Z_a-z]* / "\"" h_r3 / "'" [^']* "'" ) h_r2 }
+rule m6 rel=0 { ( m0 / m3 / m7 / m8 / m9 / m10 / m11 / m13 / m15 / m17 / m19 / m20 / !( &( [\n\r] / eof ) ) any )+ ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m7 rel=0 { "[" ( m0 / m3 / m8 / m9 / m10 / m11 / m13 / m15 / m17 / m19 / m20 / m7 / !"]" any )* ( "]" / eoftrunc ) }
+rule m8 scope=literal rel=1 { ( nb [a-zA-Z0-9_] "on" / "off" / "true" / "false" / "yes" / "no" ![a-zA-Z0-9_] ) }
+rule m9 scope=variable rel=1 { "$" ["0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule m10 scope=variable rel=1 { "${" ( !"}" [^\n\r] )* "}" }
+rule m11 scope=string rel=0 { "'''" ( m12 / !"'''" any )* ( rel(10){ "'''" } / eoftrunc ) }
+rule m12 rel=0 { "\\" any }
+rule m11__resume { ( m12 / !"'''" any )* ( rel(10){ "'''" } / eoftrunc ) }
+rule m13 scope=string rel=0 { "\"\"\"" ( m14 / !"\"\"\"" any )* ( rel(10){ "\"\"\"" } / eoftrunc ) }
+rule m14 rel=0 { "\\" any }
+rule m13__resume { ( m14 / !"\"\"\"" any )* ( rel(10){ "\"\"\"" } / eoftrunc ) }
+rule m15 scope=string rel=0 { "\"" ( m16 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m16 rel=0 { "\\" any }
+rule m15__resume { ( m16 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m17 scope=string rel=0 { "'" ( m18 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m18 rel=0 { "\\" any }
+rule m17__resume { ( m18 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m19 scope=number rel=0 { ( [+\-] [+\-]* )? [0-9] [0-9]* "_" [0-9_] [0-9_]* }
+rule m20 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m7__resume { ( m0 / m3 / m8 / m9 / m10 / m11 / m13 / m15 / m17 / m19 / m20 / m7 / !"]" any )* ( "]" / eoftrunc ) }
+rule m6__resume { ( m0 / m3 / m7 / m8 / m9 / m10 / m11 / m13 / m15 / m17 / m19 / m20 / !( &( [\n\r] / eof ) ) any )+ ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m5_s { m5 ( m6 / rel(1){ &( &( [\n\r] / eof ) ) } / eoftrunc ) }
+rule m5_s__resume { ( m6 / rel(1){ &( &( [\n\r] / eof ) ) } / eoftrunc ) }
+rule root { ( m0 / m3 / m4 / m5_s / illegalx { [^\t-\r ] } / any )* eof }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="APKTOOL_RENAMED_0x7f15007c" parent="@style/APKTOOL_RENAMED_0x7f15007b">
+        <item name="isLightTheme">false</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150260" parent="@style/APKTOOL_RENAMED_0x7f15025e" />
+    <style name="APKTOOL_RENAMED_0x7f150274" parent="@style/APKTOOL_RENAMED_0x7f15005a">
+        <item name="isLightTheme">false</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150277" parent="@style/APKTOOL_RENAMED_0x7f15005b">
+        <item name="isLightTheme">false</item>
+    </style>
+</resources>

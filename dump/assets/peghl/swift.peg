@@ -1,0 +1,250 @@
+# swift.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u, dot≈[^\n\r]
+
+language swift
+
+words kwroot miss=plain {
+  actor:keyword:1 any:keyword:1 associatedtype:keyword:1 async:keyword:1 await:keyword:1 as:keyword:1 borrowing:keyword:1 break:keyword:1 case:keyword:1 catch:keyword:1 class:keyword:1 consume:keyword:1 consuming:keyword:1 continue:keyword:1 convenience:keyword:1 copy:keyword:1 default:keyword:1 defer:keyword:1 deinit:keyword:1 didSet:keyword:1 distributed:keyword:1 do:keyword:1 dynamic:keyword:1 each:keyword:1 else:keyword:1 enum:keyword:1 extension:keyword:1 fallthrough:keyword:1 fileprivate:keyword:1 final:keyword:1 for:keyword:0 func:keyword:1 get:keyword:1 guard:keyword:1 if:keyword:0 import:keyword:1 indirect:keyword:1 infix:keyword:1 inout:keyword:1 internal:keyword:1 in:keyword:0 is:keyword:1 isolated:keyword:1 nonisolated:keyword:1 lazy:keyword:1 let:keyword:1 macro:keyword:1 mutating:keyword:1 nonmutating:keyword:1 open:keyword:1 operator:keyword:1 optional:keyword:1 override:keyword:1 package:keyword:1 postfix:keyword:1 precedencegroup:keyword:1 prefix:keyword:1 private:keyword:1 protocol:keyword:1 public:keyword:1 repeat:keyword:1 required:keyword:1 rethrows:keyword:1 return:keyword:1 set:keyword:1 some:keyword:1 static:keyword:1 struct:keyword:1 subscript:keyword:1 super:keyword:1 switch:keyword:1 throws:keyword:1 throw:keyword:1 try:keyword:1 typealias:keyword:1 unowned:keyword:1 var:keyword:1 weak:keyword:1 where:keyword:1 while:keyword:1 willSet:keyword:1 _:keyword:0 "#colorLiteral":keyword:1 "#column":keyword:1 "#dsohandle":keyword:1 "#else":keyword:1 "#elseif":keyword:1 "#endif":keyword:1 "#error":keyword:1 "#file":keyword:1 "#fileID":keyword:1 "#fileLiteral":keyword:1 "#filePath":keyword:1 "#function":keyword:1 "#if":keyword:1 "#imageLiteral":keyword:1 "#keyPath":keyword:1 "#line":keyword:1 "#selector":keyword:1 "#sourceLocation":keyword:1 "#warning":keyword:1 false:literal:1 nil:literal:1 true:literal:1
+}
+
+words kw8 miss=plain {
+  repeat:keyword:1 each:keyword:1
+}
+
+words kw27 miss=plain {
+  iOS:keyword:1 iOSApplicationExtension:keyword:1 macOS:keyword:1 macOSApplicationExtension:keyword:1 macCatalyst:keyword:1 macCatalystApplicationExtension:keyword:1 watchOS:keyword:1 watchOSApplicationExtension:keyword:1 tvOS:keyword:1 tvOSApplicationExtension:keyword:1 swift:keyword:1
+}
+
+words h_kwa27 miss=fail {
+  abs:none:0 all:none:0 any:none:0 assert:none:0 assertionFailure:none:0 debugPrint:none:0 dump:none:0 fatalError:none:0 getVaList:none:0 isKnownUniquelyReferenced:none:0 max:none:0 min:none:0 numericCast:none:0 pointwiseMax:none:0 pointwiseMin:none:0 precondition:none:0 preconditionFailure:none:0 print:none:0 readLine:none:0 repeatElement:none:0 sequence:none:0 stride:none:0 swap:none:0 swift_unboxFromSwiftValueWithType:none:0 transcode:none:0 type:none:0 unsafeBitCast:none:0 unsafeDowncast:none:0 withExtendedLifetime:none:0 withUnsafeMutablePointer:none:0 withUnsafePointer:none:0 withVaList:none:0 withoutActuallyEscaping:none:0 zip:none:0
+}
+
+words kw95 miss=plain {
+  _:keyword:0
+}
+
+words kw119 miss=plain {
+  assignment:keyword:1 associativity:keyword:1 higherThan:keyword:1 left:keyword:1 lowerThan:keyword:1 none:keyword:1 right:keyword:1 false:keyword:1 nil:keyword:1 true:keyword:1
+}
+
+words kw120 miss=plain {
+  import:keyword:1
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule __kwscanpat_kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) }
+rule _na0 { "¨" / "ª" / "­" / "¯" / "²" / "³" / "´" / "µ" / "·" / "¸" / "¹" / "º" }
+rule _na1 { "¼" / "½" / "¾" / "À" / "Á" / "Â" / "Ã" / "Ä" / "Å" / "Æ" / "Ç" / "È" / "É" / "Ê" / "Ë" / "Ì" / "Í" / "Î" / "Ï" / "Ð" / "Ñ" / "Ò" / "Ó" / "Ô" / "Õ" / "Ö" / "Ø" / "Ù" / "Ú" / "Û" / "Ü" / "Ý" / "Þ" / "ß" / "à" / "á" / "â" / "ã" / "ä" / "å" / "æ" / "ç" / "è" / "é" / "ê" / "ë" / "ì" / "í" / "î" / "ï" / "ð" / "ñ" / "ò" / "ó" / "ô" / "õ" / "ö" / "ø" / "ù" / "ú" / "û" / "ü" / "ý" / "þ" / "ÿ" }
+rule mc7_r0 { [0-9A-Z_a-z]* ( ( [A-Z_a-z] / _na0 / _na1 / [\u] / [0-9] ) mc7_r0 / "`" ) }
+rule _na2 { "¡" / "¢" / "£" / "¤" / "¥" / "¦" / "§" }
+rule _na3 { "©" / "«" }
+rule _na4 { "¬" / "®" }
+rule _na5 { "°" / "±" }
+rule _na6 { "¶" / "»" / "¿" / "×" / "÷" }
+rule _na7 { "‖" / "‗" }
+rule _na8 { "†" / "‡" / "•" / "‣" / "․" / "‥" / "…" / "‧" }
+rule _na9 { "、" / "。" / "〃" }
+rule _na10 { "̀" / "́" / "̂" / "̃" / "̄" / "̅" / "̆" / "̇" / "̈" / "̉" / "̊" / "̋" / "̌" / "̍" / "̎" / "̏" / "̐" / "̑" / "̒" / "̓" / "̔" / "̕" / "̖" / "̗" / "̘" / "̙" / "̚" / "̛" / "̜" / "̝" / "̞" / "̟" / "̠" / "̡" / "̢" / "̣" / "̤" / "̥" / "̦" / "̧" / "̨" / "̩" / "̪" / "̫" / "̬" / "̭" / "̮" / "̯" / "̰" / "̱" / "̲" / "̳" / "̴" / "̵" / "̶" / "̷" / "̸" / "̹" / "̺" / "̻" / "̼" / "̽" / "̾" / "̿" / "̀" / "́" / "͂" / "̓" / "̈́" / "ͅ" / "͆" / "͇" / "͈" / "͉" / "͊" / "͋" / "͌" / "͍" / "͎" / "͏" / "͐" / "͑" / "͒" / "͓" / "͔" / "͕" / "͖" / "͗" / "͘" / "͙" / "͚" / "͛" / "͜" / "͝" / "͞" / "͟" / "͠" / "͡" / "͢" / "ͣ" / "ͤ" / "ͥ" / "ͦ" / "ͧ" / "ͨ" / "ͩ" / "ͪ" / "ͫ" / "ͬ" / "ͭ" / "ͮ" / "ͯ" }
+rule h_s12 { "_" h_s12 / h_r11 }
+rule h_r11 { [0-9] h_s12 / ( ( [Ee] [+\-]? [0-9] "_"* ( [0-9] "_"* )* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) }
+rule h_r13 { [0-9] h_s12 }
+rule h_s16 { "_" h_s16 / h_r15 }
+rule h_r15 { [0-9] h_s16 / ( ( "." h_r13 / ( ( [Ee] [+\-]? [0-9] "_"* ( [0-9] "_"* )* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) ) ) }
+rule h_r17 { [0-9] h_s16 }
+rule h_s20 { "_" h_s20 / h_r19 }
+rule h_r19 { [0-9A-Fa-f] h_s20 / ( ( [Pp] [+\-]? [0-9] "_"* ( [0-9] "_"* )* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) }
+rule h_r21 { [0-9A-Fa-f] h_s20 }
+rule h_s24 { "_" h_s24 / h_r23 }
+rule h_r23 { [0-9A-Fa-f] h_s24 / ( ( "." h_r21 / ( ( [Pp] [+\-]? [0-9] "_"* ( [0-9] "_"* )* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) ) ) }
+rule h_r25 { [0-9A-Fa-f] h_s24 }
+rule h_r39 { [0-9A-Z_a-z]* ( ( [A-Z_a-z] / _na0 / _na1 / [\u] / [0-9] ) h_r39 / ( ")" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) ) }
+rule h_r50 { [0-9A-Z_a-z]* ( ( [A-Z_a-z] / _na0 / _na1 / [\u] / [0-9] ) h_r50 / [\t-\r ]* ":" ) }
+rule h_r72 { [0-9A-Z_a-z]* ( ( [A-Z_a-z] / _na0 / _na1 / [\u] / [0-9] ) h_r72 / ( [\t-\r ] [\t-\r ]* ( [A-Z_a-z] h_r50 / _na0 h_r50 / _na1 h_r50 / [\u] h_r50 ) ) ) }
+rule __kwscanpat_kw95 { [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule h_r204 { [\x00-\t\v\f\x0e-.0-\x7f]* ( [^\n\r] h_r204 / "/###" ) }
+rule h_r205 { [\x00-\t\v\f\x0e-.0-\x7f]* ( [^\n\r] h_r205 / "/##" ) }
+rule h_r206 { [\x00-\t\v\f\x0e-.0-\x7f]* ( [^\n\r] h_r206 / "/#" ) }
+rule sg_r0 { ( [!%&*+\-/<-?\^|~] ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( _na2 ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( _na3 ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( _na4 ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( _na5 ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( _na6 ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( _na7 ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( _na8 ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( [\u] ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( _na9 ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) / ( "〰" ( ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) )* ) }
+rule sg_r1 { ( [A-Z_a-z] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* ) / ( _na0 ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* ) / ( _na1 ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* ) / ( [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* ) }
+
+rule m0 scope=comment rel=0 { "//" ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m2 rel=1 { eng3 }
+rule m0__resume { ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3 scope=comment rel=0 { "/*" ( m3 / m4 / m5 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m4 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m5 rel=1 { eng3 }
+rule m3__resume { ( m3 / m4 / m5 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m6 rel=0 { cap scope=keyword rel=0 mc=1 { ( "func" / "macro" ) } [\t-\r ] [\t-\r ]* cap scope=title.function rel=0 mc=1 { ( "`" ( [A-Z_a-z] mc7_r0 / _na0 mc7_r0 / _na1 mc7_r0 / [\u] mc7_r0 ) / sg_r1 / sg_r0 ) } ( m7 / !( "(" ) m85 )*  ( m86 )? rel(1){ &( any / eof ) } }
+rule m7 rel=0 { "<" ( m8 / m3 / m11 / !">" kw kw8 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m8 scope=comment rel=0 { "//" ( m9 / m10 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m9 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m10 rel=1 { eng3 }
+rule m8__resume { ( m9 / m10 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m11 rel=0 { &( nb [a-zA-Z0-9_] [A-Z] ) ( m12 / m13 / m14 / m15 / m16 / m17 )+  }
+rule m12 scope=type rel=1 { ( "AV" / "CA" / "CF" / "CG" / "CI" / "CL" / "CM" / "CN" / "CT" / "MK" / "MP" / "MTK" / "MTL" / "NS" / "SCN" / "SK" / "UI" / "WK" / "XC" ) ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* }
+rule m13 scope=type rel=0 { [A-Z] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* }
+rule m14 rel=0 { [!?] [!?]* }
+rule m15 rel=0 { "..." }
+rule m16 rel=0 { [\t-\r ] [\t-\r ]* "&" [\t-\r ] [\t-\r ]* &( [A-Z] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* ) }
+rule m17 rel=0 { "<" ( m18 / m3 / m21 / m22 / m23 / m24_s / m83 / m84 / m27 / m11 / !">" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m18 scope=comment rel=0 { "//" ( m19 / m20 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m19 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m20 rel=1 { eng3 }
+rule m18__resume { ( m19 / m20 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m21 rel=1 { "." cap scope=keyword rel=0 mc=1 { ( &[a-zA-Z0-9_] "Protocol" ![a-zA-Z0-9_] / &[a-zA-Z0-9_] "Type" ![a-zA-Z0-9_] / &[a-zA-Z0-9_] "init" ![a-zA-Z0-9_] / &[a-zA-Z0-9_] "self" ![a-zA-Z0-9_] ) } }
+rule m22 rel=0 { "." ( "actor" / "any" / "associatedtype" / "async" / "await" / "as?" / "as!" / "as" / "borrowing" / "break" / "case" / "catch" / "class" / "consume" / "consuming" / "continue" / "convenience" / "copy" / "default" / "defer" / "deinit" / "didSet" / "distributed" / "do" / "dynamic" / "each" / "else" / "enum" / "extension" / "fallthrough" / "fileprivate(set)" / "fileprivate" / "final" / "for" / "func" / "get" / "guard" / "if" / "import" / "indirect" / "infix" / "init?" / "init!" / "inout" / "internal(set)" / "internal" / "in" / "is" / "isolated" / "nonisolated" / "lazy" / "let" / "macro" / "mutating" / "nonmutating" / "open(set)" / "open" / "operator" / "optional" / "override" / "package" / "postfix" / "precedencegroup" / "prefix" / "private(set)" / "private" / "protocol" / "public(set)" / "public" / "repeat" / "required" / "rethrows" / "return" / "set" / "some" / "static" / "struct" / "subscript" / "super" / "switch" / "throws" / "throw" / "try?" / "try!" / "try" / "typealias" / "unowned(safe)" / "unowned(unsafe)" / "unowned" / "var" / "weak" / "where" / "while" / "willSet" ) }
+rule m23 scope=keyword rel=1 { ( nb [a-zA-Z0-9_] "as?" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "as!" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "fileprivate(set)" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "init?" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "init!" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "internal(set)" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "open(set)" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "private(set)" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "public(set)" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "try?" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "try!" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "unowned(safe)" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "unowned(unsafe)" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) / nb [a-zA-Z0-9_] "Any" ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] "Self" ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] "init" ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] "self" ![a-zA-Z0-9_] ) }
+rule m24 scope=keyword rel=1 { ( "@" / "#" "un"? ) "available" }
+rule m25 rel=0 { ( m26 )*  rel(1){ &( any / eof ) } }
+rule m26 rel=0 { "(" ( m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / !")" kw kw27 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m27 rel=0 { "->" }
+rule m28 scope=operator rel=0 { sg_r0 }
+rule m29 scope=operator rel=0 { "." ( "." / ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) ) ( ( "." / ( ( [!%&*+\-/<-?\^|~] / _na2 / _na3 / _na4 / _na5 / _na6 / _na7 / _na8 / [\u] / _na9 / "〰" ) / _na10 / [\u] / [\u] / [\u] / [\u] ) ) )* }
+rule m30 scope=number rel=0 { nb [a-zA-Z0-9_] h_r17 }
+rule m31 scope=number rel=0 { nb [a-zA-Z0-9_] "0x" h_r25 }
+rule m32 scope=number rel=0 { nb [a-zA-Z0-9_] "0o" [0-7] "_"* ( [0-7] "_"* )* ![a-zA-Z0-9_] }
+rule m33 scope=number rel=0 { nb [a-zA-Z0-9_] "0b" [01] "_"* ( [01] "_"* )* ![a-zA-Z0-9_] }
+rule m34 scope=string rel=0 { "\"\"\"" ( m35 / m36 / m37 / m38 / !"\"\"\"" any )* ( rel(1){ "\"\"\"" } / eoftrunc ) }
+rule m35 scope=subst rel=1 { "\\" ["'0\\nrt] }
+rule m36 scope=subst rel=1 { "\\u{" [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] )? )? )? )? )? )? )? "}" }
+rule m37 scope=subst rel=1 { "\\" [\t ]* ( [\n\r] / "\r\n" ) }
+rule m38 scope=subst rel=0 { "\\(" ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m82 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m39 rel=0 { "." ( "abs" / "all" / "any" / "assert" / "assertionFailure" / "debugPrint" / "dump" / "fatalError" / "getVaList" / "isKnownUniquelyReferenced" / "max" / "min" / "numericCast" / "pointwiseMax" / "pointwiseMin" / "precondition" / "preconditionFailure" / "print" / "readLine" / "repeatElement" / "sequence" / "stride" / "swap" / "swift_unboxFromSwiftValueWithType" / "transcode" / "type" / "unsafeBitCast" / "unsafeDowncast" / "withExtendedLifetime" / "withUnsafeMutablePointer" / "withUnsafePointer" / "withVaList" / "withoutActuallyEscaping" / "zip" ) }
+rule m40 scope=built_in rel=1 { nb [a-zA-Z0-9_] kw h_kwa27 { [A-FK-MPR-W_a-il-uw-z]+ } &"(" &"(" }
+rule m41 scope=string rel=0 { "#\"\"\"" ( m42 / m43 / m44 / m45 / !"\"\"\"#" any )* ( rel(1){ "\"\"\"#" } / eoftrunc ) }
+rule m42 scope=subst rel=1 { "\\#" ["'0\\nrt] }
+rule m43 scope=subst rel=1 { "\\#u{" [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] )? )? )? )? )? )? )? "}" }
+rule m44 scope=subst rel=1 { "\\#" [\t ]* ( [\n\r] / "\r\n" ) }
+rule m45 scope=subst rel=0 { "\\#(" ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m81 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m46 scope=string rel=0 { "##\"\"\"" ( m47 / m48 / m49 / m50 / !"\"\"\"##" any )* ( rel(1){ "\"\"\"##" } / eoftrunc ) }
+rule m47 scope=subst rel=1 { "\\##" ["'0\\nrt] }
+rule m48 scope=subst rel=1 { "\\##u{" [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] )? )? )? )? )? )? )? "}" }
+rule m49 scope=subst rel=1 { "\\##" [\t ]* ( [\n\r] / "\r\n" ) }
+rule m50 scope=subst rel=0 { "\\##(" ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m80 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m51 scope=string rel=0 { "###\"\"\"" ( m52 / m53 / m54 / m55 / !"\"\"\"###" any )* ( rel(1){ "\"\"\"###" } / eoftrunc ) }
+rule m52 scope=subst rel=1 { "\\###" ["'0\\nrt] }
+rule m53 scope=subst rel=1 { "\\###u{" [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] )? )? )? )? )? )? )? "}" }
+rule m54 scope=subst rel=1 { "\\###" [\t ]* ( [\n\r] / "\r\n" ) }
+rule m55 scope=subst rel=0 { "\\###(" ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m79 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m56 scope=string rel=0 { "\"" ( m57 / m58 / m59 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m57 scope=subst rel=1 { "\\" ["'0\\nrt] }
+rule m58 scope=subst rel=1 { "\\u{" [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] )? )? )? )? )? )? )? "}" }
+rule m59 scope=subst rel=0 { "\\(" ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m78 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m60 scope=string rel=0 { "#\"" ( m61 / m62 / m63 / !"\"#" any )* ( rel(1){ "\"#" } / eoftrunc ) }
+rule m61 scope=subst rel=1 { "\\#" ["'0\\nrt] }
+rule m62 scope=subst rel=1 { "\\#u{" [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] )? )? )? )? )? )? )? "}" }
+rule m63 scope=subst rel=0 { "\\#(" ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m77 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m64 scope=string rel=0 { "##\"" ( m65 / m66 / m67 / !"\"##" any )* ( rel(1){ "\"##" } / eoftrunc ) }
+rule m65 scope=subst rel=1 { "\\##" ["'0\\nrt] }
+rule m66 scope=subst rel=1 { "\\##u{" [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] )? )? )? )? )? )? )? "}" }
+rule m67 scope=subst rel=0 { "\\##(" ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m76 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m68 scope=string rel=0 { "###\"" ( m69 / m70 / m71 / !"\"###" any )* ( rel(1){ "\"###" } / eoftrunc ) }
+rule m69 scope=subst rel=1 { "\\###" ["'0\\nrt] }
+rule m70 scope=subst rel=1 { "\\###u{" [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] ( [0-9A-Fa-f] )? )? )? )? )? )? )? "}" }
+rule m71 scope=subst rel=0 { "\\###(" ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m75 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m72 rel=1 { "`" ( [A-Z_a-z] mc7_r0 / _na0 mc7_r0 / _na1 mc7_r0 / [\u] mc7_r0 ) }
+rule m73 scope=variable rel=1 { "$" [0-9] [0-9]* }
+rule m74 scope=variable rel=1 { "$" ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* }
+rule m75 rel=0 { "(" ( m75 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m75__resume { ( m75 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m71__resume { ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m75 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m68__resume { ( m69 / m70 / m71 / !"\"###" any )* ( rel(1){ "\"###" } / eoftrunc ) }
+rule m76 rel=0 { "(" ( m76 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m76__resume { ( m76 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m67__resume { ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m76 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m64__resume { ( m65 / m66 / m67 / !"\"##" any )* ( rel(1){ "\"##" } / eoftrunc ) }
+rule m77 rel=0 { "(" ( m77 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m77__resume { ( m77 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m63__resume { ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m77 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m60__resume { ( m61 / m62 / m63 / !"\"#" any )* ( rel(1){ "\"#" } / eoftrunc ) }
+rule m78 rel=0 { "(" ( m78 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m78__resume { ( m78 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m59__resume { ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m78 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m56__resume { ( m57 / m58 / m59 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m79 rel=0 { "(" ( m79 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m79__resume { ( m79 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m55__resume { ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m79 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m51__resume { ( m52 / m53 / m54 / m55 / !"\"\"\"###" any )* ( rel(1){ "\"\"\"###" } / eoftrunc ) }
+rule m80 rel=0 { "(" ( m80 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m80__resume { ( m80 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m50__resume { ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m80 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m46__resume { ( m47 / m48 / m49 / m50 / !"\"\"\"##" any )* ( rel(1){ "\"\"\"##" } / eoftrunc ) }
+rule m81 rel=0 { "(" ( m81 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m81__resume { ( m81 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m45__resume { ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m81 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m41__resume { ( m42 / m43 / m44 / m45 / !"\"\"\"#" any )* ( rel(1){ "\"\"\"#" } / eoftrunc ) }
+rule m82 rel=0 { "(" ( m82 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m82__resume { ( m82 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m38__resume { ( m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m82 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m34__resume { ( m35 / m36 / m37 / m38 / !"\"\"\"" any )* ( rel(1){ "\"\"\"" } / eoftrunc ) }
+rule m26__resume { ( m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / !")" kw kw27 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m24_s { m24 ( m25 / eoftrunc ) }
+rule m24_s__resume { ( m25 / eoftrunc ) }
+rule m83 scope=keyword rel=1 { "@" ( ( "attached" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "autoclosure" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "convention(" ( "swift" / "block" / "c" ) ")" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "discardableResult" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "dynamicCallable" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "dynamicMemberLookup" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "escaping" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "freestanding" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "frozen" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "GKInspectable" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "IBAction" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "IBDesignable" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "IBInspectable" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "IBOutlet" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "IBSegueAction" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "inlinable" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "main" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "nonobjc" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "NSApplicationMain" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "NSCopying" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "NSManaged" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "objc(" ( [A-Z_a-z] h_r39 / _na0 h_r39 / _na1 h_r39 / [\u] h_r39 ) &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "objc" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "objcMembers" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "propertyWrapper" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "requires_stored_property_inits" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "resultBuilder" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "Sendable" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "testable" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "UIApplicationMain" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "unchecked" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "unknown" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "usableFromInline" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) / ( "warn_unqualified_access" &( ( "(" / [\t-\r ] [\t-\r ]* ) ) ) ) }
+rule m84 scope=meta rel=1 { "@" sg_r1 }
+rule m17__resume { ( m18 / m3 / m21 / m22 / m23 / m24_s / m83 / m84 / m27 / m11 / !">" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m7__resume { ( m8 / m3 / m11 / !">" kw kw8 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !">" any )* ( rel(1){ ">" } / eoftrunc ) }
+rule m85 rel=0 { [\t-\r ] [\t-\r ]* }
+rule m86 rel=0 { "(" ( m87 / m90 / m3 / m21 / m22 / m23 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m24_s / m83 / m84 / m11 / m93 / !")" illegalx { ["'] } / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m87 rel=0 { ( &( ( [A-Z_a-z] h_r50 / _na0 h_r50 / _na1 h_r50 / [\u] h_r50 ) ) / &( ( [A-Z_a-z] h_r72 / _na0 h_r72 / _na1 h_r72 / [\u] h_r72 ) ) ) ( ( m88 / m89 / !":" any )+ ( ":" / eoftrunc ) / ":" ) }
+rule m88 scope=keyword rel=1 { nb [a-zA-Z0-9_] "_" ![a-zA-Z0-9_] }
+rule m89 scope=params rel=1 { sg_r1 }
+rule m87__resume { ( ( m88 / m89 / !":" any )+ ( ":" / eoftrunc ) / ":" ) }
+rule m90 scope=comment rel=0 { "//" ( m91 / m92 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m91 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m92 rel=1 { eng3 }
+rule m90__resume { ( m91 / m92 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m93 rel=0 { "(" ( m93 / m94 / m95 / m3 / m98 / m103 / m106 / m109 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m24_s / m83 / m84 / m11 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( ")" / eoftrunc ) }
+rule m94 rel=0 { kwscan kw95 __kwscanpat_kw95 { ( [A-Z_a-z] h_r50 / _na0 h_r50 / _na1 h_r50 / [\u] h_r50 ) } }
+rule m95 scope=comment rel=0 { "//" ( m96 / m97 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m96 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m97 rel=1 { eng3 }
+rule m95__resume { ( m96 / m97 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m98 scope=regexp rel=0 { "###/" ( m99 / m100 / m102 / !( "/###" ) any )* ( rel(1){ "/###" } / eoftrunc ) }
+rule m99 rel=0 { "\\" any }
+rule m100 rel=0 { "[" ( m101 / !"]" any )* ( "]" / eoftrunc ) }
+rule m101 rel=0 { "\\" any }
+rule m100__resume { ( m101 / !"]" any )* ( "]" / eoftrunc ) }
+rule m102 scope=comment rel=0 { "#" !h_r204 ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m102__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m98__resume { ( m99 / m100 / m102 / !( "/###" ) any )* ( rel(1){ "/###" } / eoftrunc ) }
+rule m103 scope=regexp rel=0 { "##/" ( m104 / m100 / m105 / !( "/##" ) any )* ( rel(1){ "/##" } / eoftrunc ) }
+rule m104 rel=0 { "\\" any }
+rule m105 scope=comment rel=0 { "#" !h_r205 ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m105__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m103__resume { ( m104 / m100 / m105 / !( "/##" ) any )* ( rel(1){ "/##" } / eoftrunc ) }
+rule m106 scope=regexp rel=0 { "#/" ( m107 / m100 / m108 / !( "/#" ) any )* ( rel(1){ "/#" } / eoftrunc ) }
+rule m107 rel=0 { "\\" any }
+rule m108 scope=comment rel=0 { "#" !h_r206 ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m108__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m106__resume { ( m107 / m100 / m108 / !( "/#" ) any )* ( rel(1){ "/#" } / eoftrunc ) }
+rule m109 scope=regexp rel=0 { "/" [^\t-\r ] &( [^\n/]* "/" ) ( m110 / m100 / !( "/" ) any )* ( rel(1){ "/" } / eoftrunc ) }
+rule m110 rel=0 { "\\" any }
+rule m109__resume { ( m110 / m100 / !( "/" ) any )* ( rel(1){ "/" } / eoftrunc ) }
+rule m93__resume { ( m93 / m94 / m95 / m3 / m98 / m103 / m106 / m109 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m24_s / m83 / m84 / m11 / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( ")" / eoftrunc ) }
+rule m86__resume { ( m87 / m90 / m3 / m21 / m22 / m23 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m24_s / m83 / m84 / m11 / m93 / !")" illegalx { ["'] } / !")" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m111 rel=0 { cap scope=keyword rel=0 mc=1 { nb [a-zA-Z0-9_] ( "subscript" / "init" [!?]? ) } [\t-\r ]* &[(<] ( m7 / !( "(" ) m85 )*  ( m86 )? rel(1){ &( any / eof ) } }
+rule m112 rel=1 { cap scope=keyword rel=0 mc=1 { "class" ![a-zA-Z0-9_] } [\t-\r ] [\t-\r ]* cap scope=keyword rel=0 mc=1 { "func" ![a-zA-Z0-9_] } [\t-\r ] [\t-\r ]* cap scope=title.function rel=0 mc=1 { &[a-zA-Z0-9_] [A-Z_a-z] ( [0-9A-Z_a-z] [0-9A-Z_a-z]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) } }
+rule m113 rel=1 { cap scope=keyword rel=0 mc=1 { "class" ![a-zA-Z0-9_] } [\t-\r ] [\t-\r ]* cap scope=keyword rel=0 mc=1 { "var" ![a-zA-Z0-9_] } }
+rule m114 rel=0 { cap scope=keyword rel=0 mc=1 { ( "struct" / "protocol" / "class" / "extension" / "enum" / "actor" ) } [\t-\r ] [\t-\r ]* ( ( cap scope=title.class rel=0 mc=1 { [A-Z_a-z] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { _na0 ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { _na1 ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) / ( cap scope=title.class rel=0 mc=1 { [\u] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } [\t-\r ]* ) ) ( m7 / m21 / m22 / m23 / m115 )*  rel(1){ &( any / eof ) } }
+rule m115 rel=0 { ":" ( m116 / m21 / m22 / m23 / !"{" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !"{" any )* ( "{" / eoftrunc ) }
+rule m116 scope=title.class.inherited rel=1 { [A-Z] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* }
+rule m115__resume { ( m116 / m21 / m22 / m23 / !"{" kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / !"{" any )* ( "{" / eoftrunc ) }
+rule m117 rel=1 { cap scope=keyword rel=0 mc=1 { "operator" } [\t-\r ] [\t-\r ]* cap scope=title rel=0 mc=1 { sg_r0 } }
+rule m118 rel=0 { cap scope=keyword rel=0 mc=1 { "precedencegroup" } [\t-\r ] [\t-\r ]* cap scope=title rel=0 mc=1 { [A-Z] ( ( ( [A-Z_a-z] / _na0 / _na1 / [\u] ) / [0-9] / [\u] ) )* } ( m11 / !"}" kw kw119 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m118__resume { ( m11 / !"}" kw kw119 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m119 rel=0 { &( nb [a-zA-Z0-9_] "import" !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw120 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m120 / m3 / !( &( [\n\r] / eof ) ) kw kw120 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !( &( [\n\r] / eof ) ) any )* ( &( [\n\r] / eof ) / eoftrunc ) }
+rule m120 scope=comment rel=0 { "//" ( m121 / m122 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m121 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m122 rel=1 { eng3 }
+rule m120__resume { ( m121 / m122 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m119__resume { ( m120 / m3 / !( &( [\n\r] / eof ) ) kw kw120 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !( &( [\n\r] / eof ) ) any )* ( &( [\n\r] / eof ) / eoftrunc ) }
+rule root { ( m0 / m3 / m6 / m111 / m112 / m113 / m114 / m117 / m118 / m119 / m98 / m103 / m106 / m109 / m21 / m22 / m23 / m39 / m40 / m27 / m28 / m29 / m30 / m31 / m32 / m33 / m34 / m41 / m46 / m51 / m56 / m60 / m64 / m68 / m72 / m73 / m74 / m24_s / m83 / m84 / m11 / m93 / kw kwroot { ( nb [a-zA-Z0-9_] [0-9A-Z_a-z] [0-9A-Z_a-z]* / "#" [0-9A-Z_a-z] [0-9A-Z_a-z]* ) } / any )* eof }

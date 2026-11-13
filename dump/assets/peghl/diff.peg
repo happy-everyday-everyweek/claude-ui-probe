@@ -1,0 +1,16 @@
+# diff.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+
+language diff
+
+rule m0 scope=meta rel=10 { ( nb [^\n\r] "@@" " " " "* "-" [0-9] [0-9]* "," [0-9] [0-9]* " " " "* "+" [0-9] [0-9]* "," [0-9] [0-9]* " " " "* "@@" / nb [^\n\r] "@@" " " " "* "-" [0-9] [0-9]* " " " "* "+" [0-9] [0-9]* "," [0-9] [0-9]* " " " "* "@@" / nb [^\n\r] "@@" " " " "* "-" [0-9] [0-9]* "," [0-9] [0-9]* " " " "* "+" [0-9] [0-9]* " " " "* "@@" / nb [^\n\r] "@@" " " " "* "-" [0-9] [0-9]* " " " "* "+" [0-9] [0-9]* " " " "* "@@" / nb [^\n\r] "***" " " " "* [0-9] [0-9]* "," [0-9] [0-9]* " " " "* "****" &( [\n\r] / eof ) / nb [^\n\r] "---" " " " "* [0-9] [0-9]* "," [0-9] [0-9]* " " " "* "----" &( [\n\r] / eof ) ) }
+rule m1 scope=comment rel=0 { ( "Index: " / nb [^\n\r] "index" / "=" "=" "=" "="* / nb [^\n\r] "-" "-" "-" / nb [^\n\r] "*" "*" "*" " " / nb [^\n\r] "+" "+" "+" / nb [^\n\r] "diff --git" ) ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m2 scope=comment rel=1 { nb [^\n\r] "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" "*" &( [\n\r] / eof ) }
+rule m3 scope=addition rel=0 { nb [^\n\r] "+" ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m4 scope=deletion rel=0 { nb [^\n\r] "-" ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m4__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m5 scope=addition rel=0 { nb [^\n\r] "!" ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m5__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule root { ( m0 / m1 / m2 / m3 / m4 / m5 / any )* eof }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="APKTOOL_RENAMED_0x7f15007b" parent="@android:style/Theme.DeviceDefault.DayNight">
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="isLightTheme">?android:isLightTheme</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f15007d" parent="@style/APKTOOL_RENAMED_0x7f15007b" />
+    <style name="APKTOOL_RENAMED_0x7f15014b" parent="@style/APKTOOL_RENAMED_0x7f15014c">
+        <item name="android:textFontWeight">700</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f15014c" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:textSize">@null</item>
+        <item name="android:typeface">@null</item>
+        <item name="android:textColor">@null</item>
+        <item name="android:textColorLink">@null</item>
+        <item name="android:shadowColor">@null</item>
+        <item name="android:shadowDx">@null</item>
+        <item name="android:shadowDy">@null</item>
+        <item name="android:shadowRadius">@null</item>
+        <item name="android:elegantTextHeight">@null</item>
+        <item name="android:letterSpacing">@null</item>
+        <item name="android:fontFeatureSettings">@null</item>
+        <item name="android:fontVariationSettings">@null</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f15014d" parent="@style/APKTOOL_RENAMED_0x7f15014c">
+        <item name="android:textFontWeight">500</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f15014e" parent="@style/APKTOOL_RENAMED_0x7f15014c">
+        <item name="android:textFontWeight">400</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f15014f" parent="@android:style/Theme.DeviceDefault.DayNight" />
+    <style name="APKTOOL_RENAMED_0x7f150274" parent="@style/APKTOOL_RENAMED_0x7f15005a">
+        <item name="android:isLightTheme">true</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150277" parent="@style/APKTOOL_RENAMED_0x7f15005b">
+        <item name="android:isLightTheme">true</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150345">
+        <item name="android:isLightTheme">false</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150346">
+        <item name="android:isLightTheme">true</item>
+    </style>
+</resources>

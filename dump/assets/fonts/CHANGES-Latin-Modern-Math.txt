@@ -1,0 +1,79 @@
+Trimmed Math: what was changed from Latin Modern Math
+=====================================================
+
+Trimmed Math, the font in trimmed-math.otf in this folder, is not the
+original Latin Modern Math. It is a copy of version 1.959 of that font,
+changed by Anthropic in October and November 2026 as set out below, and
+renamed as that font's licence asks. The authors of Latin Modern Math,
+B. Jackowski, P. Strzelczyk and P. Pianowski, took no part in the changes.
+Please do not report a fault in this copy to them. Latin Modern Math's
+licence and its authors' description are beside it, in
+GUST-FONT-LICENSE.txt and README-of-original-Latin-Modern-Math.txt.
+
+What was removed:
+- 2,040 of the font's 4,802 glyphs, the ones AndroidMath can never draw:
+  - 1,990 forms drawn for superscripts and subscripts, and 20 dotless
+    forms. The font offers these only through its OpenType substitution
+    features, and AndroidMath applies none.
+  - 30 other glyphs that no character, no substitution rule and no list of
+    larger forms in the MATH table leads to.
+  The last eight glyph numbers belonged to removed glyphs and are gone, so
+  the font now counts 4,794 glyphs. The other 2,032 removed glyphs keep
+  their numbers and names as empty glyphs of no width, so that no
+  remaining glyph changes its number.
+- With those glyphs, what the font's other tables said of them: in the
+  MATH table 338 italic corrections, 1,317 accent positions and 12
+  extended-shape marks, which between them belong to 1,434 of the removed
+  glyphs; in the GDEF table their glyph classes; in the CFF table 482 of
+  the 1,039 subroutines that glyph programs share. The 557 subroutines
+  that remain were renumbered.
+- The substitution rules themselves: the GSUB table's three features
+  (aalt, dtls, ssty), their three lookups, and the default language
+  system of its one script record, which listed the three features.
+- The ten name records and the one character map in the Macintosh
+  encoding. The ten Windows name records and the four Unicode character
+  maps remain. Apart from what is described under "What else was
+  changed", the Windows records hold the same text as the removed ones,
+  the copyright notice included.
+- The FFTM table, which holds time stamps of the FontForge editor.
+- Two parts that held nothing: the GDEF table's ligature-caret list and
+  the GPOS table's one script record.
+
+What else was changed:
+- The font's names and the files' names: Latin Modern Math's licence asks,
+  without requiring it, that a changed copy be given new ones. The family
+  name "Latin Modern Math" is now "Trimmed Math", and the full and
+  PostScript names "LatinModernMath-Regular" are now "TrimmedMath-Regular",
+  both in the name records and in the CFF table. The file
+  latinmodern-math.otf is now trimmed-math.otf, and the authors'
+  README-Latin-Modern-Math.txt, with its text unchanged, is now
+  README-of-original-Latin-Modern-Math.txt.
+- Two name records, the version string and the unique font identifier,
+  end with "; modified by Anthropic (unused glyphs removed), see
+  CHANGES-Latin-Modern-Math.txt", so that the font itself says it is a
+  changed copy. The font's style name and its copyright and trademark
+  notices are as the authors wrote them.
+- The "last modified" date in the font is set to 1980-01-01 (it was
+  2014-09-05).
+- Three entries of the CFF table that hold their format's default values
+  are no longer written out: Encoding 0, BlueShift 7 and ForceBold 0.
+
+What is unchanged: every character the original font maps, every taller,
+wider or pieced-together form that its MATH table names, the outline, width
+and hinting of every glyph that remains, each glyph's number, the font's
+style name, and its version number.
+
+How: with the subsetter of fontTools (https://github.com/fonttools/fonttools),
+asked for every character of the font and every name ID, with no layout
+features and with glyph numbers retained. Its defaults also drop the
+Macintosh name records and character map. The new names and the ending
+quoted above were then written, also with fontTools.
+
+README-of-original-Latin-Modern-Math.txt says the work consists of the
+files listed in MANIFEST-Latin-Modern-Math.txt. That manifest belongs to
+the original distribution; AndroidMath never shipped it and it is not in
+this folder.
+
+The original, unmodified font, with its manifest and documentation:
+https://www.gust.org.pl/projects/e-foundry/lm-math
+(also on CTAN: https://ctan.org/tex-archive/fonts/lm-math)

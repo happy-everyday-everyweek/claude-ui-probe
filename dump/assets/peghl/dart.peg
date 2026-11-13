@@ -1,0 +1,83 @@
+# dart.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u, dot≈[^\n\r]
+
+language dart
+
+words kwroot miss=plain {
+  abstract:keyword:1 as:keyword:1 assert:keyword:1 async:keyword:1 await:keyword:1 base:keyword:1 break:keyword:1 case:keyword:1 catch:keyword:1 class:keyword:1 const:keyword:1 continue:keyword:1 covariant:keyword:1 default:keyword:1 deferred:keyword:1 do:keyword:1 dynamic:built_in:1 else:keyword:1 enum:keyword:1 export:keyword:1 extends:keyword:1 extension:keyword:1 external:keyword:1 factory:keyword:1 false:keyword:1 final:keyword:1 finally:keyword:1 for:keyword:0 Function:built_in:1 get:keyword:1 hide:keyword:1 if:keyword:0 implements:keyword:1 import:keyword:1 in:keyword:0 interface:keyword:1 is:keyword:1 late:keyword:1 library:keyword:1 mixin:keyword:1 new:keyword:1 null:keyword:1 on:keyword:1 operator:keyword:1 part:keyword:1 required:keyword:1 rethrow:keyword:1 return:keyword:1 sealed:keyword:1 set:keyword:1 show:keyword:1 static:keyword:1 super:keyword:1 switch:keyword:1 sync:keyword:1 this:keyword:1 throw:keyword:1 true:keyword:1 try:keyword:1 typedef:keyword:1 var:keyword:1 void:keyword:1 when:keyword:1 while:keyword:1 with:keyword:1 yield:keyword:1 Comparable:built_in:1 DateTime:built_in:1 Duration:built_in:1 Iterable:built_in:1 Iterator:built_in:1 List:built_in:0 Map:built_in:1 Match:built_in:1 Object:built_in:1 Pattern:built_in:1 RegExp:built_in:1 Set:built_in:1 Stopwatch:built_in:1 String:built_in:1 StringBuffer:built_in:1 StringSink:built_in:1 Symbol:built_in:1 Type:built_in:1 Uri:built_in:1 bool:built_in:1 double:built_in:1 int:built_in:1 num:built_in:1 Element:built_in:1 ElementList:built_in:1 Comparable?:built_in:1 DateTime?:built_in:1 Duration?:built_in:1 Function?:built_in:1 Iterable?:built_in:1 Iterator?:built_in:1 List?:built_in:1 Map?:built_in:1 Match?:built_in:1 Object?:built_in:1 Pattern?:built_in:1 RegExp?:built_in:1 Set?:built_in:1 Stopwatch?:built_in:1 String?:built_in:1 StringBuffer?:built_in:1 StringSink?:built_in:1 Symbol?:built_in:1 Type?:built_in:1 Uri?:built_in:1 bool?:built_in:1 double?:built_in:1 int?:built_in:1 num?:built_in:1 Element?:built_in:1 ElementList?:built_in:1 Never:built_in:1 Null:built_in:1 print:built_in:1 document:built_in:1 querySelector:built_in:1 querySelectorAll:built_in:1 window:built_in:1
+}
+
+words kw8 miss=plain {
+  true:keyword:1 false:keyword:1 null:keyword:1 this:keyword:1 is:keyword:1 new:keyword:1 super:keyword:1
+}
+
+words kw30 miss=plain {
+  class:keyword:1 interface:keyword:1
+}
+
+words kw31 miss=plain {
+  extends:keyword:1 implements:keyword:1
+}
+
+rule h_r0 { [0-9_] h_r0 / ( ( ( [Ee] [+\-]? [0-9] ( [0-9_] [0-9_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ![a-zA-Z0-9_] ) / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) }
+rule h_r1 { [0-9_] h_r1 / ( ( "." [0-9] h_r0 / ( ( ( [Ee] [+\-]? [0-9] ( [0-9_] [0-9_]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ![a-zA-Z0-9_] ) / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) ) ) ) }
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule __kwscanpat_kwroot { [A-Za-z] [0-9A-Z_a-z]* "?"? }
+
+rule m0 scope=string rel=0 { "r'''" ( !"'''" any )* ( rel(1){ "'''" } / eoftrunc ) }
+rule m0__resume { ( !"'''" any )* ( rel(1){ "'''" } / eoftrunc ) }
+rule m1 scope=string rel=0 { "r\"\"\"" ( !"\"\"\"" any )* ( rel(1){ "\"\"\"" } / eoftrunc ) }
+rule m1__resume { ( !"\"\"\"" any )* ( rel(1){ "\"\"\"" } / eoftrunc ) }
+rule m2 scope=string rel=0 { "r'" ( !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m2__resume { ( !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m3 scope=string rel=0 { "r\"" ( !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m3__resume { ( !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m4 scope=string rel=0 { "'''" ( m5 / m6 / m7 / !"'''" any )* ( rel(1){ "'''" } / eoftrunc ) }
+rule m5 rel=0 { "\\" any }
+rule m6 scope=subst rel=1 { "$" [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule m7 scope=subst rel=0 { "${" ( m8 / m9 / m0 / m1 / m2 / m3 / m4 / m10 / m12 / m14 / !"}" kw kw8 { ( [0-9A-Z_a-z] [0-9A-Z_a-z]* !["'] / ( !( "r'''" / "r\"\"\"" / "r'" / "r\"" ) [0-9A-Z_a-z] )+ ) } / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m8 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] h_r1 }
+rule m9 scope=number rel=0 { nb [a-zA-Z0-9_] "0" [Xx] [0-9A-Fa-f] ( [0-9A-F_a-f] [0-9A-F_a-f]* ![a-zA-Z0-9_] / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ) }
+rule m10 scope=string rel=0 { "\"\"\"" ( m11 / m6 / m7 / !"\"\"\"" any )* ( rel(1){ "\"\"\"" } / eoftrunc ) }
+rule m11 rel=0 { "\\" any }
+rule m10__resume { ( m11 / m6 / m7 / !"\"\"\"" any )* ( rel(1){ "\"\"\"" } / eoftrunc ) }
+rule m12 scope=string rel=0 { "'" ( m13 / m6 / m7 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m13 rel=0 { "\\" any }
+rule m12__resume { ( m13 / m6 / m7 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m14 scope=string rel=0 { "\"" ( m15 / m6 / m7 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m15 rel=0 { "\\" any }
+rule m14__resume { ( m15 / m6 / m7 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m7__resume { ( m8 / m9 / m0 / m1 / m2 / m3 / m4 / m10 / m12 / m14 / !"}" kw kw8 { ( [0-9A-Z_a-z] [0-9A-Z_a-z]* !["'] / ( !( "r'''" / "r\"\"\"" / "r'" / "r\"" ) [0-9A-Z_a-z] )+ ) } / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m4__resume { ( m5 / m6 / m7 / !"'''" any )* ( rel(1){ "'''" } / eoftrunc ) }
+rule m16 scope=comment rel=0 { sublang-chunked-norel markdown { "/**" !"/" ( nosub { m17 } / nosub { m18 } / !( "*/" ) any )* ( "*/" / eoftrunc ) } }
+rule m17 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m18 rel=1 { eng3 }
+rule m16__resume { sublang-chunked-norel markdown { ( nosub { m17 } / nosub { m18 } / !( "*/" ) any )* ( "*/" / eoftrunc ) } }
+rule m19 scope=comment rel=0 { "/" "/" "/" "/"* " "? ( m20 / m21 / m22 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m20 rel=0 { sublang-chunked-norel markdown { [^\n\r] ( !( &( [\n\r] / eof ) ) any )* ( &( [\n\r] / eof ) / eoftrunc ) } }
+rule m20__resume { sublang-chunked-norel markdown { ( !( &( [\n\r] / eof ) ) any )* ( &( [\n\r] / eof ) / eoftrunc ) } }
+rule m21 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m22 rel=1 { eng3 }
+rule m19__resume { ( m20 / m21 / m22 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m23 scope=comment rel=0 { "//" ( m24 / m25 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m24 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m25 rel=1 { eng3 }
+rule m23__resume { ( m24 / m25 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m26 scope=comment rel=0 { "/*" ( m27 / m28 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m27 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m28 rel=1 { eng3 }
+rule m26__resume { ( m27 / m28 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m29 rel=0 { cap scope=class rel=0 { &( nb [a-zA-Z0-9_] ( "class" / "interface" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw30 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m30 / m31 / !"{" kw kw30 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !"{" any )* } kwscan kwroot __kwscanpat_kwroot { chunktext { ( "{" / eoftrunc ) } } }
+rule m30 rel=0 { &( nb [a-zA-Z0-9_] ( "extends" / "implements" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw31 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } }
+rule m31 scope=title rel=0 { [A-Z_a-z] [0-9A-Z_a-z]* }
+rule m29__resume { cap scope=class rel=0 { ( m30 / m31 / !"{" kw kw30 { ( !( [A-Z_a-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !"{" any )* } ( "{" / eoftrunc ) }
+rule m32 scope=meta rel=1 { "@" [A-Za-z] [A-Za-z]* }
+rule m33 rel=1 { "=>" }
+rule root { ( m0 / m1 / m2 / m3 / m4 / m10 / m12 / m14 / m16 / m19 / m23 / m26 / m29 / m8 / m9 / m32 / m33 / kw kwroot { ( [A-Za-z] [0-9A-Z_a-z]* !["'] / [A-Za-z] ( !( "r'''" / "r\"\"\"" / "r'" / "r\"" ) [0-9A-Z_a-z] )* ) "?"? } / any )* eof }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<restrictions
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <restriction android:description="@string/APKTOOL_RENAMED_0x7f1411df" android:title="@string/APKTOOL_RENAMED_0x7f1411e0" android:key="isEmailLoginEnabled" android:defaultValue="true" android:restrictionType="bool" />
+    <restriction android:description="@string/APKTOOL_RENAMED_0x7f1411e1" android:title="@string/APKTOOL_RENAMED_0x7f1411e2" android:key="isGoogleLoginEnabled" android:defaultValue="true" android:restrictionType="bool" />
+</restrictions>

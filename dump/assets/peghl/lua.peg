@@ -1,0 +1,48 @@
+# lua.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u
+
+language lua
+
+words kwroot miss=plain {
+  true:literal:1 false:literal:1 nil:literal:1 and:keyword:0 break:keyword:1 do:keyword:1 else:keyword:1 elseif:keyword:1 end:keyword:1 for:keyword:0 goto:keyword:1 if:keyword:0 in:keyword:0 local:keyword:1 not:keyword:0 or:keyword:0 repeat:keyword:1 return:keyword:1 then:keyword:0 until:keyword:1 while:keyword:1 _G:built_in:1 _ENV:built_in:1 _VERSION:built_in:1 __index:built_in:1 __newindex:built_in:1 __mode:built_in:1 __call:built_in:1 __metatable:built_in:1 __tostring:built_in:1 __len:built_in:1 __gc:built_in:1 __add:built_in:1 __sub:built_in:1 __mul:built_in:1 __div:built_in:1 __mod:built_in:1 __pow:built_in:1 __concat:built_in:1 __unm:built_in:1 __eq:built_in:1 __lt:built_in:1 __le:built_in:1 assert:built_in:1 collectgarbage:built_in:1 dofile:built_in:1 error:built_in:1 getfenv:built_in:1 getmetatable:built_in:1 ipairs:built_in:1 load:built_in:1 loadfile:built_in:1 loadstring:built_in:1 module:built_in:1 next:built_in:1 pairs:built_in:1 pcall:built_in:1 print:built_in:1 rawequal:built_in:1 rawget:built_in:1 rawset:built_in:1 require:built_in:1 select:built_in:1 setfenv:built_in:1 setmetatable:built_in:1 tonumber:built_in:1 tostring:built_in:1 type:built_in:1 unpack:built_in:1 xpcall:built_in:1 arg:built_in:1 self:built_in:1 coroutine:built_in:1 resume:built_in:1 yield:built_in:1 status:built_in:1 wrap:built_in:1 create:built_in:1 running:built_in:1 debug:built_in:1 getupvalue:built_in:1 sethook:built_in:1 gethook:built_in:1 setlocal:built_in:1 traceback:built_in:1 getinfo:built_in:1 setupvalue:built_in:1 getlocal:built_in:1 getregistry:built_in:1 io:built_in:1 lines:built_in:1 write:built_in:1 close:built_in:1 flush:built_in:1 open:built_in:1 output:built_in:1 read:built_in:1 stderr:built_in:1 stdin:built_in:1 input:built_in:1 stdout:built_in:1 popen:built_in:1 tmpfile:built_in:1 math:built_in:1 log:built_in:1 max:built_in:1 acos:built_in:1 huge:built_in:1 ldexp:built_in:1 pi:built_in:1 cos:built_in:1 tanh:built_in:1 pow:built_in:1 deg:built_in:1 tan:built_in:1 cosh:built_in:1 sinh:built_in:1 random:built_in:1 randomseed:built_in:1 frexp:built_in:1 ceil:built_in:1 floor:built_in:1 rad:built_in:1 abs:built_in:1 sqrt:built_in:1 modf:built_in:1 asin:built_in:1 min:built_in:1 mod:built_in:1 fmod:built_in:1 log10:built_in:1 atan2:built_in:1 exp:built_in:1 sin:built_in:1 atan:built_in:1 os:built_in:1 exit:built_in:1 setlocale:built_in:1 date:built_in:1 getenv:built_in:1 difftime:built_in:1 remove:built_in:1 time:built_in:1 clock:built_in:1 tmpname:built_in:1 rename:built_in:1 execute:built_in:1 package:built_in:1 preload:built_in:1 loadlib:built_in:1 loaded:built_in:1 loaders:built_in:1 cpath:built_in:1 config:built_in:1 path:built_in:1 seeall:built_in:1 string:built_in:1 sub:built_in:1 upper:built_in:1 len:built_in:1 gfind:built_in:1 rep:built_in:1 find:built_in:1 match:built_in:1 char:built_in:1 dump:built_in:1 gmatch:built_in:1 reverse:built_in:1 byte:built_in:1 format:built_in:1 gsub:built_in:1 lower:built_in:1 table:built_in:1 setn:built_in:1 insert:built_in:1 getn:built_in:1 foreachi:built_in:1 maxn:built_in:1 foreach:built_in:1 concat:built_in:1 sort:built_in:1
+}
+
+words kw8 miss=plain {
+  function:keyword:1
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule h_r0 { [A-Z_a-z] [0-9A-Z_a-z]* "." h_r0 / ( ( [A-Z_a-z] [0-9A-Z_a-z]* ":" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) ) }
+
+rule m0 scope=comment rel=0 { "--" !( "[" "="* "[" ) ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m2 rel=1 { eng3 }
+rule m0__resume { ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3 scope=comment rel=0 { "--[" "="* "[" ( m4 / m5 / m6 / !( "]" "="* "]" ) any )* ( rel(10){ "]" "="* "]" } / eoftrunc ) }
+rule m4 rel=0 { "[" "="* "[" ( m4 / !( "]" "="* "]" ) any )* ( rel(1){ "]" "="* "]" } / eoftrunc ) }
+rule m4__resume { ( m4 / !( "]" "="* "]" ) any )* ( rel(1){ "]" "="* "]" } / eoftrunc ) }
+rule m5 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m6 rel=1 { eng3 }
+rule m3__resume { ( m4 / m5 / m6 / !( "]" "="* "]" ) any )* ( rel(10){ "]" "="* "]" } / eoftrunc ) }
+rule m7 scope=function rel=0 { &( nb [a-zA-Z0-9_] "function" !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw8 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m8 / m0 / m3 / !( ( ")" / "(" ) ) kw kw8 { ( !( h_r0 ) [0-9A-Z_a-z] )+ } / !( ( ")" / "(" ) ) any )* ( m9 / ")" / eoftrunc ) }
+rule m8 scope=title rel=0 { h_r0 }
+rule m9 scope=params rel=0 { "(" ( m0 / m3 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m9__resume { ( m0 / m3 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m7__resume { ( m8 / m0 / m3 / !( ( ")" / "(" ) ) kw kw8 { ( !( h_r0 ) [0-9A-Z_a-z] )+ } / !( ( ")" / "(" ) ) any )* ( m9 / ")" / eoftrunc ) }
+rule m10 scope=number rel=0 { "-"? ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) "0" [Xx] [0-9A-Fa-f] [0-9A-Fa-f]* / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) [0-9] [0-9]* ( "." [0-9]* )? / "." [0-9] [0-9]* ) ( [Ee] [+\-]? [0-9] [0-9]* )? ) }
+rule m11 scope=string rel=0 { "'" ( m12 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m12 rel=0 { "\\" any }
+rule m11__resume { ( m12 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m13 scope=string rel=0 { "\"" ( m14 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m14 rel=0 { "\\" any }
+rule m13__resume { ( m14 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m15 scope=string rel=0 { "[" "="* "[" ( m4 / !( "]" "="* "]" ) any )* ( rel(5){ "]" "="* "]" } / eoftrunc ) }
+rule m15__resume { ( m4 / !( "]" "="* "]" ) any )* ( rel(5){ "]" "="* "]" } / eoftrunc ) }
+rule root { ( m0 / m3 / m7 / m10 / m11 / m13 / m15 / kw kwroot { [A-Z_a-z] [0-9A-Z_a-z]* } / any )* eof }

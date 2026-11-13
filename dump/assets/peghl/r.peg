@@ -1,0 +1,75 @@
+# r.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: dot≈[^\n\r], \s≈ASCII, non-ascii-class-member≈\u
+
+language r
+
+words kwroot miss=plain {
+  function:keyword:1 if:keyword:0 in:keyword:0 break:keyword:1 next:keyword:1 repeat:keyword:1 else:keyword:1 for:keyword:0 while:keyword:1 NULL:literal:1 NA:literal:1 TRUE:literal:1 FALSE:literal:1 Inf:literal:1 NaN:literal:1 NA_integer_:literal:10 NA_real_:literal:10 NA_character_:literal:10 NA_complex_:literal:10 LETTERS:built_in:1 letters:built_in:1 month.abb:built_in:1 month.name:built_in:1 pi:built_in:1 T:built_in:1 F:built_in:1 abs:built_in:1 acos:built_in:1 acosh:built_in:1 all:built_in:1 any:built_in:1 anyNA:built_in:1 Arg:built_in:1 as.call:built_in:1 as.character:built_in:1 as.complex:built_in:1 as.double:built_in:1 as.environment:built_in:1 as.integer:built_in:1 as.logical:built_in:1 as.null.default:built_in:1 as.numeric:built_in:1 as.raw:built_in:1 asin:built_in:1 asinh:built_in:1 atan:built_in:1 atanh:built_in:1 attr:built_in:1 attributes:built_in:1 baseenv:built_in:1 browser:built_in:1 c:built_in:1 call:built_in:1 ceiling:built_in:1 class:built_in:1 Conj:built_in:1 cos:built_in:1 cosh:built_in:1 cospi:built_in:1 cummax:built_in:1 cummin:built_in:1 cumprod:built_in:1 cumsum:built_in:1 digamma:built_in:1 dim:built_in:1 dimnames:built_in:1 emptyenv:built_in:1 exp:built_in:1 expression:built_in:1 floor:built_in:1 forceAndCall:built_in:1 gamma:built_in:1 gc.time:built_in:1 globalenv:built_in:1 Im:built_in:1 interactive:built_in:1 invisible:built_in:1 is.array:built_in:1 is.atomic:built_in:1 is.call:built_in:1 is.character:built_in:1 is.complex:built_in:1 is.double:built_in:1 is.environment:built_in:1 is.expression:built_in:1 is.finite:built_in:1 is.function:built_in:1 is.infinite:built_in:1 is.integer:built_in:1 is.language:built_in:1 is.list:built_in:1 is.logical:built_in:1 is.matrix:built_in:1 is.na:built_in:1 is.name:built_in:1 is.nan:built_in:1 is.null:built_in:1 is.numeric:built_in:1 is.object:built_in:1 is.pairlist:built_in:1 is.raw:built_in:1 is.recursive:built_in:1 is.single:built_in:1 is.symbol:built_in:1 lazyLoadDBfetch:built_in:1 length:built_in:1 lgamma:built_in:1 list:built_in:0 log:built_in:1 max:built_in:1 min:built_in:1 missing:built_in:1 Mod:built_in:1 names:built_in:1 nargs:built_in:1 nzchar:built_in:1 oldClass:built_in:1 on.exit:built_in:1 pos.to.env:built_in:1 proc.time:built_in:1 prod:built_in:1 quote:built_in:1 range:built_in:1 Re:built_in:1 rep:built_in:1 retracemem:built_in:1 return:built_in:1 round:built_in:1 seq_along:built_in:1 seq_len:built_in:1 seq.int:built_in:1 sign:built_in:1 signif:built_in:1 sin:built_in:1 sinh:built_in:1 sinpi:built_in:1 sqrt:built_in:1 standardGeneric:built_in:1 substitute:built_in:1 sum:built_in:1 switch:built_in:1 tan:built_in:1 tanh:built_in:1 tanpi:built_in:1 tracemem:built_in:1 trigamma:built_in:1 trunc:built_in:1 unclass:built_in:1 untracemem:built_in:1 UseMethod:built_in:1 xtfrm:built_in:1
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule __kwscanpat_kwroot { ( ( [A-Za-z] / "." [.A-Z_a-z] ) [.0-9A-Z_a-z]* / "." ![0-9] ) }
+rule sg_r0 { "0" [Xx] [0-9A-Fa-f] [0-9A-Fa-f]* ( "." [0-9A-Fa-f]* [Pp] [+\-]? [0-9] [0-9]* "i"? / ( [Pp] [+\-]? [0-9] [0-9]* )? [Li]? ) / ( [0-9] [0-9]* ( "." [0-9]* )? / "." [0-9] [0-9]* ) ( [Ee] [+\-]? [0-9] [0-9]* )? [Li]? }
+
+rule m0 scope=comment rel=0 { "#'" ( !( "@examples" ) m1 / !( "@examples" ) m4 / !( "@examples" ) m5 / !( "@examples" ) m6 / !( "@examples" ) m7 / !( ( &( [\n\r] / eof ) / "@examples" ) ) any )* ( m8_s rel(1){ &( any / eof ) } / rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1 scope=doctag rel=0 { "@param" ( !( ( &( [\n\r] / eof ) / ( ( ( [A-Za-z] / "." [.A-Z_a-z] ) [.0-9A-Z_a-z]* / "." ![0-9] ) ) / ( "`" ( "\\" [^\n\r] / [^\\`] ) ( ( "\\" [^\n\r] / [^\\`] ) )* "`" ) ) ) any )* ( m2 rel(1){ &( any / eof ) } / m3 rel(1){ &( any / eof ) } / rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m2 scope=variable rel=1 { ( ( [A-Za-z] / "." [.A-Z_a-z] ) [.0-9A-Z_a-z]* / "." ![0-9] ) }
+rule m3 scope=variable rel=1 { "`" ( "\\" [^\n\r] / [^\\`] ) ( ( "\\" [^\n\r] / [^\\`] ) )* "`" }
+rule m1__resume { ( !( ( &( [\n\r] / eof ) / ( ( ( [A-Za-z] / "." [.A-Z_a-z] ) [.0-9A-Z_a-z]* / "." ![0-9] ) ) / ( "`" ( "\\" [^\n\r] / [^\\`] ) ( ( "\\" [^\n\r] / [^\\`] ) )* "`" ) ) ) any )* ( m2 rel(1){ &( any / eof ) } / m3 rel(1){ &( any / eof ) } / rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m4 scope=doctag rel=1 { "@" [A-Za-z] [A-Za-z]* }
+rule m5 scope=keyword rel=1 { "\\" [A-Za-z] [A-Za-z]* }
+rule m6 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m7 rel=1 { eng3 }
+rule m8 scope=doctag rel=1 { "@examples" }
+rule m9 rel=0 { ( !( &( ( "\n" nb [^\n\r] "#'" [\t-\r ]* &( "@" [A-Za-z] [A-Za-z]* ) / "\n" nb [^\n\r] !"#'" ) ) ) any )* ( rel(1){ &( ( "\n" nb [^\n\r] "#'" [\t-\r ]* &( "@" [A-Za-z] [A-Za-z]* ) / "\n" nb [^\n\r] !"#'" ) ) } / eoftrunc ) }
+rule m9__resume { ( !( &( ( "\n" nb [^\n\r] "#'" [\t-\r ]* &( "@" [A-Za-z] [A-Za-z]* ) / "\n" nb [^\n\r] !"#'" ) ) ) any )* ( rel(1){ &( ( "\n" nb [^\n\r] "#'" [\t-\r ]* &( "@" [A-Za-z] [A-Za-z]* ) / "\n" nb [^\n\r] !"#'" ) ) } / eoftrunc ) }
+rule m8_s { m8 ( m9 / rel(1){ &( &( ( "\n" nb [^\n\r] "#'" [\t-\r ]* &( "@" [A-Za-z] [A-Za-z]* ) / "\n" nb [^\n\r] !"#'" ) ) ) } / eoftrunc ) }
+rule m8_s__resume { ( m9 / rel(1){ &( &( ( "\n" nb [^\n\r] "#'" [\t-\r ]* &( "@" [A-Za-z] [A-Za-z]* ) / "\n" nb [^\n\r] !"#'" ) ) ) } / eoftrunc ) }
+rule m0__resume { ( !( "@examples" ) m1 / !( "@examples" ) m4 / !( "@examples" ) m5 / !( "@examples" ) m6 / !( "@examples" ) m7 / !( ( &( [\n\r] / eof ) / "@examples" ) ) any )* ( m8_s rel(1){ &( any / eof ) } / rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m10 scope=comment rel=0 { "#" ( m11 / m12 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m11 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m12 rel=1 { eng3 }
+rule m10__resume { ( m11 / m12 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m13 scope=string rel=0 { [Rr] "\"" delim 1 { "-"* } "(" ( m14 / !( ")" samedelim 1 ![\-] "\"" ) any )* ( rel(1){ ")" samedelim 1 ![\-] "\"" } / eoftrunc ) }
+rule m14 rel=0 { "\\" any }
+rule m13__resume { ( m14 / !( ")" samedelim 1 ![\-] "\"" ) any )* ( rel(1){ ")" samedelim 1 ![\-] "\"" } / eoftrunc ) }
+rule m15 scope=string rel=0 { [Rr] "\"" delim 1 { "-"* } "{" ( m16 / !( "}" samedelim 1 ![\-] "\"" ) any )* ( rel(1){ "}" samedelim 1 ![\-] "\"" } / eoftrunc ) }
+rule m16 rel=0 { "\\" any }
+rule m15__resume { ( m16 / !( "}" samedelim 1 ![\-] "\"" ) any )* ( rel(1){ "}" samedelim 1 ![\-] "\"" } / eoftrunc ) }
+rule m17 scope=string rel=0 { [Rr] "\"" delim 1 { "-"* } "[" ( m18 / !( "]" samedelim 1 ![\-] "\"" ) any )* ( rel(1){ "]" samedelim 1 ![\-] "\"" } / eoftrunc ) }
+rule m18 rel=0 { "\\" any }
+rule m17__resume { ( m18 / !( "]" samedelim 1 ![\-] "\"" ) any )* ( rel(1){ "]" samedelim 1 ![\-] "\"" } / eoftrunc ) }
+rule m19 scope=string rel=0 { [Rr] "'" delim 1 { "-"* } "(" ( m20 / !( ")" samedelim 1 ![\-] "'" ) any )* ( rel(1){ ")" samedelim 1 ![\-] "'" } / eoftrunc ) }
+rule m20 rel=0 { "\\" any }
+rule m19__resume { ( m20 / !( ")" samedelim 1 ![\-] "'" ) any )* ( rel(1){ ")" samedelim 1 ![\-] "'" } / eoftrunc ) }
+rule m21 scope=string rel=0 { [Rr] "'" delim 1 { "-"* } "{" ( m22 / !( "}" samedelim 1 ![\-] "'" ) any )* ( rel(1){ "}" samedelim 1 ![\-] "'" } / eoftrunc ) }
+rule m22 rel=0 { "\\" any }
+rule m21__resume { ( m22 / !( "}" samedelim 1 ![\-] "'" ) any )* ( rel(1){ "}" samedelim 1 ![\-] "'" } / eoftrunc ) }
+rule m23 scope=string rel=0 { [Rr] "'" delim 1 { "-"* } "[" ( m24 / !( "]" samedelim 1 ![\-] "'" ) any )* ( rel(1){ "]" samedelim 1 ![\-] "'" } / eoftrunc ) }
+rule m24 rel=0 { "\\" any }
+rule m23__resume { ( m24 / !( "]" samedelim 1 ![\-] "'" ) any )* ( rel(1){ "]" samedelim 1 ![\-] "'" } / eoftrunc ) }
+rule m25 scope=string rel=0 { "\"" ( m26 / !"\"" any )* ( "\"" / eoftrunc ) }
+rule m26 rel=0 { "\\" any }
+rule m25__resume { ( m26 / !"\"" any )* ( "\"" / eoftrunc ) }
+rule m27 scope=string rel=0 { "'" ( m28 / !"'" any )* ( "'" / eoftrunc ) }
+rule m28 rel=0 { "\\" any }
+rule m27__resume { ( m28 / !"'" any )* ( "'" / eoftrunc ) }
+rule m29 rel=0 { ( ( cap scope=operator rel=0 mc=1 { [!:<->] "=" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "||" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "&&" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "::" ":"? } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "<-" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "<<-" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "->>" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "->" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "|>" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { [!$&*+\-/:<-@\^|~] } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=operator rel=0 mc=1 { "**" } cap scope=number rel=0 mc=1 { sg_r0 } ) ) }
+rule m30 rel=0 { cap scope=operator rel=0 mc=1 { "%" [^%]* "%" } cap scope=number rel=0 mc=1 { sg_r0 } }
+rule m31 rel=0 { ( ( cap scope=punctuation rel=0 mc=1 { [()] } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=punctuation rel=0 mc=1 { [{}] } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=punctuation rel=0 mc=1 { "[[" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=punctuation rel=0 mc=1 { [\[\]] } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=punctuation rel=0 mc=1 { "\\" } cap scope=number rel=0 mc=1 { sg_r0 } ) / ( cap scope=punctuation rel=0 mc=1 { "," } cap scope=number rel=0 mc=1 { sg_r0 } ) ) }
+rule m32 rel=0 { ( ( [^.0-9A-Z_a-z] cap scope=number rel=0 mc=1 { sg_r0 } ) / ( nb [^\n\r] cap scope=number rel=0 mc=1 { sg_r0 } ) ) }
+rule m33 rel=1 { ( ( ( [A-Za-z] / "." [.A-Z_a-z] ) [.0-9A-Z_a-z]* [\t-\r ] [\t-\r ]* cap scope=operator rel=0 mc=1 { "<-" } [\t-\r ] [\t-\r ]* ) / "." ![0-9] [\t-\r ] [\t-\r ]* cap scope=operator rel=0 mc=1 { "<-" } [\t-\r ] [\t-\r ]* ) }
+rule m34 scope=operator rel=0 { ( [!:<->] "=" / "||" / "&&" / "::" ":"? / "<-" / "<<-" / "->>" / "->" / "|>" / [!$&*+\-/:<-@\^|~] / "**" ) }
+rule m35 scope=operator rel=0 { "%" [^%]* "%" }
+rule m36 scope=punctuation rel=0 { ( [()] / [{}] / "[[" / [\[\]] / "\\" / "," ) }
+rule m37 rel=0 { "`" ( m38 / !"`" any )* ( rel(1){ "`" } / eoftrunc ) }
+rule m38 rel=1 { "\\" [^\n\r] }
+rule m37__resume { ( m38 / !"`" any )* ( rel(1){ "`" } / eoftrunc ) }
+rule root { ( m0 / m10 / m13 / m15 / m17 / m19 / m21 / m23 / m25 / m27 / m29 / m30 / m31 / m32 / m33 / m34 / m35 / m36 / m37 / kw kwroot { ( ( [A-Za-z] / "." [.A-Z_a-z] ) [.0-9A-Z_a-z]* / "." ![0-9] ) } / any )* eof }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="@dimen/APKTOOL_RENAMED_0x7f070064" android:bottom="0.0dp">
+        <shape android:shape="oval">
+            <gradient android:startColor="@color/APKTOOL_RENAMED_0x7f060043" android:endColor="@color/APKTOOL_RENAMED_0x7f060042" android:angle="0.0" android:type="radial" android:gradientRadius="50.0%p" android:centerColor="@color/APKTOOL_RENAMED_0x7f060041" />
+        </shape>
+    </item>
+</layer-list>

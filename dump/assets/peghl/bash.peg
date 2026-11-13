@@ -1,0 +1,57 @@
+# bash.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: dot≈[^\n\r], \s≈ASCII, non-ascii-class-member≈\u
+
+language bash
+
+words kwroot miss=plain {
+  if:keyword:0 then:keyword:0 else:keyword:1 elif:keyword:1 fi:keyword:1 time:keyword:1 for:keyword:0 while:keyword:1 until:keyword:1 in:keyword:0 do:keyword:1 done:keyword:1 case:keyword:1 esac:keyword:1 coproc:keyword:1 function:keyword:1 select:keyword:1 true:literal:1 false:literal:1 break:built_in:1 cd:built_in:1 continue:built_in:1 eval:built_in:1 exec:built_in:1 exit:built_in:1 export:built_in:1 getopts:built_in:1 hash:built_in:1 pwd:built_in:1 readonly:built_in:1 return:built_in:1 shift:built_in:1 test:built_in:1 times:built_in:1 trap:built_in:1 umask:built_in:1 unset:built_in:1 alias:built_in:1 bind:built_in:1 builtin:built_in:1 caller:built_in:1 command:built_in:1 declare:built_in:1 echo:built_in:1 enable:built_in:1 help:built_in:1 let:built_in:1 local:built_in:1 logout:built_in:1 mapfile:built_in:1 printf:built_in:1 read:built_in:1 readarray:built_in:1 source:built_in:1 sudo:built_in:1 type:built_in:1 typeset:built_in:1 ulimit:built_in:1 unalias:built_in:1 set:built_in:1 shopt:built_in:1 autoload:built_in:1 bg:built_in:1 bindkey:built_in:1 bye:built_in:1 cap:built_in:1 chdir:built_in:1 clone:built_in:1 comparguments:built_in:1 compcall:built_in:1 compctl:built_in:1 compdescribe:built_in:1 compfiles:built_in:1 compgroups:built_in:1 compquote:built_in:1 comptags:built_in:1 comptry:built_in:1 compvalues:built_in:1 dirs:built_in:1 disable:built_in:1 disown:built_in:1 echotc:built_in:1 echoti:built_in:1 emulate:built_in:1 fc:built_in:1 fg:built_in:1 float:built_in:1 functions:built_in:1 getcap:built_in:1 getln:built_in:1 history:built_in:1 integer:built_in:1 jobs:built_in:1 kill:built_in:1 limit:built_in:1 log:built_in:1 noglob:built_in:1 popd:built_in:1 print:built_in:1 pushd:built_in:1 pushln:built_in:1 rehash:built_in:1 sched:built_in:1 setcap:built_in:1 setopt:built_in:1 stat:built_in:1 suspend:built_in:1 ttyctl:built_in:1 unfunction:built_in:1 unhash:built_in:1 unlimit:built_in:1 unsetopt:built_in:1 vared:built_in:1 wait:built_in:1 whence:built_in:1 where:built_in:1 which:built_in:1 zcompile:built_in:1 zformat:built_in:1 zftp:built_in:1 zle:built_in:1 zmodload:built_in:1 zparseopts:built_in:1 zprof:built_in:1 zpty:built_in:1 zregexparse:built_in:1 zsocket:built_in:1 zstyle:built_in:1 ztcp:built_in:1 chcon:built_in:1 chgrp:built_in:1 chown:built_in:1 chmod:built_in:1 cp:built_in:1 dd:built_in:1 df:built_in:1 dir:built_in:1 dircolors:built_in:1 ln:built_in:1 ls:built_in:1 mkdir:built_in:1 mkfifo:built_in:1 mknod:built_in:1 mktemp:built_in:1 mv:built_in:1 realpath:built_in:1 rm:built_in:1 rmdir:built_in:1 shred:built_in:1 sync:built_in:1 touch:built_in:1 truncate:built_in:1 vdir:built_in:1 b2sum:built_in:1 base32:built_in:1 base64:built_in:1 cat:built_in:1 cksum:built_in:1 comm:built_in:1 csplit:built_in:1 cut:built_in:1 expand:built_in:1 fmt:built_in:1 fold:built_in:1 head:built_in:1 join:built_in:1 md5sum:built_in:1 nl:built_in:1 numfmt:built_in:1 od:built_in:1 paste:built_in:1 ptx:built_in:1 pr:built_in:1 sha1sum:built_in:1 sha224sum:built_in:1 sha256sum:built_in:1 sha384sum:built_in:1 sha512sum:built_in:1 shuf:built_in:1 sort:built_in:1 split:built_in:1 sum:built_in:1 tac:built_in:1 tail:built_in:1 tr:built_in:1 tsort:built_in:1 unexpand:built_in:1 uniq:built_in:1 wc:built_in:1 arch:built_in:1 basename:built_in:1 chroot:built_in:1 date:built_in:1 dirname:built_in:1 du:built_in:1 env:built_in:1 expr:built_in:1 factor:built_in:1 groups:built_in:1 hostid:built_in:1 id:built_in:1 link:built_in:1 logname:built_in:1 nice:built_in:1 nohup:built_in:1 nproc:built_in:1 pathchk:built_in:1 pinky:built_in:1 printenv:built_in:1 readlink:built_in:1 runcon:built_in:1 seq:built_in:1 sleep:built_in:1 stdbuf:built_in:1 stty:built_in:1 tee:built_in:1 timeout:built_in:1 tty:built_in:1 uname:built_in:1 unlink:built_in:1 uptime:built_in:1 users:built_in:1 who:built_in:1 whoami:built_in:1 yes:built_in:1
+}
+
+rule h_r0 { [\-.0-9_a-z] h_r0 / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) }
+rule h_r1 { [\-.0-9_a-z] h_r0 }
+rule h_r2 { [\x00-\t\v\f\x0e-aeg-jl-ru-y{-\x7f]* ( [^\n\r] h_r2 / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ( "fish" / "bash" / "tcsh" / "dash" / "scsh" / "zsh" / "csh" / "ksh" / "sh" ) ![a-zA-Z0-9_] [^\n\r]* ) ) }
+rule __kwscanpat_kwroot { nb [a-zA-Z0-9_] [a-z] h_r1 }
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+
+rule m0 scope=meta rel=0 { bof nb [^\n\r] "#!" [ ]* "/" h_r2 ( !( &( [\n\r] / eof ) ) any )* ( rel(10){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m0__resume { ( !( &( [\n\r] / eof ) ) any )* ( rel(10){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1 scope=meta rel=0 { bof nb [^\n\r] "#!" [ ]* "/" ( !( &( [\n\r] / eof ) ) any )* ( &( [\n\r] / eof ) / eoftrunc ) }
+rule m1__resume { ( !( &( [\n\r] / eof ) ) any )* ( &( [\n\r] / eof ) / eoftrunc ) }
+rule m2 scope=function rel=0 { &( [0-9A-Z_a-z] [0-9A-Z_a-z]* [\t-\r ]* "(" [\t-\r ]* ")" [\t-\r ]* "{" ) ( m3 )+  }
+rule m3 scope=title rel=0 { [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule m4 rel=0 { "$"? "((" ( m5 / m6 / m7 / m8 / [0-9] [0-9]* / !"))" any )* ( rel(1){ "))" } / eoftrunc ) }
+rule m5 scope=number rel=1 { [0-9] [0-9]* "#" [0-9a-f] [0-9a-f]* }
+rule m6 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m7 scope=variable rel=1 { "$" [#0-9@-Z_a-z] ( [0-9A-Z_a-z] [0-9A-Z_a-z]* ![0-9A-Z_a-z] ![$] / ![0-9A-Z_a-z] ![$] ) }
+rule m8 scope=variable rel=0 { "${" ( m8 / m9 / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m9 rel=0 { ":-" ( m7 / m8 )*  rel(1){ &( any / eof ) } }
+rule m8__resume { ( m8 / m9 / !"}" any )* ( rel(1){ "}" } / eoftrunc ) }
+rule m4__resume { ( m5 / m6 / m7 / m8 / [0-9] [0-9]* / !"))" any )* ( rel(1){ "))" } / eoftrunc ) }
+rule m10 rel=0 { ( ( nb [^\n\r] cap scope=comment rel=0 mc=1 { "#" [^\n\r]* &( [\n\r] / eof ) } ) / ( [\t-\r ] cap scope=comment rel=0 mc=1 { "#" [^\n\r]* &( [\n\r] / eof ) } ) ) ( m11 / m12 )*  rel(1){ &( any / eof ) } }
+rule m11 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m12 rel=1 { eng3 }
+rule m13 rel=1 { "<<" "-"? [\t-\r ]* &( [0-9A-Z_a-z] [0-9A-Z_a-z]* ) }
+rule m14 rel=0 { ( m15 )*  rel(1){ &( any / eof ) } }
+rule m15 scope=string rel=0 { delim 1 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( !( nb [0-9A-Z_a-z] samedelim 1 ![0-9A-Z_a-z] ) any )* ( rel(1){ nb [0-9A-Z_a-z] samedelim 1 ![0-9A-Z_a-z] } / eoftrunc ) }
+rule m15__resume { ( !( nb [0-9A-Z_a-z] samedelim 1 ![0-9A-Z_a-z] ) any )* ( rel(1){ nb [0-9A-Z_a-z] samedelim 1 ![0-9A-Z_a-z] } / eoftrunc ) }
+rule m13_s { m13 ( m14 / eoftrunc ) }
+rule m13_s__resume { ( m14 / eoftrunc ) }
+rule m16 rel=1 { "/" [\-._a-z] [\-._a-z]* ( "/" [\-._a-z] [\-._a-z]* )* }
+rule m17 scope=string rel=0 { "\"" ( m18 / m7 / m8 / m19 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m18 rel=0 { "\\" any }
+rule m19 scope=subst rel=0 { "$(" ( m20 / m17 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m20 rel=0 { "\\" any }
+rule m19__resume { ( m20 / m17 / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m17__resume { ( m18 / m7 / m8 / m19 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m21 rel=1 { "\\\"" }
+rule m22 scope=string rel=0 { "'" ( !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m22__resume { ( !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m23 rel=1 { "\\'" }
+rule root { ( m0 / m1 / m2 / m4 / m10 / m13_s / m16 / m17 / m21 / m22 / m23 / m7 / m8 / kw kwroot { nb [a-zA-Z0-9_] [a-z] h_r1 } / [0-9A-Z_a-z] [0-9A-Z_a-z]* / any )* eof }

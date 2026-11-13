@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout android:id="@id/variant_popup" android:background="@drawable/popup_view_rounded_background" android:padding="@dimen/APKTOOL_RENAMED_0x7f0700b2" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/APKTOOL_RENAMED_0x7f0700b1" android:paddingEnd="@dimen/APKTOOL_RENAMED_0x7f0700b0"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

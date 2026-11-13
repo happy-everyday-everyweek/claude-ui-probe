@@ -1,0 +1,46 @@
+# makefile.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, non-ascii-class-member≈\u
+
+language makefile
+
+words kwroot miss=plain {
+  define:keyword:1 endef:keyword:1 undefine:keyword:1 ifdef:keyword:1 ifndef:keyword:1 ifeq:keyword:1 ifneq:keyword:1 else:keyword:1 endif:keyword:1 include:keyword:1 -include:keyword:1 sinclude:keyword:1 override:keyword:1 export:keyword:1 unexport:keyword:1 private:keyword:1 vpath:keyword:1
+}
+
+words kw9 miss=plain {
+  subst:built_in:1 patsubst:built_in:1 strip:built_in:1 findstring:built_in:1 filter:built_in:1 filter-out:built_in:1 sort:built_in:1 word:built_in:1 wordlist:built_in:1 firstword:built_in:1 lastword:built_in:1 dir:built_in:1 notdir:built_in:1 suffix:built_in:1 basename:built_in:1 addsuffix:built_in:1 addprefix:built_in:1 join:built_in:1 wildcard:built_in:1 realpath:built_in:1 abspath:built_in:1 error:built_in:1 warning:built_in:1 shell:built_in:1 origin:built_in:1 flavor:built_in:1 foreach:built_in:1 if:built_in:0 or:built_in:0 and:built_in:0 call:built_in:1 eval:built_in:1 file:built_in:1 value:built_in:0
+}
+
+words kw11 miss=plain {
+  .PHONY:keyword:1
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule h_r0 { [\x00-\x08\x0e-\x1f!-9;-\x7f]* ( [^\t-\r ] h_r0 / ":" ) }
+rule h_r1 { [^\t-\r ] h_r0 }
+
+rule m0 scope=comment rel=0 { "#" ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m2 rel=1 { eng3 }
+rule m0__resume { ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3 scope=variable rel=0 { "$(" [A-Z_a-z] [0-9A-Z_a-z]* ")" ( m4 )*  rel(1){ &( any / eof ) } }
+rule m4 rel=0 { "\\" any }
+rule m5 scope=variable rel=1 { "$" [%*+<?@\^] }
+rule m6 scope=string rel=0 { "\"" ( m7 / m3 / m5 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m7 rel=0 { "\\" any }
+rule m6__resume { ( m7 / m3 / m5 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m8 scope=variable rel=0 { &( "$(" [\-0-9A-Z_a-z] [\-0-9A-Z_a-z]* [\t-\r ] ) ( kw kw9 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / ![\t-\r ] any )+ [\t-\r ] ( m3 / m5 / m6 / !")" kw kw9 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m8__resume { ( m3 / m5 / m6 / !")" kw kw9 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } / !")" any )* ( rel(1){ ")" } / eoftrunc ) }
+rule m9 rel=1 { nb [^\n\r] [A-Z_a-z] [0-9A-Z_a-z]* [\t-\r ]* &( [+:?]? "=" ) }
+rule m10 scope=meta rel=0 { &( nb [^\n\r] ".PHONY:" ) ( kw kw11 { [.0-9A-Z_a-z] [.0-9A-Z_a-z]* } / ![:] any )+ ":" ( !( &( [\n\r] / eof ) ) kw kw11 { [.0-9A-Z_a-z] [.0-9A-Z_a-z]* } / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m10__resume { ( !( &( [\n\r] / eof ) ) kw kw11 { [.0-9A-Z_a-z] [.0-9A-Z_a-z]* } / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m11 scope=section rel=0 { nb [^\n\r] h_r1 ( m3 / m5 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m11__resume { ( m3 / m5 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule root { ( m0 / m3 / m5 / m6 / m8 / m9 / m10 / m11 / kw kwroot { ( !nb [^\n\r] [0-9A-Z_a-z] [0-9A-Z_a-z]* ![\-] / ( !( nb [^\n\r] [A-Z_a-z] [0-9A-Z_a-z]* [\t-\r ]* &( [+:?]? "=" ) / nb [^\n\r] h_r1 ) [\-0-9A-Z_a-z] )+ ) } / any )* eof }

@@ -1,0 +1,23 @@
+# go, hand-written for the apps by clean2, Nov 8 2026. No ported rule; see ORIGIN.md.
+language go
+
+set W = [A-Za-z0-9_\u]
+set I = [A-Za-z_\u]
+set O = [ \t\n\r.:=+*%&|^~?@<>;,(){}\[\]$!#\\\-]
+words low rel=0 miss=fail markhits=false { break:keyword case:keyword chan:keyword const:keyword continue:keyword default:keyword defer:keyword else:keyword fallthrough:keyword for:keyword go:keyword goto:keyword if:keyword import:keyword interface:keyword map:keyword package:keyword range:keyword return:keyword select:keyword struct:keyword switch:keyword type:keyword var:keyword true:literal false:literal iota:literal nil:literal bool:type byte:type complex64:type complex128:type error:type float32:type float64:type int:type int8:type int16:type int32:type int64:type rune:type string:type uint:type uint8:type uint16:type uint32:type uint64:type uintptr:type append:built_in cap:built_in close:built_in complex:built_in copy:built_in delete:built_in imag:built_in len:built_in make:built_in new:built_in panic:built_in print:built_in println:built_in real:built_in recover:built_in }
+rule fun { cap scope=keyword rel=0 { "fu" [n] [c] } !W [ \t]* ( cap scope=title rel=0 { I W* } ( [ \t]* "[" [^\[\]\n(]* "]" )? )? ( &"(" params )? }
+rule tag { cap scope=doctag rel=0 { ( "BUG" / "FI" [X] [M] "E" / "HA" [C] [K] / "NO" [T] [E] / "OP" [T] [I] "MI" [Z] [E] / "TO" [D] [O] / "XXX" ) ":" } }
+rule linec scope=comment rel=0 { "//" [^\nBFHNOTX]* ( ( tag / [BFHNOTX] ) [^\nBFHNOTX]* )* }
+rule blockc__resume { [^*BFHNOTX]* ( ( "*" !"/" / tag / [BFHNOTX] ) [^*BFHNOTX]* )* ( "*/" / eoftrunc ) }
+rule blockc scope=comment rel=0 { "/*" [^*BFHNOTX]* ( ( "*" !"/" / tag / [BFHNOTX] ) [^*BFHNOTX]* )* ( "*/" / eoftrunc ) }
+rule str scope=string rel=0 { "\"" [^"\\\n]* ( "\\" [^\n] [^"\\\n]* )* "\\"? "\""? }
+rule raw__resume { [^`]* ( "`" / eoftrunc ) }
+rule raw scope=string rel=0 { "`" [^`]* ( "`" / eoftrunc ) }
+rule chr scope=string rel=0 { "'" ( "\\" [^\n] [^'\n]* / [^\n'\\]+ )? "'"? }
+rule num scope=number rel=0 { "0" ( [xX] [0-9a-fA-F_]* ( "." [0-9a-fA-F_]* )? ( [pP] [+\-]? [0-9_]* )? / [bB] [01_]+ / [oO] [0-7_]+ ) "i"? / ( [0-9] [0-9_]* ( "." ![.] [0-9_]* )? / "." [0-9] [0-9_]* ) ( [eE] [+\-]? [0-9_]+ )? "i"? }
+rule params__resume { pit* ( ")" / "(" pit* ")"? / eoftrunc )? }
+rule params scope=params rel=0 { "(" pit* ( ")" / "(" pit* ")"? / eoftrunc )? }
+rule pit { [^()A-Za-z_\u"'`/{}]+ / &"f" cap scope=keyword rel=0 { "fu" [n] [c] } !W / kw low { [a-z] W* } / I W* / "{" [ \t]* "}" / com }
+rule com { &"//" linec / &"/*" blockc }
+rule word { I W*  }
+rule root { ( "﻿" / &"f" fun / kw low { [a-z] W* } / word / &( "." [0-9] ) num / O / num / &"//" linec / &"/*" blockc / str / raw / chr / any )* eof }

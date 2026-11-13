@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="APKTOOL_RENAMED_0x7f150274" parent="@style/APKTOOL_RENAMED_0x7f15005a">
+        <item name="android:isLightTheme">false</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150277" parent="@style/APKTOOL_RENAMED_0x7f15005b">
+        <item name="android:isLightTheme">false</item>
+    </style>
+    <style name="APKTOOL_RENAMED_0x7f150344">
+        <item name="android:isLightTheme">false</item>
+    </style>
+</resources>

@@ -1,0 +1,41 @@
+# json.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: \s≈ASCII, dot≈[^\n\r], non-ascii-class-member≈\u
+
+language json
+
+words kwroot miss=plain {
+  true:literal:1 false:literal:1 null:literal:1
+}
+
+words kw7 miss=plain {
+  true:keyword:1 false:keyword:1 null:keyword:1
+}
+
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+
+rule m0 scope=attr rel=1.01 { ( "\"" ( ( "\\" [^\n\r] / [^\n\r"\\] ) )* "\"" / "'" ( ( "\\" [^\n\r] / [^\n\r'\\] ) )* "'" ) &( [\t-\r ]* ":" ) }
+rule m1 scope=punctuation rel=0 { [,:\[\]{}] }
+rule m2 scope=string rel=0 { "'" ( m3 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m3 rel=0 { "\\" any }
+rule m2__resume { ( m3 / !"'" illegalx { "\n" } / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m4 scope=string rel=0 { "\"" ( m5 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m5 rel=0 { "\\" any }
+rule m4__resume { ( m5 / !"\"" illegalx { "\n" } / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m6 scope=literal rel=0 { &( nb [a-zA-Z0-9_] ( "true" / "false" / "null" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw7 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } }
+rule m7 scope=number rel=0 { ( [+\-]? ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) "0" [Xx] [0-9A-Fa-f] [0-9A-Fa-f]* / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) [0-9] [0-9]* ( "." [0-9]* )? / "." [0-9] [0-9]* ) ( [Ee] [+\-]? [0-9] [0-9]* )? ) / "NaN" / [+\-]? "Infinity" ) }
+rule m8 scope=comment rel=0 { "//" ( m9 / m10 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m9 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m10 rel=1 { eng3 }
+rule m8__resume { ( m9 / m10 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m11 scope=comment rel=0 { "/*" ( m12 / m13 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m12 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m13 rel=1 { eng3 }
+rule m11__resume { ( m12 / m13 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule root { ( m0 / m1 / m2 / m4 / m6 / m7 / m8 / m11 / illegalx { [^\t-\r ] } / kw kwroot { ( !( ( [+\-]? ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) "0" [Xx] [0-9A-Fa-f] [0-9A-Fa-f]* / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) [0-9] [0-9]* ( "." [0-9]* )? / "." [0-9] [0-9]* ) ( [Ee] [+\-]? [0-9] [0-9]* )? ) / "NaN" / [+\-]? "Infinity" ) ) [0-9A-Z_a-z] )+ } / any )* eof }

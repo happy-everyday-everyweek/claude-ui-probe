@@ -1,0 +1,119 @@
+# powershell.peg — AUTO-GENERATED from highlight.js 11.11.2 by hljs2peg.
+# Do not hand-edit; regenerate instead.
+# approximations: dot≈[^\n\r], \s≈ASCII, non-ascii-class-member≈\u
+
+language powershell
+case-insensitive
+
+words kwroot miss=plain {
+  if:keyword:0 else:keyword:1 foreach:keyword:1 return:keyword:1 do:keyword:1 while:keyword:1 until:keyword:1 elseif:keyword:1 begin:keyword:1 for:keyword:0 trap:keyword:1 data:keyword:1 dynamicparam:keyword:1 end:keyword:1 break:keyword:1 throw:keyword:1 param:keyword:1 continue:keyword:1 finally:keyword:1 in:keyword:0 switch:keyword:1 exit:keyword:1 filter:keyword:1 try:keyword:1 process:keyword:1 catch:keyword:1 hidden:keyword:1 static:keyword:1 parameter:keyword:1 ac:built_in:1 asnp:built_in:1 cat:built_in:1 cd:built_in:1 cfs:built_in:1 chdir:built_in:1 clc:built_in:1 clear:built_in:1 clhy:built_in:1 cli:built_in:1 clp:built_in:1 cls:built_in:1 clv:built_in:1 cnsn:built_in:1 compare:built_in:1 copy:built_in:1 cp:built_in:1 cpi:built_in:1 cpp:built_in:1 curl:built_in:1 cvpa:built_in:1 dbp:built_in:1 del:built_in:1 diff:built_in:1 dir:built_in:1 dnsn:built_in:1 ebp:built_in:1 echo:built_in:0 epal:built_in:1 epcsv:built_in:1 epsn:built_in:1 erase:built_in:1 etsn:built_in:1 exsn:built_in:1 fc:built_in:1 fhx:built_in:1 fl:built_in:1 ft:built_in:1 fw:built_in:1 gal:built_in:1 gbp:built_in:1 gc:built_in:1 gcb:built_in:1 gci:built_in:1 gcm:built_in:1 gcs:built_in:1 gdr:built_in:1 gerr:built_in:1 ghy:built_in:1 gi:built_in:1 gin:built_in:1 gjb:built_in:1 gl:built_in:1 gm:built_in:1 gmo:built_in:1 gp:built_in:1 gps:built_in:1 gpv:built_in:1 group:built_in:1 gsn:built_in:1 gsnp:built_in:1 gsv:built_in:1 gtz:built_in:1 gu:built_in:1 gv:built_in:1 gwmi:built_in:1 h:built_in:1 history:built_in:1 icm:built_in:1 iex:built_in:1 ihy:built_in:1 ii:built_in:1 ipal:built_in:1 ipcsv:built_in:1 ipmo:built_in:1 ipsn:built_in:1 irm:built_in:1 ise:built_in:1 iwmi:built_in:1 iwr:built_in:1 kill:built_in:1 lp:built_in:1 ls:built_in:1 man:built_in:1 md:built_in:1 measure:built_in:1 mi:built_in:1 mount:built_in:1 move:built_in:1 mp:built_in:1 mv:built_in:1 nal:built_in:1 ndr:built_in:1 ni:built_in:1 nmo:built_in:1 npssc:built_in:1 nsn:built_in:1 nv:built_in:1 ogv:built_in:1 oh:built_in:1 popd:built_in:1 ps:built_in:1 pushd:built_in:1 pwd:built_in:1 r:built_in:1 rbp:built_in:1 rcjb:built_in:1 rcsn:built_in:1 rd:built_in:1 rdr:built_in:1 ren:built_in:1 ri:built_in:1 rjb:built_in:1 rm:built_in:1 rmdir:built_in:1 rmo:built_in:1 rni:built_in:1 rnp:built_in:1 rp:built_in:1 rsn:built_in:1 rsnp:built_in:1 rujb:built_in:1 rv:built_in:1 rvpa:built_in:1 rwmi:built_in:1 sajb:built_in:1 sal:built_in:1 saps:built_in:1 sasv:built_in:1 sbp:built_in:1 sc:built_in:1 scb:built_in:1 select:built_in:1 set:built_in:1 shcm:built_in:1 si:built_in:1 sl:built_in:1 sleep:built_in:1 sls:built_in:1 sort:built_in:1 sp:built_in:1 spjb:built_in:1 spps:built_in:1 spsv:built_in:1 start:built_in:1 stz:built_in:1 sujb:built_in:1 sv:built_in:1 swmi:built_in:1 tee:built_in:1 trcm:built_in:1 type:built_in:1 wget:built_in:1 where:built_in:1 wjb:built_in:1 write:built_in:1
+}
+
+words kw25 miss=plain {
+  class:keyword:1 enum:keyword:1
+}
+
+words h_kwa7 miss=fail {
+  -casesensitive:none:0
+}
+
+words h_kwa8 miss=fail {
+  -cnotcontains:none:0 -inotcontains:none:0
+}
+
+words h_kwa9 miss=fail {
+  -notcontains:none:0
+}
+
+words h_kwa10 miss=fail {
+  -ccontains:none:0 -cnotmatch:none:0 -icontains:none:0 -inotmatch:none:0
+}
+
+words h_kwa11 miss=fail {
+  -cnotlike:none:0 -contains:none:0 -creplace:none:0 -inotlike:none:0 -ireplace:none:0 -notmatch:none:0 -wildcard:none:0
+}
+
+words h_kwa12 miss=fail {
+  -notlike:none:0 -replace:none:0
+}
+
+words h_kwa13 miss=fail {
+  -cmatch:none:0 -csplit:none:0 -imatch:none:0 -isplit:none:0
+}
+
+words h_kwa14 miss=fail {
+  -clike:none:0 -exact:none:0 -ilike:none:0 -isnot:none:0 -match:none:0 -notin:none:0 -regex:none:0 -split:none:0
+}
+
+words h_kwa15 miss=fail {
+  -band:none:0 -bnot:none:0 -bxor:none:0 -file:none:0 -join:none:0 -like:none:0
+}
+
+words h_kwa16 miss=fail {
+  -and:none:0 -bor:none:0 -ceq:none:0 -cge:none:0 -cgt:none:0 -cle:none:0 -clt:none:0 -cne:none:0 -ieq:none:0 -ige:none:0 -igt:none:0 -ile:none:0 -ilt:none:0 -ine:none:0 -not:none:0 -shl:none:0 -shr:none:0 -xor:none:0
+}
+
+words h_kwa17 miss=fail {
+  -as:none:0 -eq:none:0 -ge:none:0 -gt:none:0 -in:none:0 -is:none:0 -le:none:0 -lt:none:0 -ne:none:0 -or:none:0
+}
+
+words h_kwa18 miss=fail {
+  -f:none:0
+}
+
+rule h_r0 { [\-.A-z] h_r0 / ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) }
+rule h_r1 { [\-.A-z] h_r0 }
+rule h_r4 { [\x00-\t\v\f\x0e-\\\^-\x7f]* ( [^\n\r] h_r4 / "]" [\t-\r ]* [0-9A-Z_a-z] [0-9A-Z_a-z]* [ ]? "(" ) }
+rule h_r5 { "Add" h_r5 / "Clear" h_r5 / "Close" h_r5 / "Copy" h_r5 / "Enter" h_r5 / "Exit" h_r5 / "Find" h_r5 / "Format" h_r5 / "Get" h_r5 / "Hide" h_r5 / "Join" h_r5 / "Lock" h_r5 / "Move" h_r5 / "New" h_r5 / "Open" h_r5 / "Optimize" h_r5 / "Pop" h_r5 / "Push" h_r5 / "Redo" h_r5 / "Remove" h_r5 / "Rename" h_r5 / "Reset" h_r5 / "Resize" h_r5 / "Search" h_r5 / "Select" h_r5 / "Set" h_r5 / "Show" h_r5 / "Skip" h_r5 / "Split" h_r5 / "Step" h_r5 / "Switch" h_r5 / "Undo" h_r5 / "Unlock" h_r5 / "Watch" h_r5 / "Backup" h_r5 / "Checkpoint" h_r5 / "Compare" h_r5 / "Compress" h_r5 / "Convert" h_r5 / "ConvertFrom" h_r5 / "ConvertTo" h_r5 / "Dismount" h_r5 / "Edit" h_r5 / "Expand" h_r5 / "Export" h_r5 / "Group" h_r5 / "Import" h_r5 / "Initialize" h_r5 / "Limit" h_r5 / "Merge" h_r5 / "Mount" h_r5 / "Out" h_r5 / "Publish" h_r5 / "Restore" h_r5 / "Save" h_r5 / "Sync" h_r5 / "Unpublish" h_r5 / "Update" h_r5 / "Approve" h_r5 / "Assert" h_r5 / "Build" h_r5 / "Complete" h_r5 / "Confirm" h_r5 / "Deny" h_r5 / "Deploy" h_r5 / "Disable" h_r5 / "Enable" h_r5 / "Install" h_r5 / "Invoke" h_r5 / "Register" h_r5 / "Request" h_r5 / "Restart" h_r5 / "Resume" h_r5 / "Start" h_r5 / "Stop" h_r5 / "Submit" h_r5 / "Suspend" h_r5 / "Uninstall" h_r5 / "Unregister" h_r5 / "Wait" h_r5 / "Debug" h_r5 / "Measure" h_r5 / "Ping" h_r5 / "Repair" h_r5 / "Resolve" h_r5 / "Test" h_r5 / "Trace" h_r5 / "Connect" h_r5 / "Disconnect" h_r5 / "Read" h_r5 / "Receive" h_r5 / "Send" h_r5 / "Write" h_r5 / "Block" h_r5 / "Grant" h_r5 / "Protect" h_r5 / "Revoke" h_r5 / "Unblock" h_r5 / "Unprotect" h_r5 / "Use" h_r5 / "ForEach" h_r5 / "Sort" h_r5 / "Tee" h_r5 / "Where" h_r5 / "-" [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule h_r6 { "Add" h_r5 / "Clear" h_r5 / "Close" h_r5 / "Copy" h_r5 / "Enter" h_r5 / "Exit" h_r5 / "Find" h_r5 / "Format" h_r5 / "Get" h_r5 / "Hide" h_r5 / "Join" h_r5 / "Lock" h_r5 / "Move" h_r5 / "New" h_r5 / "Open" h_r5 / "Optimize" h_r5 / "Pop" h_r5 / "Push" h_r5 / "Redo" h_r5 / "Remove" h_r5 / "Rename" h_r5 / "Reset" h_r5 / "Resize" h_r5 / "Search" h_r5 / "Select" h_r5 / "Set" h_r5 / "Show" h_r5 / "Skip" h_r5 / "Split" h_r5 / "Step" h_r5 / "Switch" h_r5 / "Undo" h_r5 / "Unlock" h_r5 / "Watch" h_r5 / "Backup" h_r5 / "Checkpoint" h_r5 / "Compare" h_r5 / "Compress" h_r5 / "Convert" h_r5 / "ConvertFrom" h_r5 / "ConvertTo" h_r5 / "Dismount" h_r5 / "Edit" h_r5 / "Expand" h_r5 / "Export" h_r5 / "Group" h_r5 / "Import" h_r5 / "Initialize" h_r5 / "Limit" h_r5 / "Merge" h_r5 / "Mount" h_r5 / "Out" h_r5 / "Publish" h_r5 / "Restore" h_r5 / "Save" h_r5 / "Sync" h_r5 / "Unpublish" h_r5 / "Update" h_r5 / "Approve" h_r5 / "Assert" h_r5 / "Build" h_r5 / "Complete" h_r5 / "Confirm" h_r5 / "Deny" h_r5 / "Deploy" h_r5 / "Disable" h_r5 / "Enable" h_r5 / "Install" h_r5 / "Invoke" h_r5 / "Register" h_r5 / "Request" h_r5 / "Restart" h_r5 / "Resume" h_r5 / "Start" h_r5 / "Stop" h_r5 / "Submit" h_r5 / "Suspend" h_r5 / "Uninstall" h_r5 / "Unregister" h_r5 / "Wait" h_r5 / "Debug" h_r5 / "Measure" h_r5 / "Ping" h_r5 / "Repair" h_r5 / "Resolve" h_r5 / "Test" h_r5 / "Trace" h_r5 / "Connect" h_r5 / "Disconnect" h_r5 / "Read" h_r5 / "Receive" h_r5 / "Send" h_r5 / "Write" h_r5 / "Block" h_r5 / "Grant" h_r5 / "Protect" h_r5 / "Revoke" h_r5 / "Unblock" h_r5 / "Unprotect" h_r5 / "Use" h_r5 / "ForEach" h_r5 / "Sort" h_r5 / "Tee" h_r5 / "Where" h_r5 }
+rule __kwscanpat_kwroot { ( "-" h_r1 / h_r1 ) }
+rule sg_r0 { "dynamicparam" / "parameter" / "continue" / "foreach" / "finally" / "process" / "return" / "elseif" / "switch" / "filter" / "hidden" / "static" / "while" / "until" / "begin" / "break" / "throw" / "param" / "catch" / "else" / "trap" / "data" / "exit" / "for" / "end" / "try" / "if" / "do" / "in" }
+
+rule m0 scope=function rel=0 { &( "[" h_r4 ) ( m1 / !( ( &( [\n\r] / eof ) / ( sg_r0 ![a-zA-Z0-9_] ) / ( [A-Za-z] [0-9A-Z_a-z]* ) ) ) any )+ ( m21 / m22 / &( [\n\r] / eof ) / eoftrunc ) }
+rule m1 rel=0 { "[" ( m1 / m0 / m2 / m5 / m6 / m7 / m8 / m13 / m14 / m15 / m16 / m9 / m10 / m11 / m17 / m18 / m19 / m20 / !"]" any )* ( "]" / eoftrunc ) }
+rule m2 scope=comment rel=0 { "#" ( m3 / m4 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3 scope=doctag rel=1 { "." ( "synopsis" / "description" / "example" / "inputs" / "outputs" / "notes" / "link" / "component" / "role" / "functionality" ) }
+rule m4 scope=doctag rel=1 { "." ( "parameter" / "forwardhelptargetname" / "forwardhelpcategory" / "remotehelprunspace" / "externalhelp" ) [\t-\r ] [\t-\r ]* [^\t-\r ] [^\t-\r ]* }
+rule m2__resume { ( m3 / m4 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m5 scope=comment rel=0 { "<#" ( m3 / m4 / !"#>" any )* ( rel(1){ "#>" } / eoftrunc ) }
+rule m5__resume { ( m3 / m4 / !"#>" any )* ( rel(1){ "#>" } / eoftrunc ) }
+rule m6 rel=0 { "`" any }
+rule m7 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m8 scope=string rel=0 { "\"" ( m6 / m9 / m10 / m11 / m12 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m9 scope=variable rel=1 { "$" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) }
+rule m10 scope=keyword rel=1 { "$this" }
+rule m11 scope=variable rel=1 { "$" [0-9A-Z_a-z] [0-:A-Z_a-z]* }
+rule m12 scope=variable rel=0 { "$" [A-z] ( ![^A-z] any )* ( rel(1){ [^A-z] } / eoftrunc ) }
+rule m12__resume { ( ![^A-z] any )* ( rel(1){ [^A-z] } / eoftrunc ) }
+rule m8__resume { ( m6 / m9 / m10 / m11 / m12 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m13 scope=string rel=0 { "@\"" ( m6 / m9 / m10 / m11 / m12 / !( nb [^\n\r] "\"@" ) any )* ( rel(1){ nb [^\n\r] "\"@" } / eoftrunc ) }
+rule m13__resume { ( m6 / m9 / m10 / m11 / m12 / !( nb [^\n\r] "\"@" ) any )* ( rel(1){ nb [^\n\r] "\"@" } / eoftrunc ) }
+rule m14 scope=string rel=0 { "'" ( !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m14__resume { ( !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m15 scope=string rel=0 { "@'" ( !( nb [^\n\r] "'@" ) any )* ( rel(1){ nb [^\n\r] "'@" } / eoftrunc ) }
+rule m15__resume { ( !( nb [^\n\r] "'@" ) any )* ( rel(1){ nb [^\n\r] "'@" } / eoftrunc ) }
+rule m16 scope=built_in rel=1 { h_r6 }
+rule m17 scope=literal rel=1 { "$" ( "null" / "true" / "false" ) ![a-zA-Z0-9_] }
+rule m18 scope=selector-tag rel=0 { "@" ( !nb [a-zA-Z0-9_] &[a-zA-Z0-9_] / nb [a-zA-Z0-9_] ![a-zA-Z0-9_] ) }
+rule m19 scope=built_in rel=0 { ( "string" / "char" / "byte" / "int" / "long" / "bool" / "decimal" / "single" / "double" / "DateTime" / "xml" / "array" / "hashtable" / "void" ) }
+rule m20 scope=type rel=0 { [.0-9A-Z_a-z] [.0-9A-Z_a-z]* }
+rule m1__resume { ( m1 / m0 / m2 / m5 / m6 / m7 / m8 / m13 / m14 / m15 / m16 / m9 / m10 / m11 / m17 / m18 / m19 / m20 / !"]" any )* ( "]" / eoftrunc ) }
+rule m21 scope=keyword rel=0 { sg_r0 ![a-zA-Z0-9_] }
+rule m22 scope=title rel=0 { [A-Za-z] [0-9A-Z_a-z]* }
+rule m0__resume { ( m1 / !( ( &( [\n\r] / eof ) / ( sg_r0 ![a-zA-Z0-9_] ) / ( [A-Za-z] [0-9A-Z_a-z]* ) ) ) any )+ ( m21 / m22 / &( [\n\r] / eof ) / eoftrunc ) }
+rule m23 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9]* ( "." [0-9] [0-9]* )? }
+rule m24 rel=0 { cap scope=class rel=0 { &( nb [a-zA-Z0-9_] ( "class" / "enum" ) !"." &( ( ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / [\t-\r ] ) ) ) kw kw25 { [0-9A-Z_a-z] [0-9A-Z_a-z]* } ( m25 / !( [\t-\r ]* [{] ) kw kw25 { ( !( [A-Za-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !( [\t-\r ]* [{] ) any )* } kwscan kwroot __kwscanpat_kwroot { chunktext { ( [\t-\r ]* [{] / eoftrunc ) } } }
+rule m25 scope=title rel=0 { [A-Za-z] [0-9A-Z_a-z]* }
+rule m24__resume { cap scope=class rel=0 { ( m25 / !( [\t-\r ]* [{] ) kw kw25 { ( !( [A-Za-z] [0-9A-Z_a-z]* ) [0-9A-Z_a-z] )+ } / !( [\t-\r ]* [{] ) any )* } ( [\t-\r ]* [{] / eoftrunc ) }
+rule m26 rel=0 { cap scope=function rel=0 { &( "function" [\t-\r ] [\t-\r ]* ) ( m27 / m28 / m29 / !( ( [\t-\r ]* "{" / &( [\n\r] / eof ) ) ) any )+ } kwscan kwroot __kwscanpat_kwroot { chunktext { ( ( [\t-\r ]* "{" / &( [\n\r] / eof ) ) / eoftrunc ) } } }
+rule m27 scope=keyword rel=0 { "function" }
+rule m28 scope=title rel=0 { [0-9A-Z_a-z] [0-9A-Z_a-z]* ( "-" [0-9A-Z_a-z] [0-9A-Z_a-z]* )* }
+rule m29 scope=params rel=0 { "(" ( m9 / m10 / m11 / !")" any )* ( ")" / eoftrunc ) }
+rule m29__resume { ( m9 / m10 / m11 / !")" any )* ( ")" / eoftrunc ) }
+rule m26__resume { cap scope=function rel=0 { ( m27 / m28 / m29 / !( ( [\t-\r ]* "{" / &( [\n\r] / eof ) ) ) any )+ } ( ( [\t-\r ]* "{" / &( [\n\r] / eof ) ) / eoftrunc ) }
+rule m30 rel=0 { &( "using" [\t-\r ] ) ( m8 / m13 / m14 / m15 / m31 / !( &( [\n\r] / eof ) ) any )+ ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m31 scope=keyword rel=1 { ( "using" / "assembly" / "command" / "module" / "namespace" / "type" ) }
+rule m30__resume { ( m8 / m13 / m14 / m15 / m31 / !( &( [\n\r] / eof ) ) any )+ ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m32 scope=operator rel=1 { ( kw h_kwa7 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa8 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa9 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa10 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa11 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa12 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa13 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa14 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa15 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa16 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa17 { [\-a-tv-x] [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) / kw h_kwa18 { [\-a-tv-x] [\-a-tv-x] } ( !nb [a-zA-Z0-9_] ![a-zA-Z0-9_] / nb [a-zA-Z0-9_] &[a-zA-Z0-9_] ) ) ![a-zA-Z0-9_] }
+rule m33 scope=literal rel=0 { "-" ( "-" [\-0-9A-Z_a-z] [\-0-9A-Z_a-z]* / [\-0-9A-Z_a-z] [\-0-9A-Z_a-z]* ) }
+rule root { ( m0 / m2 / m5 / m6 / m23 / m8 / m13 / m14 / m15 / m16 / m9 / m10 / m11 / m17 / m18 / m24 / m26 / m30 / m32 / m33 / m1 / "-" &( m0 / m2 / m5 / m6 / m23 / m8 / m13 / m14 / m15 / m16 / m9 / m10 / m11 / m17 / m18 / m24 / m26 / m30 / m32 / m33 / m1 ) / kw kwroot { ( "-" h_r1 / h_r1 ) } / any )* eof }
