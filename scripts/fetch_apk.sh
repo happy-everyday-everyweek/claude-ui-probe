@@ -75,5 +75,23 @@ for u in \
   save "apkpure $u" && exit 0
 done
 
+echo "== 5 apkpure api"
+api_json=$(curl -sSL --max-time 60 \
+  -H 'Ual-Access-Businessid: projecta' \
+  -H 'User-Agent: APKPure/3.19.9 (Aegon)' \
+  "https://api.pureapk.com/m/v3/cms/app_version?hl=en&package_name=com.anthropic.claude" || true)
+echo " api bytes=${#api_json} head=$(printf '%s' "$api_json" | head -c 120)"
+dl=$(printf '%s' "$api_json" | grep -oE '"download_url":"[^"]+"' | head -1 | sed 's/"download_url":"//;s/"$//' | sed 's#\\/#/#g')
+echo " download_url=${dl:-none}"
+if [ -n "$dl" ]; then
+  code=$(curl -sSL --max-time 600 \
+    -H 'Ual-Access-Businessid: projecta' \
+    -H 'User-Agent: APKPure/3.19.9 (Aegon)' \
+    -e "https://apkpure.com/" \
+    -o "$OUT" -w '%{http_code}' "$dl" || echo 000)
+  echo " dl http=$code"
+  save "apkpure api" && exit 0
+fi
+
 echo "全部来源失败"
 exit 1
