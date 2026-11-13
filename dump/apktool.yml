@@ -1,0 +1,23 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: claude.apk
+compressionType: false
+doNotCompress: null
+isFrameworkApk: false
+packageInfo: null
+sdkInfo: null
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  com.anthropic.claude.apk: '8'
+  config.armeabi_v7a.apk: '8'
+  config.xhdpi.apk: '8'
+  config.arm64_v8a.apk: '8'
+  config.xxhdpi.apk: '8'
+  config.pt.apk: '8'
+  config.es.apk: '8'
+  config.it.apk: '8'
+  config.ja.apk: '8'
+  config.ko.apk: '8'
+usesFramework: null
+version: 2.7.0-dirty
+versionInfo: null
