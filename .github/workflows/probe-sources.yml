@@ -126,6 +126,47 @@ jobs:
           dump "https://claude.malavida.com/android/"
           dump "https://appsapk.com/claude/"
 
+      - name: Try direct downloads
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          mkdir -p cand
+          try() {
+            name="$1"; url="$2"; ref="$3"
+            code=$(curl -sSL -A "$UA" -H 'Accept-Language: en-US,en;q=0.9' -e "$ref" \
+              --max-time 240 -o "cand/$name.bin" -w '%{http_code}' "$url" 2>/dev/null || echo 000)
+            size=$(stat -c %s "cand/$name.bin" 2>/dev/null || echo 0)
+            magic=$(head -c 2 "cand/$name.bin" 2>/dev/null)
+            echo "$name http=$code bytes=$size magic=$magic"
+            if [ "$size" -gt 20000000 ] && [ "$magic" = "PK" ]; then
+              mv "cand/$name.bin" cand/claude.apk
+              sha256sum cand/claude.apk
+              return 0
+            fi
+            rm -f "cand/$name.bin"
+            return 1
+          }
+
+          echo "== malavida download page"
+          try malavida "https://www.malavida.com/es/soft/claude/android/descargar" "https://claude.malavida.com/android/" && exit 0
+          try malavida2 "https://claude.malavida.com/android/descargar" "https://claude.malavida.com/android/" && exit 0
+
+          echo "== appsapk page links"
+          curl -sSL -A "$UA" --max-time 60 -o appsapk.html "https://appsapk.com/claude/" || true
+          grep -oiE 'https?://[^"'"'"' <>]*(downloadapk4android|download)[^"'"'"' <>]*' appsapk.html | sort -u | head -20 || true
+          for u in $(grep -oiE 'https?://server\.downloadapk4android\.com[^"'"'"' <>]*' appsapk.html | sort -u | head -5); do
+            try appsapk "$u" "https://appsapk.com/claude/" && exit 0
+          done
+          echo "no candidate"
+          ls -la cand || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: apk-candidate
+          path: cand/
+          retention-days: 5
+          if-no-files-found: ignore
+
       - name: apkeep google-play options
         run: |
           command -v cargo >/dev/null || true
