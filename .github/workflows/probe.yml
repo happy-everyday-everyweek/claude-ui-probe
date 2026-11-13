@@ -142,16 +142,22 @@ jobs:
 
       - name: Decode with apktool
         run: |
-          cd apk
-          APK=$(ls *.apk | head -1)
+          APK=$(ls apk/*.apk | head -1)
           echo "APK=$APK"
-          sha256sum "$APK" | tee ../apk.sha256
-          if ! apktool d -f -o ../decoded "$APK" 2>&1 | tail -25; then
-            echo "apt apktool 失败，改用官方 jar"
-            curl -sSL -o /tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.11.1/apktool_2.11.1.jar
-            java -jar /tmp/apktool.jar d -f -o ../decoded "$APK" 2>&1 | tail -25
+          sha256sum "$APK" | tee apk.sha256
+          # 新版 Resources.arsc（稀疏类型/新 chunk）需要 apktool 2.9+，发行版自带的 2.7 会直接抛异常。
+          curl -sSL --max-time 180 -o /tmp/apktool.jar \
+            https://github.com/iBotPeaches/Apktool/releases/download/v2.11.1/apktool_2.11.1.jar || true
+          if [ -s /tmp/apktool.jar ]; then
+            echo "用官方 jar 解码"
+            java -jar /tmp/apktool.jar d -f -o decoded "$APK" 2>&1 | tail -30
+          else
+            echo "jar 取不到，退回发行版 apktool"
+            apktool d -f -o decoded "$APK" 2>&1 | tail -30
           fi
-          ls ../decoded | head -20
+          test -f decoded/AndroidManifest.xml || { echo "解码失败：没有 AndroidManifest.xml"; exit 1; }
+          ls decoded | head -20
+          find decoded/res -type f | wc -l | xargs echo "res files:"
 
       - name: Assemble dump
         run: |
