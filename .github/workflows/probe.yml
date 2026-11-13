@@ -225,6 +225,46 @@ jobs:
           done < <(find dump/assets -type f \( -name '*.bundle' -o -name '*.jsbundle' -o -name '*.hbc' \) 2>/dev/null | sort -u)
           du -sh dump/hermes 2>/dev/null || true
 
+      - name: Decompile for search
+        run: |
+          APK=$(ls apk/*.apk | head -1)
+          url=$(curl -sS --max-time 60 https://api.github.com/repos/skylot/jadx/releases/latest \
+            | grep -oE 'https://[^"]*jadx-[0-9.]+\.zip' | head -1)
+          echo "jadx: ${url:-none}"
+          if [ -n "$url" ]; then
+            curl -sSL --max-time 300 -o jadx.zip "$url" || true
+            unzip -q -o jadx.zip -d jadx || true
+            chmod +x jadx/bin/* 2>/dev/null || true
+          fi
+          if [ -x jadx/bin/jadx ]; then
+            echo "开始反编译（只取源码，不取资源）"
+            timeout 1500 jadx/bin/jadx --no-res --no-imports -d decompiled "$APK" > jadx.log 2>&1 || true
+            tail -8 jadx.log || true
+          fi
+          if [ ! -d decompiled ]; then echo "jadx 未产出，跳过"; exit 0; fi
+          echo "java files: $(find decompiled -name '*.java' | wc -l)"
+          mkdir -p dump/dex/search-classes
+          : > dump/dex/search-index.txt
+          {
+            echo "# 搜索相关类索引"
+            echo "生成时间 $(date -u +%Y-%m-%dT%H:%MZ)"
+            echo
+          } >> dump/dex/search-index.txt
+          pick() {
+            f="$1"
+            rel=${f#decompiled/}
+            name=$(echo "$rel" | tr '/' '.')
+            if [ "$(stat -c %s "$f")" -lt 400000 ]; then
+              cp "$f" "dump/dex/search-classes/$name"
+              echo "- $rel" >> dump/dex/search-index.txt
+            fi
+          }
+          find decompiled -name '*.java' | grep -iE '/[^/]*search[^/]*\.java$' | head -120 | while read -r f; do pick "$f"; done
+          grep -rl --include='*.java' -E 'searchQuery|SearchChats|SearchBar|ConversationSearch|recentSearch|ChatsSearch' decompiled 2>/dev/null \
+            | head -80 | while read -r f; do pick "$f"; done
+          echo "search classes: $(ls dump/dex/search-classes 2>/dev/null | wc -l)"
+          du -sh dump/dex 2>/dev/null || true
+
       - name: Guard repo size
         run: |
           total=$(du -sm dump | cut -f1)
