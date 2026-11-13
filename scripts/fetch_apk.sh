@@ -12,6 +12,15 @@ ok() { [ -f "$OUT" ] && [ "$(stat -c %s "$OUT")" -gt 20000000 ] && [ "$(head -c 
 
 save() {
   if ok; then
+    # 有些镜像发的是 XAPK/APKS（zip 里放 base.apk），apktool 认不出，先拆出真正的 APK。
+    if ! unzip -l "$OUT" 2>/dev/null | grep -q 'AndroidManifest.xml'; then
+      rm -rf xapk_tmp && mkdir -p xapk_tmp
+      unzip -o -q "$OUT" -d xapk_tmp 2>/dev/null || true
+      if [ -f xapk_tmp/base.apk ]; then
+        mv xapk_tmp/base.apk "$OUT"
+        echo "[note] 从 XAPK 里取出 base.apk"
+      fi
+    fi
     echo "[ok] $1 ($(stat -c %s "$OUT") bytes)"
     GOOD=1
     return 0
@@ -25,6 +34,20 @@ echo "== 0 手动直链"
 if [ -n "${APK_URL:-}" ]; then
   curl -sSL -A "$UA" --max-time 600 -o "$OUT" "$APK_URL" || true
   save "APK_URL" && exit 0
+fi
+
+echo "== 1m malavida"
+mvpage=$(mktemp)
+curl -sSL -A "$UA" -H 'Accept-Language: es-ES,es;q=0.9' -c ck.txt -b ck.txt \
+  --max-time 60 -o "$mvpage" "https://www.malavida.com/es/soft/claude/android/descargar" || true
+echo " page bytes=$(stat -c %s "$mvpage" 2>/dev/null || echo 0)"
+mvurl=$(grep -oE 'https://dw\.malavida\.com/[^"'"'"' <>]+' "$mvpage" | head -1)
+echo " url=${mvurl:0:90}"
+if [ -n "$mvurl" ]; then
+  code=$(curl -sSL -A "$UA" -e "https://www.malavida.com/es/soft/claude/android/descargar" \
+    -c ck.txt -b ck.txt --max-time 900 -o "$OUT" -w '%{http_code}' "$mvurl" || echo 000)
+  echo " dl http=$code"
+  save malavida && exit 0
 fi
 
 echo "== 1 apkeep (apk-pure)"
