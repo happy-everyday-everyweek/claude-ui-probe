@@ -6,6 +6,11 @@ name: probe
 
 on:
   workflow_dispatch:
+    inputs:
+      apk_url:
+        description: '可选：Claude APK 直链（留空则自动从镜像取包）'
+        required: false
+        default: ''
   push:
     branches: [main]
     paths-ignore:
@@ -44,35 +49,81 @@ jobs:
         run: |
           mkdir -p apk
           cd apk
-          # apkeep 走 APKPure 源时必须用 -o 显式确认风险，否则它直接退出。
-          for i in 1 2 3; do
-            apkeep -a com.anthropic.claude -d apk-pure -o acknowledge_dangers=true . 2>&1 | tail -12 || true
-            found=$(ls ./*.apk 2>/dev/null | head -1)
-            if [ -n "$found" ] && [ "$(stat -c %s "$found")" -gt 20000000 ]; then
-              mv "$found" claude.apk
-              break
-            fi
-            echo "retry $i"
-            sleep 20
-          done
-          # 兜底：APKPure 的直连下载端点。
-          if [ ! -f claude.apk ]; then
-            UA="Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36"
-            for u in \
-              "https://d.apkpure.com/b/APK/com.anthropic.claude?version=latest" \
-              "https://d.apkpure.net/b/APK/com.anthropic.claude?version=latest"; do
-              echo "GET $u"
-              code=$(curl -sSL -A "$UA" -o claude.apk -w '%{http_code}' --max-time 180 "$u" || echo 000)
-              size=$(stat -c %s claude.apk 2>/dev/null || echo 0)
-              echo "  http=$code size=$size"
-              if [ "$code" = "200" ] && [ "$size" -gt 20000000 ] && [ "$(head -c 2 claude.apk)" = "PK" ]; then
-                break
-              fi
-              rm -f claude.apk
+          UA="Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36"
+          ok() { [ -f claude.apk ] && [ "$(stat -c %s claude.apk)" -gt 20000000 ] && [ "$(head -c 2 claude.apk)" = "PK" ]; }
+
+          # 0) 手动指定直链（workflow_dispatch 的 apk_url）
+          if [ -n "${{ inputs.apk_url }}" ]; then
+            echo "[0] 直链下载"
+            curl -sSL -A "$UA" --max-time 600 -o claude.apk "${{ inputs.apk_url }}" || true
+            ok && echo "[0] ok"
+          fi
+
+          # 1) apkeep：APKPure / 华为应用市场
+          if ! ok; then
+            for src in apk-pure huawei-app-gallery; do
+              echo "[1] apkeep $src"
+              apkeep -a com.anthropic.claude -d "$src" -o acknowledge_dangers=true . 2>&1 | tail -4 || true
+              found=$(ls ./*.apk 2>/dev/null | head -1)
+              if [ -n "$found" ] && [ "$(stat -c %s "$found")" -gt 20000000 ]; then mv "$found" claude.apk; ok && break; fi
             done
           fi
+
+          # 2) Uptodown：页面里 data-url 指向 dw.uptodown.com 的直链
+          if ! ok; then
+            echo "[2] uptodown"
+            code=$(curl -sSL -A "$UA" -H 'Accept-Language: en-US,en;q=0.9' --max-time 60 -o page.html -w '%{http_code}' "https://claude.en.uptodown.com/android/download" || echo 000)
+            echo "[2] page http=$code bytes=$(stat -c %s page.html 2>/dev/null || echo 0)"
+            link=$(grep -oE '(https://dw\.uptodown\.com/dwn/[^"'"'"' ]+|/dwn/[^"'"'"' ]+)' page.html | head -1)
+            echo "[2] link=${link:-none}"
+            if [ -n "$link" ]; then
+              case "$link" in http*) url="$link" ;; *) url="https://dw.uptodown.com$link" ;; esac
+              curl -sSL -A "$UA" -e "https://claude.en.uptodown.com/" --max-time 600 -o claude.apk "$url" || true
+              ok && echo "[2] ok"
+            fi
+          fi
+
+          # 3) APKFab：页面上直接给 .apk 链接时取第一条
+          if ! ok; then
+            echo "[3] apkfab"
+            code=$(curl -sSL -A "$UA" --max-time 60 -o page.html -w '%{http_code}' "https://apkfab.com/claude/com.anthropic.claude" || echo 000)
+            echo "[3] page http=$code bytes=$(stat -c %s page.html 2>/dev/null || echo 0)"
+            link=$(grep -oE 'https://[^"'"'"' ]+\.apk[^"'"'"' ]*' page.html | head -1)
+            echo "[3] link=${link:-none}"
+            if [ -n "$link" ]; then
+              curl -sSL -A "$UA" -e "https://apkfab.com/" --max-time 600 -o claude.apk "$link" || true
+              ok && echo "[3] ok"
+            fi
+          fi
+
+          # 4) APKMirror：应用页 → 最新版本页 → 变体下载页 → 上传目录直链
+          if ! ok; then
+            echo "[4] apkmirror"
+            base="https://www.apkmirror.com/apk/anthropic-pbc/claude-by-anthropic"
+            code=$(curl -sSL -A "$UA" --max-time 60 -o app.html -w '%{http_code}' "$base/" || echo 000)
+            echo "[4] app http=$code bytes=$(stat -c %s app.html 2>/dev/null || echo 0)"
+            rel=$(grep -oE '/apk/anthropic-pbc/claude-by-anthropic/[a-z0-9-]+-release/' app.html | tail -1 | sed 's#/*$#/#' )
+            echo "[4] rel=${rel:-none}"
+            if [ -n "$rel" ]; then
+              code=$(curl -sSL -A "$UA" --max-time 60 -o rel.html -w '%{http_code}' "https://www.apkmirror.com$rel" || echo 000)
+              echo "[4] rel http=$code bytes=$(stat -c %s rel.html 2>/dev/null || echo 0)"
+              var=$(grep -oE '/apk/anthropic-pbc/claude-by-anthropic/[a-z0-9-]+-release/[a-z0-9-]+-download/' rel.html | head -1)
+              echo "[4] variant=${var:-none}"
+              if [ -n "$var" ]; then
+                code=$(curl -sSL -A "$UA" --max-time 60 -o var.html -w '%{http_code}' "https://www.apkmirror.com$var" || echo 000)
+                echo "[4] variant page http=$code bytes=$(stat -c %s var.html 2>/dev/null || echo 0)"
+                link=$(grep -oE 'https://www\.apkmirror\.com/wp-content/uploads/[^"'"'"' ]+' var.html | head -1)
+                echo "[4] upload=${link:-none}"
+                if [ -n "$link" ]; then
+                  curl -sSL -A "$UA" -e "https://www.apkmirror.com$var" --max-time 600 -o claude.apk "$link" || true
+                  ok && echo "[4] ok"
+                fi
+              fi
+            fi
+          fi
+
           ls -la
-          test -f claude.apk || { echo "APK 未取到"; exit 1; }
+          test -f claude.apk && ok || { echo "APK 未取到"; exit 1; }
 
       - name: Decode with apktool
         run: |
