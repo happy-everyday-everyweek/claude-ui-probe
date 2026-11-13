@@ -147,7 +147,7 @@ jobs:
           sha256sum "$APK" | tee apk.sha256
           # 新版 Resources.arsc（稀疏类型/新 chunk）需要 apktool 2.9+，发行版自带的 2.7 会直接抛异常。
           curl -sSL --max-time 180 -o /tmp/apktool.jar \
-            https://github.com/iBotPeaches/Apktool/releases/download/v2.11.1/apktool_2.11.1.jar || true
+            https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar || true
           if [ -s /tmp/apktool.jar ]; then
             echo "用官方 jar 解码"
             java -jar /tmp/apktool.jar d -f -o decoded "$APK" 2>&1 | tail -30
