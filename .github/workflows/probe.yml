@@ -262,8 +262,28 @@ jobs:
           find decompiled -name '*.java' | grep -iE '/[^/]*search[^/]*\.java$' | head -120 | while read -r f; do pick "$f"; done
           grep -rl --include='*.java' -E 'searchQuery|SearchChats|SearchBar|ConversationSearch|recentSearch|ChatsSearch' decompiled 2>/dev/null \
             | head -80 | while read -r f; do pick "$f"; done
+          # 按资源 id 定位「Search chats」「Search chats and projects」对应的类：混淆后只能靠 id 找人。
+          ids=$(python3 -c "print(0x7f140fa2, 0x7f140fa8, 0x7f140daa, 0x7f140fa3)")
+          echo "资源 id: $ids" >> dump/dex/search-index.txt
+          for id in $ids; do
+            for wide in "$id" "${id}0000"; do
+              grep -rl --include='*.java' -w "$wide" decompiled 2>/dev/null | head -20 | while read -r f; do pick "$f"; done
+            done
+          done
+          # 万一代码里保留了英文字面量，也一并捞出来。
+          grep -rl --include='*.java' -E 'Search chats and projects|Conversation search|find lookup history all recents past chats' decompiled 2>/dev/null \
+            | head -30 | while read -r f; do pick "$f"; done
           echo "search classes: $(ls dump/dex/search-classes 2>/dev/null | wc -l)"
           du -sh dump/dex 2>/dev/null || true
+
+      - name: Upload anthropic sources
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: anthropic-sources
+          path: decompiled/sources/com/anthropic
+          retention-days: 5
+          if-no-files-found: ignore
 
       - name: Guard repo size
         run: |
