@@ -1,8 +1,8 @@
 # probe dump
 
-APK sha256: 41d8ee58126ff24a46efa69c4d43028af18a0da77f927136a7670b9d58aa0a0c
-时间: 2026-11-13T15:36Z
-dump 体积: 28K
+APK sha256: b2e61f7b3e3b1a1aa7766548016d0ab2db2035d002fa913fb3a547b33d376f3f
+时间: 2026-11-13T15:41Z
+dump 体积: 24K
 
 ## 目录
 - dump/res：apktool 解码后的全部 XML 资源（布局 / values / drawable-xml / anim / menu / xml）
@@ -24,6 +24,6 @@ hermes          1 files      4.0K
 ## assets 顶层清单
 ```
 total 8
-drwxr-xr-x 2 runner runner 4096 Nov 13 15:35 .
-drwxr-xr-x 5 runner runner 4096 Nov 13 15:36 ..
+drwxr-xr-x 2 runner runner 4096 Nov 13 15:41 .
+drwxr-xr-x 5 runner runner 4096 Nov 13 15:41 ..
 ```
