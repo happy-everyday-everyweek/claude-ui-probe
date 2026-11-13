@@ -112,6 +112,20 @@ jobs:
             head -c 200 d.html 2>/dev/null; echo
           done
 
+      - name: Extract download links
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          dump() {
+            echo "===== $1"
+            curl -sSL -A "$UA" -H 'Accept-Language: en-US,en;q=0.9' --max-time 45 -o page.html "$1" || true
+            echo "bytes=$(stat -c %s page.html 2>/dev/null || echo 0)"
+            grep -oiE '(href|data-url|data-href|action)="[^"]{3,140}"' page.html | grep -iE 'apk|download|descargar|dwn' | sort -u | head -15 || true
+            grep -oiE 'https?://[^"'"'"' <>]+\.(apk|xapk)[^"'"'"' <>]*' page.html | sort -u | head -10 || true
+            grep -oiE 'https?://[^"'"'"' <>]*(download|dwn)[^"'"'"' <>]*' page.html | sort -u | head -10 || true
+          }
+          dump "https://claude.malavida.com/android/"
+          dump "https://appsapk.com/claude/"
+
       - name: apkeep google-play options
         run: |
           command -v cargo >/dev/null || true
