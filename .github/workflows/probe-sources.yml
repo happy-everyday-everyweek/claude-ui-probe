@@ -41,6 +41,37 @@ jobs:
             done
           done
 
+      - name: Chinese mirrors and proxies
+        run: |
+          UA="Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36"
+          probe() {
+            echo "=== $1"
+            code=$(curl -sSL -A "$UA" -o out.html -w '%{http_code}' --max-time 45 "$1" || echo 000)
+            echo "http=$code bytes=$(stat -c %s out.html 2>/dev/null || echo 0)"
+            grep -oiE 'https?://[^"'"'"' <>]+\.(apk|xapk)[^"'"'"' <>]*' out.html | sort -u | head -5 || true
+            grep -oiE 'com\.anthropic\.claude' out.html | head -2 || true
+          }
+          probe "https://www.coolapk.com/apk/com.anthropic.claude"
+          probe "https://www.coolapk.com/search?q=claude"
+          probe "https://apkcombo.app/en/claude/com.anthropic.claude/"
+          probe "https://apkcombo.net/en/claude/com.anthropic.claude/"
+          probe "https://apk.support/app/com.anthropic.claude"
+          probe "https://apkgk.com/com.anthropic.claude"
+          probe "https://apkmonk.com/app/com.anthropic.claude/"
+
+      - name: Reader proxies for apkmirror
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          for u in \
+            "https://r.jina.ai/https://www.apkmirror.com/apk/anthropic-pbc/claude-by-anthropic/" \
+            "https://api.codetabs.com/v1/proxy?quest=https://www.apkmirror.com/apk/anthropic-pbc/claude-by-anthropic/"; do
+            echo "=== $u"
+            code=$(curl -sSL -A "$UA" -o out.txt -w '%{http_code}' --max-time 90 "$u" || echo 000)
+            echo "http=$code bytes=$(stat -c %s out.txt 2>/dev/null || echo 0)"
+            head -c 300 out.txt 2>/dev/null; echo
+            grep -oE '/apk/anthropic-pbc/claude-by-anthropic/[a-z0-9-]+-release/' out.txt 2>/dev/null | tail -3 || true
+          done
+
       - name: apkeep google-play options
         run: |
           command -v cargo >/dev/null || true
