@@ -1,0 +1,48 @@
+name: probe-sources
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Official download page
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          for u in "https://claude.ai/download" "https://www.anthropic.com/claude/download" "https://claude.com/download"; do
+            echo "=== $u"
+            code=$(curl -sSL -A "$UA" -o page.html -w '%{http_code}' --max-time 60 "$u" || echo 000)
+            echo "http=$code bytes=$(stat -c %s page.html 2>/dev/null || echo 0)"
+            grep -oE 'https?://[^"'"'"' <>]+' page.html | grep -iE 'play\.google|apple\.com|\.apk|download' | sort -u | head -20 || true
+          done
+
+      - name: Play store page
+        run: |
+          UA="Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36"
+          u="https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en&gl=US"
+          code=$(curl -sSL -A "$UA" -o play.html -w '%{http_code}' --max-time 60 "$u" || echo 000)
+          echo "http=$code bytes=$(stat -c %s play.html 2>/dev/null || echo 0)"
+          grep -oE '(Not available|Available on|Install|Download)[^<]{0,40}' play.html | sort -u | head -10 || true
+          grep -oE 'https://play\.google\.com/[^"'"'"' <>]*com\.anthropic\.claude[^"'"'"' <>]*' play.html | sort -u | head -5 || true
+
+      - name: Anonymous store dispenser
+        run: |
+          for base in "https://auroraoss.com/api/auth" "https://aurora-api.auroraoss.dev/api/auth" "https://auroraoss.com/api/v1/auth"; do
+            echo "=== $base"
+            for body in '{"email":"","password":"","gsfId":""}' '{"email":"anonymous","password":"","gsfId":""}'; do
+              code=$(curl -sSL -X POST -H 'Content-Type: application/json' --max-time 40 -o out.json -w '%{http_code}' -d "$body" "$base" || echo 000)
+              echo "body=$body http=$code bytes=$(stat -c %s out.json 2>/dev/null || echo 0)"
+              head -c 300 out.json 2>/dev/null; echo
+            done
+          done
+
+      - name: apkeep google-play options
+        run: |
+          command -v cargo >/dev/null || true
+          cargo install apkeep --locked 2>&1 | tail -2 || true
+          apkeep --help 2>&1 | sed -n '1,80p'
