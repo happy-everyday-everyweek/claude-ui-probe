@@ -93,5 +93,16 @@ if [ -n "$dl" ]; then
   save "apkpure api" && exit 0
 fi
 
+echo "== 6 aptoide"
+aj=$(curl -sSL --max-time 60 "https://ws75.aptoide.com/api/7/app/getMeta?package_name=com.anthropic.claude" || true)
+echo " bytes=${#aj} head=$(printf '%s' "$aj" | head -c 120)"
+apath=$(printf '%s' "$aj" | grep -oE '"path":"[^"]+\.apk"' | head -1 | sed 's/"path":"//;s/"$//' | sed 's#\\/#/#g')
+echo " path=${apath:-none}"
+if [ -n "$apath" ]; then
+  code=$(curl -sSL --max-time 900 -o "$OUT" -w '%{http_code}' "$apath" || echo 000)
+  echo " dl http=$code"
+  save aptoide && exit 0
+fi
+
 echo "全部来源失败"
 exit 1
