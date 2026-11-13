@@ -1,77 +1,195 @@
 name: probe
 
+# 目标：把 Claude 安卓包的真实逆向产物直接提交进仓库，而不是只写摘要。
+# 产物落在 dump/：apktool 解码出的全部 XML 资源、assets 原始文件（RN/Hermes bundle）、
+# bundle 的完整字符串表、HBC 反汇编、APK 哈希与索引。
+
 on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths-ignore:
+      - 'dump/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-dump
+  cancel-in-progress: true
 
 jobs:
-  probe:
+  dump:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install apkeep
+      - name: Toolchain
         run: |
-          cargo install apkeep --locked || pipx install apkeep || pip install apkeep
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip aapt apktool xxd rsync >/dev/null 2>&1 || true
+          java -version 2>&1 | head -3 || true
+          apktool --version 2>&1 | head -3 || true
+          python3 -m pip install --quiet --user apkeep 2>&1 | tail -3 || true
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Fetch Claude APK
         run: |
-          mkdir -p apk && cd apk
-          (apkeep -a com.anthropic.claude -d apk-pure . || apkeep -a com.anthropic.claude .) 2>&1 | tail -20
+          mkdir -p apk
+          cd apk
+          ok=""
+          for i in 1 2 3 4; do
+            if apkeep -a com.anthropic.claude -d apk-pure . 2>&1 | tail -15; then
+              if ls ./*.apk >/dev/null 2>&1; then ok=1; break; fi
+            fi
+            echo "retry $i"
+            sleep 25
+          done
           ls -la
+          test -n "$ok" || { echo "APK 未取到"; exit 1; }
 
-      - name: Unpack and inventory
+      - name: Decode with apktool
         run: |
           cd apk
           APK=$(ls *.apk | head -1)
           echo "APK=$APK"
-          unzip -o -q "$APK" -d out || true
-          mkdir -p ../report
-          {
-            echo "# entries"
-            find out -maxdepth 2 -type f | head -200
-            echo
-            echo "# assets"
-            ls -la out/assets 2>/dev/null | head -40
-            echo
-            echo "# bundle candidates"
-            find out -iname '*.bundle' -o -iname 'main.jsbundle' -o -iname '*.hbc' | head -20
-          } > ../report/inventory.md
+          sha256sum "$APK" | tee ../apk.sha256
+          if ! apktool d -f -o ../decoded "$APK" 2>&1 | tail -25; then
+            echo "apt apktool 失败，改用官方 jar"
+            curl -sSL -o /tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.11.1/apktool_2.11.1.jar
+            java -jar /tmp/apktool.jar d -f -o ../decoded "$APK" 2>&1 | tail -25
+          fi
+          ls ../decoded | head -20
 
-      - name: Search UI strings for search behaviour
+      - name: Assemble dump
         run: |
-          cd apk
-          {
-            echo "# grep: search-related identifiers in bundle"
-            for f in $(find out -iname '*.bundle' -o -iname '*.jsbundle'); do
-              echo "## $f"
-              strings -n 6 "$f" 2>/dev/null | grep -iE 'search' | sort -u | head -120
+          rm -rf dump
+          mkdir -p dump
+          cp apk.sha256 dump/APK_SHA256.txt 2>/dev/null || true
+          cp decoded/AndroidManifest.xml dump/ 2>/dev/null || true
+          cp decoded/apktool.yml dump/ 2>/dev/null || true
+
+          # 1) 全部 XML 资源（布局、values、drawable-xml、anim、menu、xml）。二进制图片与 .so 不进仓库。
+          mkdir -p dump/res
+          if [ -d decoded/res ]; then
+            ( cd decoded/res && find . -type f -name '*.xml' -exec cp --parents {} ../../dump/res/ \; )
+          fi
+          find dump/res -type f | wc -l | xargs echo "res xml files:"
+
+          # 2) assets 原始文件：RN 的 JS bundle、JSON 配置、脚本都在这里。
+          mkdir -p dump/assets
+          if [ -d decoded/assets ]; then
+            ( cd decoded/assets && find . -type f -size -30M -exec cp --parents {} ../../dump/assets/ \; )
+            ( cd decoded/assets && find . -type f -size +30M -printf '%s\t%p\n' | sort -rn ) > dump/assets/SKIPPED_OVER_30M.txt
+          fi
+          du -sh dump/assets 2>/dev/null || true
+
+      - name: Hermes bundles
+        run: |
+          mkdir -p dump/hermes
+          : > dump/hermes/README.txt
+          count=0
+          while IFS= read -r f; do
+            [ -f "$f" ] || continue
+            magic=$(xxd -p -l 8 "$f" | tr -d '\n')
+            size=$(stat -c %s "$f")
+            name=$(basename "$f")
+            echo "$name size=$size magic=$magic" >> dump/hermes/README.txt
+            count=$((count+1))
+            # Hermes HBC 魔数 0x1F1903C103BC1FC6，小端按字节读作 c61fbc03c103191f
+            if [ "$magic" = "c61fbc03c103191f" ]; then
+              {
+                echo "===== $name : UTF-8 ====="
+                strings -n 4 "$f" || true
+                echo
+                echo "===== $name : UTF-16LE ====="
+                strings -e l -n 4 "$f" || true
+              } > "dump/hermes/$name.strings.txt" 2>/dev/null || true
+              echo "$name is hermes, strings extracted" >> dump/hermes/README.txt
+            fi
+          done < <(find dump/assets -type f \( -name '*.bundle' -o -name '*.jsbundle' -o -name '*.hbc' \) 2>/dev/null | sort -u)
+          echo "bundles found: $count"
+
+      - name: Try Hermes disassembly
+        run: |
+          python3 -m pip install --quiet --user hbctool 2>&1 | tail -3 || true
+          while IFS= read -r f; do
+            [ -f "$f" ] || continue
+            magic=$(xxd -p -l 8 "$f" | tr -d '\n')
+            [ "$magic" = "c61fbc03c103191f" ] || continue
+            name=$(basename "$f")
+            out="dump/hermes/$name.hasm"
+            if hbctool disasm "$f" "$out" >> dump/hermes/README.txt 2>&1; then
+              echo "$name disassembled -> $out" >> dump/hermes/README.txt
+            else
+              echo "$name disasm failed (unsupported HBC version)" >> dump/hermes/README.txt
+            fi
+          done < <(find dump/assets -type f \( -name '*.bundle' -o -name '*.jsbundle' -o -name '*.hbc' \) 2>/dev/null | sort -u)
+          du -sh dump/hermes 2>/dev/null || true
+
+      - name: Guard repo size
+        run: |
+          total=$(du -sm dump | cut -f1)
+          echo "dump total ${total}MB"
+          if [ "$total" -gt 380 ]; then
+            echo "超出体积预算，按大小从大到小删 assets 并记录"
+            find dump/assets -type f -printf '%s\t%p\n' | sort -rn | head -40 | while IFS=$'\t' read -r sz p; do
+              echo "$sz $p (删：仓库体积预算)" >> dump/assets/SKIPPED_OVER_30M.txt
+              rm -f "$p"
             done
+            du -sm dump | cut -f1 | xargs echo "dump total now:"
+          fi
+
+      - name: Index
+        run: |
+          {
+            echo "# probe dump"
             echo
-            echo "# grep: pull-to-search / filter hints"
-            for f in $(find out -iname '*.bundle' -o -iname '*.jsbundle'); do
-              strings -n 6 "$f" 2>/dev/null | grep -iE 'pull.?to.?search|filter(Able)?|searchBar|searchInput|searchQuery|recentSearch' | sort -u | head -120
+            echo "APK sha256: $(awk '{print $1}' dump/APK_SHA256.txt 2>/dev/null)"
+            echo "时间: $(date -u +%Y-%m-%dT%H:%MZ)"
+            echo "dump 体积: $(du -sh dump | cut -f1)"
+            echo
+            echo "## 目录"
+            echo "- dump/res：apktool 解码后的全部 XML 资源（布局 / values / drawable-xml / anim / menu / xml）"
+            echo "- dump/assets：解包出的 assets 原始文件（RN bundle、JSON、脚本等，>30M 的见 SKIPPED_OVER_30M.txt）"
+            echo "- dump/hermes：bundle 的真实字符串表；HBC 会尝试用 hbctool 反汇编成 .hasm"
+            echo "- dump/AndroidManifest.xml、dump/apktool.yml：解码清单与 apktool 元数据"
+            echo
+            echo "## 统计"
+            echo '```'
+            for d in res assets hermes; do
+              printf '%-10s %6s files  %8s\n' "$d" "$(find dump/$d -type f 2>/dev/null | wc -l)" "$(du -sh dump/$d 2>/dev/null | cut -f1)"
             done
-          } > ../report/search-strings.md
-          wc -l ../report/search-strings.md
+            echo '```'
+            echo
+            echo "## 布局文件（前 80）"
+            echo '```'
+            find dump/res -path '*/layout*/*' -name '*.xml' | sort | head -80
+            echo '```'
+            echo
+            echo "## assets 顶层清单"
+            echo '```'
+            ls -la dump/assets 2>/dev/null | head -60
+            echo '```'
+          } > dump/INDEX.md
+          head -40 dump/INDEX.md
 
-      - name: Dump resource strings mentioning search
+      - name: Commit dump
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq aapt >/dev/null 2>&1 || true
-          cd apk
-          APK=$(ls *.apk | head -1)
-          (aapt dump strings "$APK" 2>/dev/null | grep -iE 'search|搜' | sort -u | head -200) > ../report/resource-strings.md || true
-          wc -l ../report/resource-strings.md
-
-      - name: Publish report to log
-        run: |
-          for f in report/*.md; do
-            echo "===== $f ====="
-            head -400 "$f"
-          done
+          git config user.name "probe-bot"
+          git config user.email "probe-bot@users.noreply.github.com"
+          git add -A dump
+          if git diff --cached --quiet; then echo "内容无变化，不提交"; exit 0; fi
+          git commit -m "dump: claude apk artifacts $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
 
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: probe-report
-          path: report/
+          name: probe-dump
+          path: dump/
+          retention-days: 7
