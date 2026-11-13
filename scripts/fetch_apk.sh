@@ -12,13 +12,29 @@ ok() { [ -f "$OUT" ] && [ "$(stat -c %s "$OUT")" -gt 20000000 ] && [ "$(head -c 
 
 save() {
   if ok; then
-    # 有些镜像发的是 XAPK/APKS（zip 里放 base.apk），apktool 认不出，先拆出真正的 APK。
+    # 有些镜像发的是 XAPK/APKS（zip 里放若干个 split APK），apktool 只会把整包当 unknown。
+    # 这里挑出真正带 AndroidManifest.xml 的那一个（base 优先，否则取最大的）。
     if ! unzip -l "$OUT" 2>/dev/null | grep -q 'AndroidManifest.xml'; then
       rm -rf xapk_tmp && mkdir -p xapk_tmp
       unzip -o -q "$OUT" -d xapk_tmp 2>/dev/null || true
-      if [ -f xapk_tmp/base.apk ]; then
-        mv xapk_tmp/base.apk "$OUT"
-        echo "[note] 从 XAPK 里取出 base.apk"
+      pick=""
+      for cand in $(find xapk_tmp -type f -name '*.apk' | sort); do
+        if unzip -l "$cand" 2>/dev/null | grep -q 'AndroidManifest.xml'; then
+          case "$(basename "$cand")" in
+            base*|*base.apk) pick="$cand"; break ;;
+          esac
+          if [ -z "$pick" ] || [ "$(stat -c %s "$cand")" -gt "$(stat -c %s "$pick")" ]; then
+            pick="$cand"
+          fi
+        fi
+      done
+      if [ -n "$pick" ]; then
+        mv "$pick" "$OUT"
+        echo "[note] 从 XAPK 里取出 $(basename "$pick")"
+      else
+        echo "[miss] XAPK 里没有可解码的 APK"
+        rm -f "$OUT"
+        return 1
       fi
     fi
     echo "[ok] $1 ($(stat -c %s "$OUT") bytes)"
