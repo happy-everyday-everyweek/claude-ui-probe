@@ -167,6 +167,21 @@ jobs:
           retention-days: 5
           if-no-files-found: ignore
 
+      - name: Inspect malavida download page
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          curl -sSL -A "$UA" -H 'Accept-Language: es-ES,es;q=0.9' -c ck.txt -b ck.txt \
+            --max-time 60 -o mv.html "https://www.malavida.com/es/soft/claude/android/descargar" || true
+          echo "bytes=$(stat -c %s mv.html 2>/dev/null || echo 0)"
+          echo "--- urls"
+          grep -oiE 'https?://[a-z0-9.-]*(malavida|uptodown|utdstc)[^"'"'"' <>]*' mv.html | sort -u | head -25 || true
+          echo "--- dwn"
+          grep -oiE '[^"'"'"' <>]*dwn[^"'"'"' <>]*' mv.html | sort -u | head -15 || true
+          echo "--- data attrs"
+          grep -oiE 'data-[a-z-]+="[^"]{2,120}"' mv.html | grep -viE 'name=|src=' | sort -u | head -20 || true
+          echo "--- forms"
+          grep -oiE '<form[^>]{0,200}' mv.html | head -5 || true
+
       - name: apkeep google-play options
         run: |
           command -v cargo >/dev/null || true
