@@ -1,5 +1,5 @@
 # 搜索相关类索引
-生成时间 2026-11-13T16:16Z
+生成时间 2026-11-13T16:46Z
 
 - sources/android/support/v4/media/MediaBrowserCompat$SearchResultReceiver.java
 - sources/org/chromium/support_lib_boundary/NoVarySearchDataBoundaryInterface.java
@@ -14,3 +14,4 @@
 - sources/defpackage/dre.java
 - sources/defpackage/bre.java
 - sources/com/google/android/material/search/SearchBar$ScrollingViewBehavior.java
+资源 id: 2132021154 2132021160 2132020650 2132021155

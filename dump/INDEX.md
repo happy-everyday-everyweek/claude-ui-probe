@@ -1,7 +1,7 @@
 # probe dump
 
 APK sha256: b2e61f7b3e3b1a1aa7766548016d0ab2db2035d002fa913fb3a547b33d376f3f
-时间: 2026-11-13T16:16Z
+时间: 2026-11-13T16:46Z
 dump 体积: 11M
 
 ## 目录
@@ -104,16 +104,16 @@ dump/res/layout-v31/APKTOOL_RENAMED_0x7f0e0099.xml
 ## assets 顶层清单
 ```
 total 496
-drwxr-xr-x 7 runner runner   4096 Nov 13 16:02 .
-drwxr-xr-x 6 runner runner   4096 Nov 13 16:16 ..
--rw-r--r-- 1 runner runner 132737 Nov 13 16:02 PublicSuffixDatabase.list
--rw-r--r-- 1 runner runner      0 Nov 13 16:02 SKIPPED_OVER_30M.txt
--rw-r--r-- 1 runner runner 332304 Nov 13 16:02 cds_icon_symbols.ttf
-drwxr-xr-x 3 runner runner   4096 Nov 13 16:02 com
-drwxr-xr-x 3 runner runner   4096 Nov 13 16:02 composeResources
--rw-r--r-- 1 runner runner     36 Nov 13 16:02 datadog.buildId
-drwxr-xr-x 2 runner runner   4096 Nov 13 16:02 dexopt
-drwxr-xr-x 2 runner runner   4096 Nov 13 16:02 fonts
-drwxr-xr-x 2 runner runner   4096 Nov 13 16:02 peghl
--rw-r--r-- 1 runner runner    133 Nov 13 16:02 sentry-debug-meta.properties
+drwxr-xr-x 7 runner runner   4096 Nov 13 16:25 .
+drwxr-xr-x 6 runner runner   4096 Nov 13 16:46 ..
+-rw-r--r-- 1 runner runner 132737 Nov 13 16:25 PublicSuffixDatabase.list
+-rw-r--r-- 1 runner runner      0 Nov 13 16:25 SKIPPED_OVER_30M.txt
+-rw-r--r-- 1 runner runner 332304 Nov 13 16:25 cds_icon_symbols.ttf
+drwxr-xr-x 3 runner runner   4096 Nov 13 16:25 com
+drwxr-xr-x 3 runner runner   4096 Nov 13 16:25 composeResources
+-rw-r--r-- 1 runner runner     36 Nov 13 16:25 datadog.buildId
+drwxr-xr-x 2 runner runner   4096 Nov 13 16:25 dexopt
+drwxr-xr-x 2 runner runner   4096 Nov 13 16:25 fonts
+drwxr-xr-x 2 runner runner   4096 Nov 13 16:25 peghl
+-rw-r--r-- 1 runner runner    133 Nov 13 16:25 sentry-debug-meta.properties
 ```
