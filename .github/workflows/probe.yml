@@ -49,6 +49,13 @@ jobs:
         run: |
           mkdir -p apk
           cd apk
+          # 主路径：脚本按顺序试各镜像，并打印每一步的可见证据。
+          if APK_URL="${{ inputs.apk_url }}" bash ../scripts/fetch_apk.sh claude.apk; then
+            ls -la
+            echo "脚本取包成功"
+            exit 0
+          fi
+          echo "脚本未取到，继续走内联兜底"
           UA="Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36"
           ok() { [ -f claude.apk ] && [ "$(stat -c %s claude.apk)" -gt 20000000 ] && [ "$(head -c 2 claude.apk)" = "PK" ]; }
 
