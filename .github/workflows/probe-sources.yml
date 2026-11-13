@@ -72,6 +72,46 @@ jobs:
             grep -oE '/apk/anthropic-pbc/claude-by-anthropic/[a-z0-9-]+-release/' out.txt 2>/dev/null | tail -3 || true
           done
 
+      - name: Mirror sweep
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          sweep() {
+            code=$(curl -sSL -A "$UA" -o s.html -w '%{http_code}' --max-time 30 "$1" 2>/dev/null || echo 000)
+            size=$(stat -c %s s.html 2>/dev/null || echo 0)
+            title=$(grep -oiE '<title>[^<]{0,60}' s.html 2>/dev/null | head -1 | sed 's/<title>//')
+            echo "$1 -> http=$code bytes=$size $title"
+            rm -f s.html
+          }
+          for u in \
+            "https://apkpure.cn/com.anthropic.claude" \
+            "https://www.softpedia.com/get/Android/Communication/Claude.shtml" \
+            "https://claude.malavida.com/android/" \
+            "https://apkdl.in/app/com.anthropic.claude" \
+            "https://apkhome.net/claude/" \
+            "https://apkdone.com/claude/" \
+            "https://apkspure.com/claude/" \
+            "https://apkaward.com/com.anthropic.claude" \
+            "https://apkfollow.com/com.anthropic.claude/" \
+            "https://androidfreeware.net/download-claude-apk/" \
+            "https://www.apk4fun.com/apk/com.anthropic.claude/" \
+            "https://apkfun.com/claude.html" \
+            "https://appsapk.com/claude/" ; do
+            sweep "$u"
+          done
+
+      - name: Official downloads host
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          for u in \
+            "https://downloads.claude.ai/" \
+            "https://downloads.claude.ai/claude-android/latest/claude.apk" \
+            "https://downloads.claude.ai/claude-science/latest/android-arm64" \
+            "https://claude.ai/android" ; do
+            code=$(curl -sSL -A "$UA" -o d.html -w '%{http_code}' --max-time 30 "$u" 2>/dev/null || echo 000)
+            echo "=== $u http=$code bytes=$(stat -c %s d.html 2>/dev/null || echo 0)"
+            head -c 200 d.html 2>/dev/null; echo
+          done
+
       - name: apkeep google-play options
         run: |
           command -v cargo >/dev/null || true
