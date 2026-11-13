@@ -34,18 +34,23 @@ jobs:
           sudo apt-get install -y -qq unzip aapt apktool xxd rsync >/dev/null 2>&1 || true
           java -version 2>&1 | head -3 || true
           apktool --version 2>&1 | head -3 || true
-          python3 -m pip install --quiet --user apkeep 2>&1 | tail -3 || true
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          # apkeep 是 Rust 程序：优先用官方预编译包，取不到再 cargo 装（慢但不至于断）。
+          if curl -sSL --fail -o /tmp/apkeep.tgz \
+            https://github.com/EFForg/apkeep/releases/latest/download/apkeep-x86_64-unknown-linux-gnu.tar.gz; then
+            tar -xzf /tmp/apkeep.tgz -C /tmp && sudo install /tmp/apkeep /usr/local/bin/apkeep
+          fi
+          command -v apkeep >/dev/null || (command -v cargo >/dev/null && cargo install apkeep --locked)
+          apkeep --version 2>&1 | head -3 || true
 
       - name: Fetch Claude APK
         run: |
           mkdir -p apk
           cd apk
           ok=""
-          for i in 1 2 3 4; do
-            if apkeep -a com.anthropic.claude -d apk-pure . 2>&1 | tail -15; then
-              if ls ./*.apk >/dev/null 2>&1; then ok=1; break; fi
-            fi
+          for i in 1 2 3 4 5; do
+            apkeep -a com.anthropic.claude -d apk-pure . 2>&1 | tail -15 || true
+            APK=$(ls ./*.apk 2>/dev/null | head -1)
+            if [ -n "$APK" ] && [ "$(stat -c %s "$APK")" -gt 20000000 ]; then ok=1; break; fi
             echo "retry $i"
             sleep 25
           done
