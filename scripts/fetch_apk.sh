@@ -37,6 +37,8 @@ page=$(mktemp)
 curl -sSL -A "$UA" -H 'Accept-Language: en-US,en;q=0.9' -c ck.txt -b ck.txt \
   --max-time 60 -o "$page" "https://claude.en.uptodown.com/android/download" || true
 echo " page bytes=$(stat -c %s "$page" 2>/dev/null || echo 0) dwn=$(grep -c dwn "$page" 2>/dev/null || echo 0) dataurl=$(grep -c 'data-url' "$page" 2>/dev/null || echo 0)"
+# 存一份原始页面，方便下一轮按真实结构写解析。
+mkdir -p ../debug && cp "$page" ../debug/uptodown-download.html 2>/dev/null || true
 grep -oE '(https?:)?//dw\.uptodown\.com/dwn/[^"'"'"' <]+' "$page" | head -3 || true
 dataurl=$(grep -oE 'data-url="[^"]+"' "$page" | head -1 | sed 's/data-url="//;s/"$//')
 echo " data-url=${dataurl:-none}"
