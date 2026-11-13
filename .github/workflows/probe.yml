@@ -1,0 +1,77 @@
+name: probe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install apkeep
+        run: |
+          cargo install apkeep --locked || pipx install apkeep || pip install apkeep
+
+      - name: Fetch Claude APK
+        run: |
+          mkdir -p apk && cd apk
+          (apkeep -a com.anthropic.claude -d apk-pure . || apkeep -a com.anthropic.claude .) 2>&1 | tail -20
+          ls -la
+
+      - name: Unpack and inventory
+        run: |
+          cd apk
+          APK=$(ls *.apk | head -1)
+          echo "APK=$APK"
+          unzip -o -q "$APK" -d out || true
+          mkdir -p ../report
+          {
+            echo "# entries"
+            find out -maxdepth 2 -type f | head -200
+            echo
+            echo "# assets"
+            ls -la out/assets 2>/dev/null | head -40
+            echo
+            echo "# bundle candidates"
+            find out -iname '*.bundle' -o -iname 'main.jsbundle' -o -iname '*.hbc' | head -20
+          } > ../report/inventory.md
+
+      - name: Search UI strings for search behaviour
+        run: |
+          cd apk
+          {
+            echo "# grep: search-related identifiers in bundle"
+            for f in $(find out -iname '*.bundle' -o -iname '*.jsbundle'); do
+              echo "## $f"
+              strings -n 6 "$f" 2>/dev/null | grep -iE 'search' | sort -u | head -120
+            done
+            echo
+            echo "# grep: pull-to-search / filter hints"
+            for f in $(find out -iname '*.bundle' -o -iname '*.jsbundle'); do
+              strings -n 6 "$f" 2>/dev/null | grep -iE 'pull.?to.?search|filter(Able)?|searchBar|searchInput|searchQuery|recentSearch' | sort -u | head -120
+            done
+          } > ../report/search-strings.md
+          wc -l ../report/search-strings.md
+
+      - name: Dump resource strings mentioning search
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq aapt >/dev/null 2>&1 || true
+          cd apk
+          APK=$(ls *.apk | head -1)
+          (aapt dump strings "$APK" 2>/dev/null | grep -iE 'search|搜' | sort -u | head -200) > ../report/resource-strings.md || true
+          wc -l ../report/resource-strings.md
+
+      - name: Publish report to log
+        run: |
+          for f in report/*.md; do
+            echo "===== $f ====="
+            head -400 "$f"
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe-report
+          path: report/
