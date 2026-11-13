@@ -1,0 +1,16 @@
+# 搜索相关类索引
+生成时间 2026-11-13T16:16Z
+
+- sources/android/support/v4/media/MediaBrowserCompat$SearchResultReceiver.java
+- sources/org/chromium/support_lib_boundary/NoVarySearchDataBoundaryInterface.java
+- sources/androidx/appcompat/widget/SearchView$SearchAutoComplete.java
+- sources/com/anthropic/claude/chat/bottomsheet/ResearchDetailsSheetDestination.java
+- sources/com/anthropic/claude/app/shell/content/CodeSearchHint.java
+- sources/com/google/android/material/search/SearchView$Behavior.java
+- sources/com/google/android/material/search/SearchBar$ScrollingViewBehavior.java
+- sources/defpackage/mmk.java
+- sources/defpackage/h1m.java
+- sources/defpackage/tuz.java
+- sources/defpackage/dre.java
+- sources/defpackage/bre.java
+- sources/com/google/android/material/search/SearchBar$ScrollingViewBehavior.java
